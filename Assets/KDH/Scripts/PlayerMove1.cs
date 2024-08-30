@@ -1,37 +1,37 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Pld : MonoBehaviourPun
+public class PlayerMove1 : MonoBehaviourPun
 {
-    // ìºë¦­í„° ì»¨íŠ¸ë¡¤ëŸ¬
+    // Ä³¸¯ÅÍ ÄÁÆ®·Ñ·¯
     CharacterController cc;
 
-    // ì´ë™ ì†ë ¥
+    // ÀÌµ¿ ¼Ó·Â
     public float moveSpeed = 5;
 
-    // ì¤‘ë ¥
+    // Áß·Â
     float gravity = -9.81f;
-    // y ì†ë ¥
+    // y ¼Ó·Â
     float yVelocity;
-    // ì í”„ ì´ˆê¸° ì†ë ¥
+    // Á¡ÇÁ ÃÊ±â ¼Ó·Â
     public float jumpPower = 3;
 
-    // ì¹´ë©”ë¼
+    // Ä«¸Ş¶ó
     public GameObject cam;
 
-    #region ë‚´êº¼
+    #region ³»²¨
     //void Update()
     //{
-    //    // ìœ ì €ì˜ ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
+    //    // À¯ÀúÀÇ ÀÔ·ÂÀ» ¹Ş´Â´Ù.
     //    float h = Input.GetAxis("Horizontal");
     //    float v = Input.GetAxis("Vertical");
 
     //    Vector3 velocity = new Vector3(h, 0, v);
     //    velocity.Normalize();
 
-    //    // ë‚´ê°€ íšŒì „í•˜ë©´ ë‚˜ì˜ ì•ë°©í–¥ë„ ë°”ë€ë‹¤.
+    //    // ³»°¡ È¸ÀüÇÏ¸é ³ªÀÇ ¾Õ¹æÇâµµ ¹Ù²ï´Ù.
     //    velocity = transform.TransformDirection(velocity);
 
     //    // p = p0 + vt
@@ -41,9 +41,9 @@ public class Pld : MonoBehaviourPun
 
     private void Start()
     {
-        // ìºë¦­í„° ì»¨íŠ¸ë¡¤ëŸ¬ ê°€ì ¸ì˜¤ì.
+        // Ä³¸¯ÅÍ ÄÁÆ®·Ñ·¯ °¡Á®¿ÀÀÚ.
         cc = GetComponent<CharacterController>();
-        // ë‚´ ê²ƒì¼ ë•Œë§Œ ì¹´ë©”ë¼ë¥¼ í™œì„±í™” í•˜ì
+        // ³» °ÍÀÏ ¶§¸¸ Ä«¸Ş¶ó¸¦ È°¼ºÈ­ ÇÏÀÚ
         cam.SetActive(photonView.IsMine);
         //if (photonView.IsMine)
         //{
@@ -53,52 +53,52 @@ public class Pld : MonoBehaviourPun
 
     private void Update()
     {
-        // ë‚´ ê²ƒì¼ ë•Œë§Œ ì»¨íŠ¸ë¡¤ í•˜ì!
+        // ³» °ÍÀÏ ¶§¸¸ ÄÁÆ®·Ñ ÇÏÀÚ!
         if (photonView.IsMine)
         {
-            // 1. í‚¤ë³´ë“œ WWASD í‚¤ ì…ë ¥ì„ ë°›ì
+            // 1. Å°º¸µå WWASD Å° ÀÔ·ÂÀ» ¹ŞÀÚ
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
-            // 2. ë°©í–¥ì„ ì •í•˜ì.
+            // 2. ¹æÇâÀ» Á¤ÇÏÀÚ.
             Vector3 dirH = Vector3.right * h;
             Vector3 dirV = Vector3.forward * v;
             Vector3 dir = dirH + dirV;
 
             dir.Normalize();
 
-            // ë§Œì•½ì— ë•…ì— ìˆìœ¼ë©´ yVelocity ë¥¼ 0 ìœ¼ë¡œ ì´ˆê¸°í™”
+            // ¸¸¾à¿¡ ¶¥¿¡ ÀÖÀ¸¸é yVelocity ¸¦ 0 À¸·Î ÃÊ±âÈ­
             if (cc.isGrounded)
             {
                 yVelocity = 0;
             }
 
-            // ë§Œì•½ì— Space ë°”ë¥¼ ëˆ„ë¥´ë©´
+            // ¸¸¾à¿¡ Space ¹Ù¸¦ ´©¸£¸é
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // yVelocity ë¥¼ jumpPower ë¡œ ì„¤ì •
+                // yVelocity ¸¦ jumpPower ·Î ¼³Á¤
                 yVelocity = jumpPower;
             }
 
-            // yVelocity ê°’ì„ ì¤‘ë ¥ì— ì˜í•´ì„œ ë³€ê²½ì‹œí‚¤ì.
+            // yVelocity °ªÀ» Áß·Â¿¡ ÀÇÇØ¼­ º¯°æ½ÃÅ°ÀÚ.
             yVelocity += gravity * Time.deltaTime;
 
-            #region ë¬¼ë¦¬ì ì¸ ì í”„ ì•„ë‹Œ ê²ƒ (ìƒí•˜ ì´ë™[ì¤‘ë ¥]ì—ë„ ì´ë™ì†ë„ê°€ ê°œì…í•˜ëŠ” ê²ƒ)
-            // dir.y ì— yVelocity ê°’ì„ ì„¸íŒ…
+            #region ¹°¸®ÀûÀÎ Á¡ÇÁ ¾Æ´Ñ °Í (»óÇÏ ÀÌµ¿[Áß·Â]¿¡µµ ÀÌµ¿¼Óµµ°¡ °³ÀÔÇÏ´Â °Í)
+            // dir.y ¿¡ yVelocity °ªÀ» ¼¼ÆÃ
             dir.y = yVelocity;
 
-            // ìì‹ ì˜ ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ dir ë³€ê²½
+            // ÀÚ½ÅÀÇ ¹æÇâÀ» ±âÁØÀ¸·Î dir º¯°æ
             dir = transform.TransformDirection(dir);
 
             //dirH = transform.right * h;
             //dirV = transform.forward * v;
-            // ã„´ ì´ë ‡ê²Œ í–ˆìœ¼ë©´  dir = transform.TransformDirection(dir); <= ì´ ê³¼ì •ì´ í•„ìš” ì—†ìŒ
+            // ¤¤ ÀÌ·¸°Ô ÇßÀ¸¸é  dir = transform.TransformDirection(dir); <= ÀÌ °úÁ¤ÀÌ ÇÊ¿ä ¾øÀ½
 
-            // 3. ê·¸ ë°©í–¥ìœ¼ë¡œ ì›€ì§ì´ì.
+            // 3. ±× ¹æÇâÀ¸·Î ¿òÁ÷ÀÌÀÚ.
             //transform.position += dir * moveSpeed * Time.deltaTime;
             cc.Move(dir * moveSpeed * Time.deltaTime);
             #endregion
 
-            #region ë¬¼ë¦¬ì ì¸ ì í”„ (ìƒí•˜ ì´ë™[ì¤‘ë ¥]ì—ëŠ” ì´ë™ì†ë„ê°€ ê°œì…í•˜ì§€ ì•ŠëŠ” ê²ƒ = ì˜¤ë¡œì§€ ì¤‘ë ¥ë§Œ ì ìš©)
+            #region ¹°¸®ÀûÀÎ Á¡ÇÁ (»óÇÏ ÀÌµ¿[Áß·Â]¿¡´Â ÀÌµ¿¼Óµµ°¡ °³ÀÔÇÏÁö ¾Ê´Â °Í = ¿À·ÎÁö Áß·Â¸¸ Àû¿ë)
             dir = dir * moveSpeed;
             dir.y = yVelocity;
             cc.Move(dir * Time.deltaTime);
