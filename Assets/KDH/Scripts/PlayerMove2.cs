@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -7,37 +7,37 @@ using Unity.Mathematics;
 
 public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 {
-    // ÀÌµ¿ ¼Ó·Â
+    // ì´ë™ ì†ë ¥
     public float moveSpeed = 5f;
 
-    // Áß·Â
+    // ì¤‘ë ¥
     float gravity = -9.81f;
-    // y ¼Ó·Â
+    // y ì†ë ¥
     float yVelocity;
 
-    // Á¡ÇÁ ÃÊ±â ¼Ó·Â
+    // ì í”„ ì´ˆê¸° ì†ë ¥
     public float jumpPower = 3;
 
-    // Ä³¸¯ÅÍ ÄÁÆ®·Ñ·¯
+    // ìºë¦­í„° ì»¨íŠ¸ë¡¤ëŸ¬
     CharacterController cc;
 
-    // Ä«¸Ş¶ó
+    // ì¹´ë©”ë¼
     public GameObject cam;
 
-    // ¼­¹ö¿¡¼­ ³Ñ¾î¿À´Â À§Ä¡°ª
+    // ì„œë²„ì—ì„œ ë„˜ì–´ì˜¤ëŠ” ìœ„ì¹˜ê°’
     Vector3 receivePos;
-    // ¼­¹ö¿¡¼­ ³Ñ¾î¿À´Â È¸Àü°ª
+    // ì„œë²„ì—ì„œ ë„˜ì–´ì˜¤ëŠ” íšŒì „ê°’
     quaternion receiveRot;
 
-    // º¸Á¤ ¼Ó·Â
+    // ë³´ì • ì†ë ¥
     public float lerpSpeed = 50;
 
     // ani
     Animator anim;
 
-    // AD Å°¸¦ ÀÔ·Â ¹ŞÀ» º¯¼ö
+    // AD í‚¤ë¥¼ ì…ë ¥ ë°›ì„ ë³€ìˆ˜
     float h;
-    // WS Å°¸¦ ÀÔ·Â ¹ŞÀ» º¯¼ö
+    // WS í‚¤ë¥¼ ì…ë ¥ ë°›ì„ ë³€ìˆ˜
     float v;
 
     // LookPos
@@ -45,10 +45,10 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 
     void Start()
     {
-        // Ä³¸¯ÅÍ ÄÁÆ®·Ñ·¯ °¡Á®¿ÀÀÚ
+        // ìºë¦­í„° ì»¨íŠ¸ë¡¤ëŸ¬ ê°€ì ¸ì˜¤ì
         cc = GetComponent<CharacterController>();
 
-        // ³» °ÍÀÏ ¶§¸¸ Ä«¸Ş¶ó¸¦ È°¼ºÈ­
+        // ë‚´ ê²ƒì¼ ë•Œë§Œ ì¹´ë©”ë¼ë¥¼ í™œì„±í™”
         cam.SetActive(photonView.IsMine);
         //if (photonView.IsMine)
         //{
@@ -57,24 +57,24 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 
         if (photonView.IsMine)
         {
-            // ¸¶¿ì½º Àá±×±â
+            // ë§ˆìš°ìŠ¤ ì ê·¸ê¸°
             Cursor.lockState = CursorLockMode.Locked;
         }
-        //¾Ö´Ï¸ŞÀÌÅÍ °¡Á®¿À±â
+        //ì• ë‹ˆë©”ì´í„° ê°€ì ¸ì˜¤ê¸°
         anim = GetComponentInChildren<Animator>();
 
     }
 
     void Update()
     {
-        // ³» °ÍÀÏ ¶§¸¸ ÄÁÆ²·Ñ ÇÏÀÚ!
+        // ë‚´ ê²ƒì¼ ë•Œë§Œ ì»¨í‹€ë¡¤ í•˜ì!
         if (photonView.IsMine)
         {
-            // 1. Å°º¸µå WASD Å° ÀÔ·ÂÀ» ¹ŞÀÚ.
+            // 1. í‚¤ë³´ë“œ WASD í‚¤ ì…ë ¥ì„ ë°›ì.
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
 
-            // 2. ¹æÇâÀ» Á¤ÇÏÀÚ.
+            // 2. ë°©í–¥ì„ ì •í•˜ì.
             //Vector3 dir = transform.TransformDirection(new Vector3(h, 0, v).normalized);
 
             //Vector3 dir = new Vector3(h, 0, v);
@@ -84,96 +84,96 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
             //Vector3 dir = dirH + dirV;
             //dir.Normalize();
 
-            // ÀÚ½ÅÀÇ ¹æÇâÀ» ±âÁØÀ¸·Î dir º¯°æ 1 (±âÁ¸ ½ÄÀº ÇÃ·¹ÀÌ¾î È¸Àü °ü°è¾øÀÌ ¿ùµå ±âÁØÀ¸·Î ¾ÕµÚ·Î¸¸ ¿òÁ÷ÀÓ)
+            // ìì‹ ì˜ ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ dir ë³€ê²½ 1 (ê¸°ì¡´ ì‹ì€ í”Œë ˆì´ì–´ íšŒì „ ê´€ê³„ì—†ì´ ì›”ë“œ ê¸°ì¤€ìœ¼ë¡œ ì•ë’¤ë¡œë§Œ ì›€ì§ì„)
             //dir = transform.TransformDirection(dir);
 
-            // ÀÚ½ÅÀÇ ¹æÇâÀ» ±âÁØÀ¸·Î dir º¯°æ 2
+            // ìì‹ ì˜ ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ dir ë³€ê²½ 2
             Vector3 dirH = transform.right * h;
             Vector3 dirV = transform.forward * v;
             Vector3 dir = dirH + dirV;
             dir.Normalize();
 
-            // ¸¸¾à¿¡ ¶¥¿¡ ÀÖÀ¸¸é yVelocity  ¸¦ 0 À¸·Î ÃÊ±âÈ­
+            // ë§Œì•½ì— ë•…ì— ìˆìœ¼ë©´ yVelocity  ë¥¼ 0 ìœ¼ë¡œ ì´ˆê¸°í™”
             if (cc.isGrounded)
             {
                 yVelocity = 0;
             }
 
-            // ¸¸¾à¿¡ Space ¹Ù¸¦ ´©¸£¸é
+            // ë§Œì•½ì— Space ë°”ë¥¼ ëˆ„ë¥´ë©´
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // yVelocity ¸¦ jumpPower ·Î ¼³Á¤
+                // yVelocity ë¥¼ jumpPower ë¡œ ì„¤ì •
                 yVelocity = jumpPower;
             }
 
-            // yVelocity °ªÀ» Áß·Â¿¡ ÀÇÇØ¼­ º¯°æ½ÃÅ°ÀÚ.
+            // yVelocity ê°’ì„ ì¤‘ë ¥ì— ì˜í•´ì„œ ë³€ê²½ì‹œí‚¤ì.
             yVelocity += gravity * Time.deltaTime;
 
-            #region ¹°¸®ÀûÀÎ Á¡ÇÁ ¾Æ´Ñ°Í
-            // dir.y ¿¡ yVelocity °ªÀ» ¼ÂÆÃ
+            #region ë¬¼ë¦¬ì ì¸ ì í”„ ì•„ë‹Œê²ƒ
+            // dir.y ì— yVelocity ê°’ì„ ì…‹íŒ…
             dir.y = yVelocity;
 
-            // 3. ±× ¹æÇâÀ¸·Î ¿òÁ÷ÀÌÀÚ.
+            // 3. ê·¸ ë°©í–¥ìœ¼ë¡œ ì›€ì§ì´ì.
             //transform.position += (dir * moveSpeed * Time.deltaTime);
             //transform.position += dir * 5 * Time.deltaTime;
             cc.Move(dir * moveSpeed * Time.deltaTime);
             #endregion
 
-            #region ¹°¸®ÀûÀÎ Á¡ÇÁ
+            #region ë¬¼ë¦¬ì ì¸ ì í”„
             //dir = dir * moveSpeed;
             //dir.y = yVelocity;
             //cc.Move(dir * Time.deltaTime);
             #endregion
 
-            //// anim À» ÀÌ¿ëÇØ¼­ h, v °ªÀ» Àü´Ş -- ¾Æ´Ò¶§µµ Àû¿ë ÇÏµµ·Ï ¹ÛÀ¸·Î ÀÌµ¿
+            //// anim ì„ ì´ìš©í•´ì„œ h, v ê°’ì„ ì „ë‹¬ -- ì•„ë‹ë•Œë„ ì ìš© í•˜ë„ë¡ ë°–ìœ¼ë¡œ ì´ë™
             //anim.SetFloat("DirH", h);
             //anim.SetFloat("DirV", v);
         }
-        // ³ªÀÇ Player ¾Æ´Ï¶ó¸é
+        // ë‚˜ì˜ Player ì•„ë‹ˆë¼ë©´
         else
         {
-            // À§Ä¡ º¸Á¤
+            // ìœ„ì¹˜ ë³´ì •
             transform.position = Vector3.Lerp(transform.position, receivePos, Time.deltaTime * lerpSpeed);
-            // È¸Àü º¸Á¤
+            // íšŒì „ ë³´ì •
             transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, Time.deltaTime * lerpSpeed);
         }
-        // anim À» ÀÌ¿ëÇØ¼­ h, v °ªÀ» Àü´Ş
-        anim.SetFloat("DirH", h);
-        anim.SetFloat("DirV", v);
+        // anim ì„ ì´ìš©í•´ì„œ h, v ê°’ì„ ì „ë‹¬
+        //anim.SetFloat("DirH", h);
+        //anim.SetFloat("DirV", v);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        // ¸¸¾à¿¡ ³»°¡ µ¥ÀÌÅÍ¸¦ º¸³¾ ¼ö ÀÖ´Â »óÅÂ¶ó¸é(³» °ÍÀÌ¶ó¸é)
+        // ë§Œì•½ì— ë‚´ê°€ ë°ì´í„°ë¥¼ ë³´ë‚¼ ìˆ˜ ìˆëŠ” ìƒíƒœë¼ë©´(ë‚´ ê²ƒì´ë¼ë©´)
         if (stream.IsWriting)
         {
-            // ³ªÀÇ À§Ä¡ °ªÀ» º¸³½´Ù
+            // ë‚˜ì˜ ìœ„ì¹˜ ê°’ì„ ë³´ë‚¸ë‹¤
             stream.SendNext(transform.position);
-            // ³ªÀÇ È¸Àü°ªÀ» º¸³½´Ù
+            // ë‚˜ì˜ íšŒì „ê°’ì„ ë³´ë‚¸ë‹¤
             stream.SendNext(transform.rotation);
-            // ³ªÀÇ h °ª
+            // ë‚˜ì˜ h ê°’
             stream.SendNext(h);
-            // ³ªÀÇ v °ª
+            // ë‚˜ì˜ v ê°’
             stream.SendNext(v);
-            // LookPos ÀÇ À§Ä¡°ªÀ» º¸³½´Ù.
+            // LookPos ì˜ ìœ„ì¹˜ê°’ì„ ë³´ë‚¸ë‹¤.
             stream.SendNext(lookPos.position);
 
         }
-        // µ¥ÀÌÅÍ¸¦ ¹ŞÀ» ¼ö ÀÖ´Â »óÅÂ¶ó¸é (³» °ÍÀÌ ¾Æ´Ï¶ó¸é)
+        // ë°ì´í„°ë¥¼ ë°›ì„ ìˆ˜ ìˆëŠ” ìƒíƒœë¼ë©´ (ë‚´ ê²ƒì´ ì•„ë‹ˆë¼ë©´)
         else if (stream.IsReading)
         {
-            // À§Ä¡ °ªÀ» ¹ŞÀÚ. ¼ø¼­ Áß¿äÇÔ. À§Ä¡ ¸ÕÀú º¸³ÂÀ¸¸é À§Ä¡ ¸ÕÀú
+            // ìœ„ì¹˜ ê°’ì„ ë°›ì. ìˆœì„œ ì¤‘ìš”í•¨. ìœ„ì¹˜ ë¨¼ì € ë³´ëƒˆìœ¼ë©´ ìœ„ì¹˜ ë¨¼ì €
             //transform.position = (Vector3)stream.ReceiveNext();
             receivePos = (Vector3)stream.ReceiveNext();
 
-            // È¸Àü °ªÀ» ¹ŞÀÚ.
+            // íšŒì „ ê°’ì„ ë°›ì.
             //transform.rotation = (quaternion)stream.ReceiveNext();
             receiveRot = (quaternion)stream.ReceiveNext();
-            // ¼­¹ö¿¡¼­ Àü´Ş µÇ´Â h °ª ¹ŞÀÚ
+            // ì„œë²„ì—ì„œ ì „ë‹¬ ë˜ëŠ” h ê°’ ë°›ì
             h = (float)stream.ReceiveNext();
-            // ¼­¹ö¿¡¼­ Àü´Ş µÇ´Â v °ª ¹ŞÀÚ
+            // ì„œë²„ì—ì„œ ì „ë‹¬ ë˜ëŠ” v ê°’ ë°›ì
             v = (float)stream.ReceiveNext();
-            // LookPos ÀÇ À§Ä¡°ªÀ» ¹ŞÀÚ.
+            // LookPos ì˜ ìœ„ì¹˜ê°’ì„ ë°›ì.
             lookPos.position = (Vector3)stream.ReceiveNext();
         }
     }

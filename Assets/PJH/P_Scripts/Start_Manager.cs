@@ -65,7 +65,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
         Application.Quit();
 
         // 유니티 에디터 정지
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     // 로그인 패널의 '나가기'를 눌렀을때

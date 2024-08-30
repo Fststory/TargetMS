@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/KDH/Scenes/connectScene.unity
+    guid: 1d2cfc7a9b9df4c42a907b3d13a7a2bc
+  - enabled: 1
+    path: Assets/KDH/Scenes/PlayScene.unity
+    guid: 260c2e0a72b5e224f836440bb21de5fa
   m_configObjects: {}
