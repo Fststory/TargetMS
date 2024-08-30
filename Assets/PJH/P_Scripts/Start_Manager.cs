@@ -1,34 +1,35 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using TMPro;
 
-public class Start_Manager : MonoBehaviour
+public class Start_Manager : MonoBehaviourPunCallbacks
 {
 
-    // ·Î±×ÀÎ ÆĞ³Î
-    [Header("·Î±×ÀÎ ÆĞ³Î º¯¼ö")]
+    // ë¡œê·¸ì¸ íŒ¨ë„
+    [Header("ë¡œê·¸ì¸ íŒ¨ë„ ë³€ìˆ˜")]
     public GameObject loginPanel;
     public TextMeshProUGUI loginSuccess_text;
     public TextMeshProUGUI loginFail_text;
 
-    // À½¾Ç
-    [Header("À½¾Ç º¯¼ö")]
-    private AudioSource audioSource; // ¿Àµğ¿À Å¬¸³À» µå·¡±×ÇØ¼­ ÀÎ½ºÆåÅÍ¿¡ µå¶ø
+    // ìŒì•…
+    [Header("ìŒì•… ë³€ìˆ˜")]
+    private AudioSource audioSource; // ì˜¤ë””ì˜¤ í´ë¦½ì„ ë“œë˜ê·¸í•´ì„œ ì¸ìŠ¤í™í„°ì— ë“œë
+
 
 
 
     void Start()
     {
-        // ½ÃÀÛ¶§ ·Î±×ÀÎ ÆĞ³Î ¼û±â±â
+        // ì‹œì‘ë•Œ ë¡œê·¸ì¸ íŒ¨ë„ ìˆ¨ê¸°ê¸°
         loginPanel.SetActive(false);
         
         loginSuccess_text.gameObject.SetActive(false);
         loginFail_text.gameObject.SetActive(false);
 
-        // ½ÃÀÛ½Ã À½¾Ç Àç»ı
+        // ì‹œì‘ì‹œ ìŒì•… ì¬ìƒ
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.Play();
 
@@ -39,61 +40,61 @@ public class Start_Manager : MonoBehaviour
 
     }
 
-    // ½ÃÀÛ¹öÆ° ´­·¶À»¶§, 
+    // ì‹œì‘ë²„íŠ¼ ëˆŒë €ì„ë•Œ, 
     public void OnButtonClickedStart()
     {
-        // ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ¸¸é , ·Îºñ·Î ÀÌµ¿
+        // ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆìœ¼ë©´ , ë¡œë¹„ë¡œ ì´ë™
         if (PhotonNetwork.IsConnected)
         {
             SceneManager.LoadScene("Lobby");
 
-            //PhotonNetwork.LoadLevel("Lobby"); Æ÷Åæ»ç¿ë½Ã
+            //PhotonNetwork.LoadLevel("Lobby"); í¬í†¤ì‚¬ìš©ì‹œ
         }
-        // ·Î±×ÀÎÀÌ ¾ÈµÇ¾î ÀÖÀ¸¸é
+        // ë¡œê·¸ì¸ì´ ì•ˆë˜ì–´ ìˆìœ¼ë©´
         else
         {
-            // ·Î±×ÀÎ ÆĞ³ÎÀ» È°¼ºÈ­
+            // ë¡œê·¸ì¸ íŒ¨ë„ì„ í™œì„±í™”
             loginPanel.SetActive(true);           
         }
     }
 
 
-    // ½ÃÀÛÈ­¸éÀÇ Á¾·á¹öÆ°À» ´­·¶À»¶§ ¾Û Á¾·á
+    // ì‹œì‘í™”ë©´ì˜ ì¢…ë£Œë²„íŠ¼ì„ ëˆŒë €ì„ë•Œ ì•± ì¢…ë£Œ
     public void OnButtonClickedQuit()
     {
         Application.Quit();
 
-        // À¯´ÏÆ¼ ¿¡µğÅÍ Á¤Áö
+        // ìœ ë‹ˆí‹° ì—ë””í„° ì •ì§€
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
-    // ·Î±×ÀÎ ÆĞ³ÎÀÇ '³ª°¡±â'¸¦ ´­·¶À»¶§
+    // ë¡œê·¸ì¸ íŒ¨ë„ì˜ 'ë‚˜ê°€ê¸°'ë¥¼ ëˆŒë €ì„ë•Œ
     public void LoginPanelQuitButton()
     {
         loginPanel.SetActive(false);
     }
 
-    // ·Î±×ÀÎ ÆĞ³Î 'È®ÀÎ'À» ´­·¶À»¶§
+    // ë¡œê·¸ì¸ íŒ¨ë„ 'í™•ì¸'ì„ ëˆŒë €ì„ë•Œ
     public void LoinPanelYesButton()
     {
-        // ¸¸¾à, ·Î±×ÀÎ Á¤º¸°¡ Á¤È®ÇÏ´Ù¸é
+        // ë§Œì•½, ë¡œê·¸ì¸ ì •ë³´ê°€ ì •í™•í•˜ë‹¤ë©´
         if (PhotonNetwork.IsConnected)
         {
-            Debug.Log("·Î±×ÀÎ ‰ç½À´Ï´Ù.");
-            // ·Î±×ÀÎ ÆĞ³ÎÀ» ²ô°í
+            Debug.Log("ë¡œê·¸ì¸ ë¬ìŠµë‹ˆë‹¤.");
+            // ë¡œê·¸ì¸ íŒ¨ë„ì„ ë„ê³ 
             loginPanel.SetActive(false);
-            // Text¸¦ ¶ç¿î´Ù            
+            // Textë¥¼ ë„ìš´ë‹¤            
             loginSuccess_text.gameObject.SetActive(true);
-            // 3ÃÊµÚ¿¡ ¸Ş¼¼Áö¸¦ ¼û±ä´Ù.
+            // 3ì´ˆë’¤ì— ë©”ì„¸ì§€ë¥¼ ìˆ¨ê¸´ë‹¤.
             Invoke("HideLoginSuccessText", 3f);
            
         }
-        // ·Î±×ÀÎ Á¤º¸°¡ ºÎ Á¤È®ÇÏ´Ù¸é // ¾î¶»°Ô ºÎ Á¤È®ÇÑÁö ÆÇ´ÜÇÏ´Â ½ºÅ©¸³Æ®µµ
+        // ë¡œê·¸ì¸ ì •ë³´ê°€ ë¶€ ì •í™•í•˜ë‹¤ë©´ // ì–´ë–»ê²Œ ë¶€ ì •í™•í•œì§€ íŒë‹¨í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ë„
         else
         {
-            // ·ÎÅ©ÀÎ ½ÇÆĞ ÅØ½ºÆ®¸¦ ¶ç¿ì°í
+            // ë¡œí¬ì¸ ì‹¤íŒ¨ í…ìŠ¤íŠ¸ë¥¼ ë„ìš°ê³ 
             loginFail_text.gameObject.SetActive(true);
-            // 3ÃÊ µÚ¿¡ ¼û±ä´Ù.
+            // 3ì´ˆ ë’¤ì— ìˆ¨ê¸´ë‹¤.
             Invoke("HideLoginFailText", 3f);
 
            
