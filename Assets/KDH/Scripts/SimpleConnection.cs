@@ -21,12 +21,12 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
-
         print("마스터 서버에 접속");
 
         // 로비 접속
         JoinLobby();
     }
+
     public void JoinLobby()
     {
         // 닉네임 설정
@@ -68,16 +68,6 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
     }
 
     // 방 입장 성공 했을 때 호출되는 함수
-    //public override void OnJoinedRoom()
-    //{
-    //    base.OnJoinedRoom();
-    //    print("방 입장 완료");
-
-    //    // 멀티플레이 컨텐츠 즐길 수 있는 상태
-    //    // GameScene으로 이동!
-    //    //SceneManager.LoadScene("");
-    //    PhotonNetwork.LoadLevel("PlayScene");
-    //}
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
@@ -87,7 +77,7 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
         {
             // 최소 2명 이상의 플레이어가 접속했을 때 씬을 변경
-            PhotonNetwork.LoadLevel("PlayScene");
+            StartCoroutine(WaitAndLoadScene(3f)); // 3초 대기 후 씬 전환
         }
         else
         {
@@ -95,5 +85,9 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
         }
     }
 
-
+    private IEnumerator WaitAndLoadScene(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime); // 대기 시간
+        PhotonNetwork.LoadLevel("PlayScene"); // 씬 전환
+    }
 }
