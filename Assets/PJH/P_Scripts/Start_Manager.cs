@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using TMPro;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class Start_Manager : MonoBehaviourPunCallbacks
 {
@@ -18,11 +19,16 @@ public class Start_Manager : MonoBehaviourPunCallbacks
     [Header("음악 변수")]
     private AudioSource audioSource; // 오디오 클립을 드래그해서 인스펙터에 드랍
 
+    // 테스트용 아이디 비밀번호
+    private string id = "dkdlel";
+    private string psw = "qlalfqjsgh";
+
 
 
 
     void Start()
-    {
+    { 
+
         // 시작때 로그인 패널 숨기기
         loginPanel.SetActive(false);
         
@@ -68,17 +74,42 @@ public class Start_Manager : MonoBehaviourPunCallbacks
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
+
+
+    // 로그인 패널
+
+
     // 로그인 패널의 '나가기'를 눌렀을때
     public void LoginPanelQuitButton()
     {
         loginPanel.SetActive(false);
     }
 
+    
+
+    // 테스트를 위한 로그인 비밀번호 상수
+
+    private bool IsValidUser(string username , string password )
+    {
+        if(username == id && password == psw )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
     // 로그인 패널 '확인'을 눌렀을때
     public void LoinPanelYesButton()
     {
         // 만약, 로그인 정보가 정확하다면
-        if (PhotonNetwork.IsConnected)
+        //if (PhotonNetwork.IsConnected)
+
+        if(IsValidUser( id , psw))
         {
             Debug.Log("로그인 됬습니다.");
             // 로그인 패널을 끄고
