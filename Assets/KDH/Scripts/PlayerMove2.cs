@@ -74,6 +74,7 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
 
+
             // 2. 방향을 정하자.
             //Vector3 dir = transform.TransformDirection(new Vector3(h, 0, v).normalized);
 
