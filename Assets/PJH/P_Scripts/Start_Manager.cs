@@ -124,7 +124,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
         Application.Quit();
 
         // 유니티 에디터 정지
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
 

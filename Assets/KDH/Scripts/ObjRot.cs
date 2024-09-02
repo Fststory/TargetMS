@@ -1,18 +1,19 @@
-using Photon.Pun;
+ï»¿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjRot : MonoBehaviour
 {
-    // È¸Àü ¼Ó·Â
+    // íšŒì „ ì†ë ¥
     public float rotSpeed = 200;
 
-    // È¸Àü °ª
+    // íšŒì „ ê°’
     float rotX;
     float rotY;
 
-    // È¸Àü °¡´É ¿©ºÎ
+
+    // íšŒì „ ê°€ëŠ¥ ì—¬ë¶€
     public bool useRotX;
     public bool useRotY;
 
@@ -26,21 +27,21 @@ public class ObjRot : MonoBehaviour
 
     void Update()
     {
-        // ¸¸¾à¿¡ ³» °ÍÀÌ¶ó¸é
+        // ë§Œì•½ì— ë‚´ ê²ƒì´ë¼ë©´
         if (pv.IsMine)
         {
-            // 1. ¸¶¿ì½ºÀÇ ¿òÁ÷ÀÓÀ» ¹Ş¾Æ¿ÀÀÚ.
+            // 1. ë§ˆìš°ìŠ¤ì˜ ì›€ì§ì„ì„ ë°›ì•„ì˜¤ì.
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
 
-            // 2, È¸Àü °ªÀ» º¯°æ(´©Àû)
+            // 2, íšŒì „ ê°’ì„ ë³€ê²½(ëˆ„ì )
             if (useRotX) rotX += my * rotSpeed * Time.deltaTime;
             if (useRotY) rotY += mx * rotSpeed * Time.deltaTime;
 
-            // rotX ÀÇ °ªÀ» Á¦ÇÑ(ÃÖ¼Ò°ª, ÃÖ´ë°ª)
+            // rotX ì˜ ê°’ì„ ì œí•œ(ìµœì†Œê°’, ìµœëŒ€ê°’)
             rotX = Mathf.Clamp(rotX, -80, 80);
 
-            // 3. ±¸ÇØÁø È¸Àü °ªÀ» ³ªÀÇ È¸Àü°ªÀ¸·Î ¼¼ÆÃ
+            // 3. êµ¬í•´ì§„ íšŒì „ ê°’ì„ ë‚˜ì˜ íšŒì „ê°’ìœ¼ë¡œ ì„¸íŒ…
             transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
         }
     }
