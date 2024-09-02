@@ -16,13 +16,14 @@ GameObject:
   - component: {fileID: 8468754194997998363}
   - component: {fileID: 4574723980069362320}
   - component: {fileID: 2039180870411707403}
+  - component: {fileID: 1774636269182892723}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8041088297865468613
 Transform:
   m_ObjectHideFlags: 0
@@ -128,7 +129,6 @@ MonoBehaviour:
   jumpPower: 3
   cam: {fileID: 5761824564220523997}
   lerpSpeed: 50
-  lookPos: {fileID: 0}
 --- !u!143 &8468754194997998363
 CharacterController:
   m_ObjectHideFlags: 0
@@ -191,9 +191,26 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6158686481761060425}
+  - {fileID: 1774636269182892723}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1774636269182892723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386935142001668521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &5761824564220523997
 GameObject:
   m_ObjectHideFlags: 0
