@@ -24,7 +24,7 @@ public class AudioUploader : MonoBehaviour
 
         WWWForm form = new WWWForm();
         byte[] audioData = File.ReadAllBytes(filePath);
-        form.AddBinaryData("file", audioData, Path.GetFileName(filePath), "audio/wav");
+        form.AddBinaryData("audio_file", audioData, Path.GetFileName(filePath), "audio/wav");
 
         using (UnityWebRequest www = UnityWebRequest.Post(serverUrl, form))
         {

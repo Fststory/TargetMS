@@ -31,8 +31,10 @@ public class OutputAudioRecorder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             SaveAudioClipToWAV(Application.dataPath + "/test.wav");
-
-            // 저장 후 서버에 보내기
+        }
+        // 숫자 8번 누르면 서버에 보내기
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
             audioUploader.UploadAudioFile(Application.dataPath + "/test.wav");
         }
     }
