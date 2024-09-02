@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,28 +7,33 @@ public class OutputAudioRecorder : MonoBehaviour
 {
     private AudioClip clip;
 
+    public AudioUploader audioUploader;
+
     string[] micList;
     void Awake()
     {
         micList = Microphone.devices;
     }
 
-    private void Update()
+    private void Update()   // ë…¹ìŒ ì‹œìž‘, ì¢…ë£Œ ì‹œì ì— ë§ˆì´í¬ ì˜¤ë¸Œì íŠ¸ led ì¡°ì ˆí•´ë„ ë  ë“¯
     {
-        // ¼ýÀÚ 5¹ø ´©¸£¸é ³ìÀ½ ½ÃÀÛ!
+        // ìˆ«ìž 5ë²ˆ ëˆ„ë¥´ë©´ ë…¹ìŒ ì‹œìž‘!
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             clip = Microphone.Start(micList[0], true, 10, 44100);
         }
-        // ¼ýÀÚ 6¹ø ´©¸£¸é ³ìÀ½ Á¾·á!
+        // ìˆ«ìž 6ë²ˆ ëˆ„ë¥´ë©´ ë…¹ìŒ ì¢…ë£Œ!
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             Microphone.End(micList[0]);
         }
-        // ¼ýÀÚ 7¹ø ´©¸£¸é wavÆÄÀÏ·Î ÀúÀå!
+        // ìˆ«ìž 7ë²ˆ ëˆ„ë¥´ë©´ wavíŒŒì¼ë¡œ ì €ìž¥!
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             SaveAudioClipToWAV(Application.dataPath + "/test.wav");
+
+            // ì €ìž¥ í›„ ì„œë²„ì— ë³´ë‚´ê¸°
+            audioUploader.UploadAudioFile(Application.dataPath + "/test.wav");
         }
     }
 
@@ -40,11 +45,11 @@ public class OutputAudioRecorder : MonoBehaviour
             return;
         }
 
-        // AudioClipÀÇ ¿Àµð¿À µ¥ÀÌÅÍ °¡Á®¿À±â
+        // AudioClipì˜ ì˜¤ë””ì˜¤ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
         float[] samples = new float[clip.samples];
         clip.GetData(samples, 0);
 
-        // WAV ÆÄÀÏ Çì´õ ÀÛ¼º
+        // WAV íŒŒì¼ í—¤ë” ìž‘ì„±
         using (FileStream fs = File.Create(filePath))
         {
             WriteWAVHeader(fs, clip.channels, clip.frequency, clip.samples);
@@ -54,37 +59,37 @@ public class OutputAudioRecorder : MonoBehaviour
         Debug.Log("AudioClip saved as WAV: " + filePath);
     }
 
-    // WAV ÆÄÀÏ Çì´õ ÀÛ¼º
+    // WAV íŒŒì¼ í—¤ë” ìž‘ì„±
     private void WriteWAVHeader(FileStream fileStream, int channels, int frequency, int sampleCount)
     {
         var samples = sampleCount * channels;
         var fileSize = samples + 36;
 
-        fileStream.Write(new byte[] { 82, 73, 70, 70 }, 0, 4); // "RIFF" Çì´õ
+        fileStream.Write(new byte[] { 82, 73, 70, 70 }, 0, 4); // "RIFF" í—¤ë”
         fileStream.Write(BitConverter.GetBytes(fileSize), 0, 4);
-        fileStream.Write(new byte[] { 87, 65, 86, 69 }, 0, 4); // "WAVE" Çì´õ
-        fileStream.Write(new byte[] { 102, 109, 116, 32 }, 0, 4); // "fmt " Çì´õ
+        fileStream.Write(new byte[] { 87, 65, 86, 69 }, 0, 4); // "WAVE" í—¤ë”
+        fileStream.Write(new byte[] { 102, 109, 116, 32 }, 0, 4); // "fmt " í—¤ë”
         fileStream.Write(BitConverter.GetBytes(16), 0, 4); // 16
-        fileStream.Write(BitConverter.GetBytes(1), 0, 2); // ¿Àµð¿À Æ÷¸Ë (PCM)
-        fileStream.Write(BitConverter.GetBytes(channels), 0, 2); // Ã¤³Î ¼ö
-        fileStream.Write(BitConverter.GetBytes(frequency), 0, 4); // »ùÇÃ ·¹ÀÌÆ®
-        fileStream.Write(BitConverter.GetBytes(frequency * channels * 2), 0, 4); // ¹ÙÀÌÆ® ·¹ÀÌÆ®
-        fileStream.Write(BitConverter.GetBytes(channels * 2), 0, 2); // ºí·Ï Å©±â
-        fileStream.Write(BitConverter.GetBytes(16), 0, 2); // ºñÆ® ·¹ÀÌÆ®
-        fileStream.Write(new byte[] { 100, 97, 116, 97 }, 0, 4); // "data" Çì´õ
+        fileStream.Write(BitConverter.GetBytes(1), 0, 2); // ì˜¤ë””ì˜¤ í¬ë§· (PCM)
+        fileStream.Write(BitConverter.GetBytes(channels), 0, 2); // ì±„ë„ ìˆ˜
+        fileStream.Write(BitConverter.GetBytes(frequency), 0, 4); // ìƒ˜í”Œ ë ˆì´íŠ¸
+        fileStream.Write(BitConverter.GetBytes(frequency * channels * 2), 0, 4); // ë°”ì´íŠ¸ ë ˆì´íŠ¸
+        fileStream.Write(BitConverter.GetBytes(channels * 2), 0, 2); // ë¸”ë¡ í¬ê¸°
+        fileStream.Write(BitConverter.GetBytes(16), 0, 2); // ë¹„íŠ¸ ë ˆì´íŠ¸
+        fileStream.Write(new byte[] { 100, 97, 116, 97 }, 0, 4); // "data" í—¤ë”
         fileStream.Write(BitConverter.GetBytes(samples), 0, 4);
     }
 
-    // ¿Àµð¿À µ¥ÀÌÅÍ º¯È¯ ¹× ÀÛ¼º
+    // ì˜¤ë””ì˜¤ ë°ì´í„° ë³€í™˜ ë° ìž‘ì„±
     private void ConvertAndWrite(FileStream fileStream, float[] samples)
     {
         Int16[] intData = new Int16[samples.Length];
-        // float -> Int16 º¯È¯
+        // float -> Int16 ë³€í™˜
         for (int i = 0; i < samples.Length; i++)
         {
             intData[i] = (short)(samples[i] * 32767);
         }
-        // Int16 µ¥ÀÌÅÍ ÀÛ¼º
+        // Int16 ë°ì´í„° ìž‘ì„±
         Byte[] bytesData = new Byte[intData.Length * 2];
         Buffer.BlockCopy(intData, 0, bytesData, 0, bytesData.Length);
         fileStream.Write(bytesData, 0, bytesData.Length);
