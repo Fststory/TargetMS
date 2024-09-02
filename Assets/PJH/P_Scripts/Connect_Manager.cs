@@ -25,6 +25,14 @@ public class Connect_Manager : MonoBehaviourPunCallbacks   // 해당 씬에 들�
         Debug.Log("마스터 서버에 입장했습니다.");
         base.OnConnectedToMaster();
 
+        JoinLobby();
+
+    }
+
+    public void JoinLobby()
+    {
+        // 기본 로비 입장
+        PhotonNetwork.JoinLobby();
     }
 
     // 로비 접속시 호출되는 함수
@@ -32,6 +40,7 @@ public class Connect_Manager : MonoBehaviourPunCallbacks   // 해당 씬에 들�
     {
         base.OnJoinedLobby();
         Debug.Log("로비에 접속했습니다");
+
         JoinOrCreateRoom();
     }
 
@@ -43,9 +52,30 @@ public class Connect_Manager : MonoBehaviourPunCallbacks   // 해당 씬에 들�
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
-        PhotonNetwork JoinOrCreateRoom("TargetMs_Room_1", roomOptions, TypeLobby.Defalut);
+        PhotonNetwork.JoinOrCreateRoom("TargetMs_Room_1", roomOptions, TypedLobby.Default);
+        
     }
-   
+
+    // 방 생성에 성공했을때 호출 될 함수
+    public override void OnCreatedRoom()
+    {
+        base.OnCreatedRoom();
+        print("방 생성 완료");
+    }
+
+    // 방 입장 성공시 호출될 함수 // 일반적으로 방을 생성하면 자동으로 들어가지게 됨.
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+        print("방 생성 완료");
+
+        // 멀티플레이 컨텐츠 즐길 수 있는 상태
+
+        // 동휘 씨의 PlayScene으로 이동
+        // GameScene으로 이동!
+        PhotonNetwork.LoadLevel("PlayScene");
+    }
+
 
     //// 로비 접속시 방을 찾고 없으면 만들기
     //public void JoinOrCreateRoom()

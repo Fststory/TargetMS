@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 171369993}
   - component: {fileID: 171369992}
   - component: {fileID: 171369991}
+  - component: {fileID: 171369994}
   m_Layer: 5
   m_Name: ID_InputField (TMP)
   m_TagString: Untagged
@@ -739,7 +740,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 813086606}
+        m_TargetAssemblyTypeName: Start_Manager, Assembly-CSharp
+        m_MethodName: OnInputFieldSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -808,6 +821,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171369989}
   m_CullTransparentMesh: 1
+--- !u!114 &171369994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171369989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 813086606}
+          m_TargetAssemblyTypeName: Start_Manager, Assembly-CSharp
+          m_MethodName: OnInputFieldSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &199690456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,8 +2156,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1730422363}
-  - {fileID: 41719421}
   - {fileID: 896067331}
   - {fileID: 1988830363}
   - {fileID: 455850905}
@@ -2124,6 +2164,8 @@ RectTransform:
   - {fileID: 324070716}
   - {fileID: 487563907}
   - {fileID: 1972758928}
+  - {fileID: 1730422363}
+  - {fileID: 41719421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2164,6 +2206,9 @@ MonoBehaviour:
   loginPanel: {fileID: 487563906}
   loginSuccess_text: {fileID: 41719422}
   loginFail_text: {fileID: 1730422364}
+  idInputField: {fileID: 171369991}
+  passwordInputField: {fileID: 1230880325}
+  currentInputField: {fileID: 0}
 --- !u!4 &813086607
 Transform:
   m_ObjectHideFlags: 0
@@ -3371,8 +3416,9 @@ GameObject:
   - component: {fileID: 1230880327}
   - component: {fileID: 1230880326}
   - component: {fileID: 1230880325}
+  - component: {fileID: 1230880328}
   m_Layer: 5
-  m_Name: PassWord_InputField (TMP) (1)
+  m_Name: 'PassWord_InputField (TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3465,7 +3511,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 813086606}
+        m_TargetAssemblyTypeName: Start_Manager, Assembly-CSharp
+        m_MethodName: OnInputFieldSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -3534,6 +3592,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230880323}
   m_CullTransparentMesh: 1
+--- !u!114 &1230880328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230880323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 813086606}
+          m_TargetAssemblyTypeName: Start_Manager, Assembly-CSharp
+          m_MethodName: OnInputFieldSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1332682085
 GameObject:
   m_ObjectHideFlags: 0
