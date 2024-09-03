@@ -20,7 +20,7 @@ public class OutputAudioRecorder : MonoBehaviour
         // 숫자 5번 누르면 녹음 시작!
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            clip = Microphone.Start(micList[0], true, 10, 44100);
+            clip = Microphone.Start(micList[0], true, 10, 44100);   // 녹음하는 오디오 클립이 clip 에 담김
         }
         // 숫자 6번 누르면 녹음 종료!
         if (Input.GetKeyDown(KeyCode.Alpha6))
@@ -46,17 +46,15 @@ public class OutputAudioRecorder : MonoBehaviour
             Debug.LogError("No AudioClip assigned.");
             return;
         }
+                
+        float[] samples = new float[clip.samples];  // 녹음한 클립의 데이터 배열
+        clip.GetData(samples, 0);   // AudioClip의 오디오 데이터 가져오기
 
-        // AudioClip의 오디오 데이터 가져오기
-        float[] samples = new float[clip.samples];
-        clip.GetData(samples, 0);
-
-        // WAV 파일 헤더 작성
-        using (FileStream fs = File.Create(filePath))
+        using (FileStream fs = File.Create(filePath))   // filePath에 만들어지는 파일의 FileStream 을 fs 에 반환
         {
-            WriteWAVHeader(fs, clip.channels, clip.frequency, clip.samples);
-            ConvertAndWrite(fs, samples);
-        }
+            WriteWAVHeader(fs, clip.channels, clip.frequency, clip.samples);    // WAV 파일 헤더 작성
+            ConvertAndWrite(fs, samples);    // 오디오 데이터 변환 및 작성
+        }// using 이 끝나면 fs 도 닫힘
 
         Debug.Log("AudioClip saved as WAV: " + filePath);
     }
@@ -64,8 +62,8 @@ public class OutputAudioRecorder : MonoBehaviour
     // WAV 파일 헤더 작성
     private void WriteWAVHeader(FileStream fileStream, int channels, int frequency, int sampleCount)
     {
-        var samples = sampleCount * channels;
-        var fileSize = samples + 36;
+        var samples = sampleCount * channels;   // 총 샘플 수
+        var fileSize = samples + 36;    // 파일 크기 계산
 
         fileStream.Write(new byte[] { 82, 73, 70, 70 }, 0, 4); // "RIFF" 헤더
         fileStream.Write(BitConverter.GetBytes(fileSize), 0, 4);
@@ -85,15 +83,15 @@ public class OutputAudioRecorder : MonoBehaviour
     // 오디오 데이터 변환 및 작성
     private void ConvertAndWrite(FileStream fileStream, float[] samples)
     {
-        Int16[] intData = new Int16[samples.Length];
+        Int16[] intData = new Int16[samples.Length];    // int16 배열 생성
         // float -> Int16 변환
         for (int i = 0; i < samples.Length; i++)
         {
-            intData[i] = (short)(samples[i] * 32767);
+            intData[i] = (short)(samples[i] * 32767);   // 샘플 값을 int16 으로 변환
         }
         // Int16 데이터 작성
-        Byte[] bytesData = new Byte[intData.Length * 2];
-        Buffer.BlockCopy(intData, 0, bytesData, 0, bytesData.Length);
-        fileStream.Write(bytesData, 0, bytesData.Length);
+        Byte[] bytesData = new Byte[intData.Length * 2];    // Byte 배열 생성
+        Buffer.BlockCopy(intData, 0, bytesData, 0, bytesData.Length);   // 변환된 데이터 복사
+        fileStream.Write(bytesData, 0, bytesData.Length);   // 파일에 작성
     }
 }
