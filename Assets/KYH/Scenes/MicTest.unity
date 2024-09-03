@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverUrl: http://meta-ai.iptime.org:65535/audio/stt
+  sttRes: {fileID: 1740757248}
 --- !u!114 &519594265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,7 +854,7 @@ GameObject:
   - component: {fileID: 1740757249}
   - component: {fileID: 1740757248}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: ResSTT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,9 +900,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: bf0b77fc84678ea41b863ed922d71e5b, type: 3}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40

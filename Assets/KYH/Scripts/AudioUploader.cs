@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 using System.IO;
+using UnityEngine.UI;
 
 public class AudioUploader : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AudioUploader : MonoBehaviour
     // multipart/form-data 방식, post 메소드, 키-값은 audio_file
 
     [SerializeField] private string serverUrl = "http://your-fastapi-server-url/uploadfile/";   // 서버 URL, fastapi 주소 받고 수정하면 됨
+
+    public Text sttRes;
 
     public void UploadAudioFile(string filePath)
     {
@@ -40,6 +43,7 @@ public class AudioUploader : MonoBehaviour
             {
                 Debug.Log("File upload complete!");
                 Debug.Log("Server response: " + www.downloadHandler.text);
+                sttRes.text = www.downloadHandler.text;
             }
         }
     }
