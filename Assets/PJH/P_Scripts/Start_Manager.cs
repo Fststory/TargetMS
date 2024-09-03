@@ -93,7 +93,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
         if(isLogin)
         {
             // 로그인이 되어있고 시작하기 버튼을 누르면 로비 테스트 씬으로 이동
-            SceneManager.LoadScene("P_LobbyTestScene");
+            SceneManager.LoadScene("connectScene");
         }
         else
         {

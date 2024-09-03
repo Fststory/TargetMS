@@ -14,6 +14,9 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
         // Photon 환경설정을 기반으로 마스터 서버에 접속을 시도
         PhotonNetwork.ConnectUsingSettings();
 
+        PhotonNetwork.AutomaticallySyncScene = true;
+
+
         // 버튼의 클릭 이벤트에 메서드 추가
         if (readyButton != null)
         {
@@ -89,6 +92,9 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("방 입장 완료");
+        // PhotonNetwork.LoadLevel("PlayScene"); // 씬 전환
+
+        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity);
 
         // 방에 접속한 플레이어 수 확인
         if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
@@ -122,25 +128,28 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
     {
         if (readyPlayerCount == PhotonNetwork.CurrentRoom.PlayerCount)
         {
-            StartCoroutine(WaitAndLoadScene(3f)); // 모든 플레이어가 준비되면 3초 대기 후 씬 전환
-        }
-    }
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        base.OnPlayerEnteredRoom(newPlayer);
-        Debug.Log("New player joined: " + newPlayer.NickName);
-
-        // 모든 기존 플레이어에게 새 플레이어 정보 전달
-        foreach (Player player in PhotonNetwork.PlayerList)
-        {
-            if (player != newPlayer)
+            if(PhotonNetwork.IsMasterClient)
             {
-                // 기존 플레이어의 정보를 새 플레이어에게 전송
-                // 예를 들어, 모든 플레이어의 상태를 새 플레이어에게 전송
-                //PhotonView.RPC("UpdatePlayerList", newPlayer);
+                StartCoroutine(WaitAndLoadScene(3f)); // 모든 플레이어가 준비되면 3초 대기 후 씬 전환
             }
         }
     }
+    //public override void OnPlayerEnteredRoom(Player newPlayer)
+    //{
+    //    base.OnPlayerEnteredRoom(newPlayer);
+    //    Debug.Log("New player joined: " + newPlayer.NickName);
+
+    //    // 모든 기존 플레이어에게 새 플레이어 정보 전달
+    //    foreach (Player player in PhotonNetwork.PlayerList)
+    //    {
+    //        if (player != newPlayer)
+    //        {
+    //            // 기존 플레이어의 정보를 새 플레이어에게 전송
+    //            // 예를 들어, 모든 플레이어의 상태를 새 플레이어에게 전송
+    //            //PhotonView.RPC("UpdatePlayerList", newPlayer);
+    //        }
+    //    }
+    //}
 
 
     private IEnumerator WaitAndLoadScene(float waitTime)
