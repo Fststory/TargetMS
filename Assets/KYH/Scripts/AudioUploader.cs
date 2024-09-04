@@ -43,7 +43,7 @@ public class AudioUploader : MonoBehaviour
             else
             {
                 Debug.Log("File upload complete!");
-                Debug.Log("Server response: " + www.downloadHandler.text);
+                Debug.Log("Server response: " + www.downloadHandler.text);  // www.downloadHandler.text : http 서버에서 주는 STT 응답
                 tmpSTT.text = www.downloadHandler.text;
             }
         }
