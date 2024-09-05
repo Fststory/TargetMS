@@ -32,7 +32,7 @@ public class Alert_Event_Manager : MonoBehaviour // 돌발이벤트 발생 스�
 
     // 하단에 배치된 문서를 클릭하면
     // 다시 화면 정중앙에 크게 뜨고
-    .// 만약 그 상태에서 esc를 누르면
+    // 만약 그 상태에서 esc를 누르면
     // 다시 작게 변해서 하단에 배치된다.
 
 
