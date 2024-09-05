@@ -59,4 +59,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverUrl: http://meta-ai.iptime.org:65535/audio/stt
-  tmpSTT: {fileID: 0}
+  sttRecorder: {fileID: 0}

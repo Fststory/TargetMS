@@ -6,6 +6,8 @@ using System;
 
 public class VoiceChat : MonoBehaviour
 {
+    // STT Prefab 에 할당될 컴포넌트
+
     // Text
     TMP_Text voiceChatText;
 
@@ -16,16 +18,6 @@ public class VoiceChat : MonoBehaviour
     {
         // Text 컴포넌트 가져오자
         voiceChatText = GetComponent<TMP_Text>();
-    }
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
     }
 
     public void SetText(string s)
@@ -53,11 +45,13 @@ public class VoiceChat : MonoBehaviour
             onAutoScroll();
         }
 
+        #region Action onAutoScroll (delegate) 로 대체
         //// ChatView 게임오브젝트 찾자
         //GameObject go = GameObject.Find("ChatView");
         //// 찾은 오브젝트에서 ChatManager 컴포넌트 가져오자.
         //ChatManager cm = go.GetComponent<ChatManager>();
         //// 가져온 컴포넌트 AutoScrollBottom 함수 호출
         //cm.AutoScrollBottom();
+        #endregion
     }
 }
