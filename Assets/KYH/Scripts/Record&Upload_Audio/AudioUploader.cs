@@ -5,6 +5,13 @@ using System.IO;
 using UnityEngine.UI;
 using TMPro;
 
+[System.Serializable]
+public class SttResponse
+{
+    public string result;
+}
+
+
 public class AudioUploader : MonoBehaviour
 {
     // OutputAudioRecorder 클래스로 생성한 wav 파일을 서버에 업로드하는 기능
@@ -44,7 +51,17 @@ public class AudioUploader : MonoBehaviour
             {
                 Debug.Log("File upload complete!");
                 Debug.Log("Server response: " + www.downloadHandler.text);  // www.downloadHandler.text : http 서버에서 주는 STT 응답
-                sttRecorder.OnSubmit(www.downloadHandler.text); // RPC AddVoiceChat() 실행
+
+                // JSON 파싱
+                SttResponse response = JsonUtility.FromJson<SttResponse>(www.downloadHandler.text);
+                string sttContent = response.result;
+
+                // |n 을 제거하는 코드
+                sttContent = sttContent.Replace("|n", "");
+                print(sttContent);
+
+                //sttRecorder.OnSubmit(www.downloadHandler.text); // RPC AddVoiceChat() 실행    => 모두의 화면에 STT(www.downloadHandler.text)를 띄우는 부분
+                sttRecorder.OnSubmit(sttContent); // RPC AddVoiceChat() 실행    => 모두의 화면에 정제된 STT 를 띄우는 부분
             }
         }
     }
