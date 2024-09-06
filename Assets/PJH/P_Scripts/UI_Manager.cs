@@ -10,11 +10,14 @@ public class UI_Manager : MonoBehaviour
 {
     // 오브젝트 접촉시 띄울 캔버스
     public GameObject info_Canvas;
-
-    [Header("document를 눌렀을때 나올 변수들")]
-    public Canvas docCanvas;
+    public Button btn1;
+    public Button btn2;
+    public Button btn3;
+    
+    [Header("btn1을 눌렀을때 나올 변수들")]
+    //public GameObject docCanvas1    ;
     public GameObject infoPanel1;
-    public Button Exit;
+    public Button doc1Exit;
     public GameObject realExitPanel;
 
     float currentTime;
@@ -36,14 +39,20 @@ public class UI_Manager : MonoBehaviour
         Info_Canvas infoCanvas = GetComponent<Info_Canvas>();
 
         documents = new List<GameObject>(2);
+
+        infoPanel1.SetActive(false);
+        realExitPanel.SetActive(false);
     }
 
 
     void Update()
     {
+        // 카운트 다운 시작
+        currentTime += Time.deltaTime;
+
         if(currentTime >= 30.0f)
         {
-            Destroy(docCanvas);
+            info_Canvas.SetActive(false);
 
             currentTime = 0;
         }
@@ -51,18 +60,25 @@ public class UI_Manager : MonoBehaviour
 
 
     // doucument 버튼을 눌렀을 때 발생할 이벤트 
-    void OnclickedDocument()
+    //public void OnclickedButton(Button ClickedButton)
+    //{
+    //    // 누른 버튼안의 패널을 찾고
+    //    Transform panel = ClickedButton.transform.Find("Panel");
+
+    //    if(panel != null)
+    //    {
+    //        // document 안의 document_panel 을 setactive(true)
+    //        panel.gameObject.SetActive(true);
+    //    }
+
+    //    // 해당 document 버튼 밖에 파란 원이 생김 (setactive) true      
+
+    //}
+
+    public void OnclickedButton()
     {
-        // 카운트 다운 시작
-        currentTime += Time.deltaTime;
-        // document 안의 document_panel 을 setactive(true)
         infoPanel1.SetActive(true);
-        // 해당 document 버튼 밖에 파란 원이 생김 (setactive) true
-
-        // 
-
     }
-
 
     // doucument 사라지면 자리 변경
     void DocumentPlaceSwap()
@@ -100,47 +116,50 @@ public class UI_Manager : MonoBehaviour
     }
 
     // document 캔버스의 나가기 버튼을 눌렀을때
-    void DocumentCanvasExitButton()
+    public void InfoCanvasExitButton()
     {
-        // 패널이 활성화 되어있다면
-        if (infoPanel1.activeSelf)
+        // null refrence는 꼭 넣기
+        if(infoPanel1 != null)
         {
-            infoPanel1.SetActive(false);
-
-            // 인포1 의 부모를 찾는다
-            if (infoPanel1.transform.parent != null)
+            // 패널이 활성화 되어있다면
+            if (infoPanel1.activeSelf)
             {
-                Transform infoParent1 = infoPanel1.transform.parent;
-                GameObject parentObject = infoParent1.gameObject;
-                // 비활성화 한다. (detroy나)                
-                Destroy(parentObject);
+                infoPanel1.SetActive(false);
 
-                // 자리를 재배치한다.
-                DocumentPlaceSwap();
+                // 인포1 의 부모를 찾는다
+                if (infoPanel1.transform.parent != null)
+                {
+                    Transform infoParent1 = infoPanel1.transform.parent;
+                    GameObject parentObject = infoParent1.gameObject;
+                    // 비활성화 한다. (detroy나)                
+                    Destroy(parentObject);
+
+                    // 자리를 재배치한다.
+                    DocumentPlaceSwap();
+                }
+
             }
-            // 패널이 비활성화 되어있다면
-            else
-            {
-                // 정말 나가기 패널을 띄운다.
-                realExitPanel.SetActive(true);
-            }
-
-
+        }
+        
+        // 패널이 비활성화 되어있다면
+        else//if (infoPanel1 == null)
+        {
+            // 정말 나가기 패널을 띄운다.
+            realExitPanel.SetActive(true);
         }
     }
 
+    // realExit button 에서 나가기 버튼을 눌렀을때
+    public void RealExitExitButton()
+    {
+        info_Canvas.SetActive(false);
+    }
 
-     // 오브젝트에 캐릭터가 충돌했을때 사용할 함수 ----> 이건 동휘씨가 playermove나 부딪힐 오브젝트에 별도로 추가
-     private void OnTriggerEnter(Collider other)
-     {
-         // player move 컴포넌트를 가진 other 가 충돌하면
-         if (other.gameObject.GetComponent<PlayerMove>())
-         {
-             // 캐릭터는 동작, 회전을 멈추고
+    public void RealExitReturnButton()
+    {
+        realExitPanel.SetActive(false);
+    }
 
-             // info 캔버스를 true로
-             info_Canvas.SetActive(true);
-         }
-     }
+
 }
 
