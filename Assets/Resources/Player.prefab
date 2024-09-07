@@ -171,6 +171,7 @@ MonoBehaviour:
   useRotX: 1
   useRotY: 1
   pv: {fileID: 2039180870411707403}
+  Cam: {fileID: 1247380343717638862}
 --- !u!114 &2039180870411707403
 MonoBehaviour:
   m_ObjectHideFlags: 0

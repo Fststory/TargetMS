@@ -78,7 +78,7 @@ public class ChatManager : MonoBehaviourPun
         //string chat = "<color=#" + ColorUtility.ToHtmlStringRGB(nickNameColor) + ">" + PhotonNetwork.NickName + "</color> : " + s;
 
         // AddChat RPC 함수 호출
-        photonView.RPC(nameof(AddChat), RpcTarget.All,chat);
+        photonView.RPC(nameof(AddChat), RpcTarget.All, s);
 
         print("엔터 침 : " + s);
 
@@ -98,7 +98,7 @@ public class ChatManager : MonoBehaviourPun
         // chatItem 하나 만들자 (부모를 chatview 의 content로 하자)
         GameObject go = Instantiate(chatItemFactory, trContent);
         // chatItem 컴포넌트 가져오자.
-        ChatItem chatItem = go.GetComponent<ChatItem>();
+        ChatItem1 chatItem = go.GetComponent<ChatItem1>();
         // 가져온 컴포넌트의 SetText 함수 실행
         chatItem.SetText(chat);
         // 가져온 컴포넌트의 onAutoScroll 변수에 AutoScrollBottom 을 설정

@@ -124,7 +124,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
         Application.Quit();
 
         // 유니티 에디터 정지
-        //UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
 
@@ -183,7 +183,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
                 // 로그인 패널을 끄고
                 loginPanel.SetActive(false);
                 // Text를 띄운다            
-                loginSuccess_text.gameObject.SetActive(true);
+               // loginSuccess_text.gameObject.SetActive(true);
                 // 3초뒤에 메세지를 숨긴다.
                 Invoke("HideLoginSuccessText", 2f);
 
@@ -192,7 +192,7 @@ public class Start_Manager : MonoBehaviourPunCallbacks
             else 
             {
                 // 로그인 실패 텍스트를 띄우고
-                loginFail_text.gameObject.SetActive(true);
+                //loginFail_text.gameObject.SetActive(true);
                 // 3초 뒤에 숨긴다.
                 Invoke("HideLoginFailText", 2f);
 
