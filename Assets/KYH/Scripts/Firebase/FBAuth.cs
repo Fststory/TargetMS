@@ -15,13 +15,13 @@ public class FBAuth : MonoBehaviour
 
     void Start()
     {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            FirebaseApp app = FirebaseApp.DefaultInstance;
+        //FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+        //    FirebaseApp app = FirebaseApp.DefaultInstance;
             // auth 기능을 전체적으로 관리 실행하는 클래스 담아놓자.
             auth = FirebaseAuth.DefaultInstance;
             // 로그인 / 로그아웃 상태 체크
             auth.StateChanged += OnChangeAuthState;
-        });
+        //});
     }
 
     void Update()
@@ -63,6 +63,10 @@ public class FBAuth : MonoBehaviour
 
     IEnumerator CoSignIn()
     {
+        Debug.Log("Auth: " + auth);
+        Debug.Log("Email: " + inputEmail.text);
+        Debug.Log("Password: " + inputPassword.text);
+
         // 회원가입 시도
         var task = auth.CreateUserWithEmailAndPasswordAsync(inputEmail.text, inputPassword.text);
 

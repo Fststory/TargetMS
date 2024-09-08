@@ -47,7 +47,7 @@ public class FBDatabase : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void SaveMyInfo()
