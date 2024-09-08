@@ -64,6 +64,12 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
         // 내 플레이어인지 확인
         if (photonView.IsMine)
         {
+            // 마우스의 lockmode가 none 이면 (마우스 포인터 활성화 되어있다면) 함수 나가자
+            if (Cursor.lockState == CursorLockMode.None)
+            {
+                return;
+            }
+
             // 1. 키보드 입력 (WASD) 값을 받음
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
