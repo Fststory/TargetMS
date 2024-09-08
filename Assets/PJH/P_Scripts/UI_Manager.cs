@@ -32,6 +32,8 @@ public class UI_Manager : MonoBehaviour
     public Transform pos2;
     public Transform pos3;
 
+    [Header("키워드")]
+    public TMP_Text keyword1;
 
 
     void Start()
@@ -160,6 +162,23 @@ public class UI_Manager : MonoBehaviour
         realExitPanel.SetActive(false);
     }
 
+    // 문서에서 키워드를 눌렀을때 ~키워드를 얻었습니다 출력
 
+    // 키워드 얻고 해당 버튼을 비활성화 하는 코드 추가하기
+
+    
+    public void OnClickKeyword()
+    {
+        keyword1.gameObject.SetActive(true);
+
+        Invoke("HideKeyword", 2f);
+
+
+    }
+
+    void HideKeyword()
+    {
+        keyword1.gameObject.SetActive(false);
+    }
 }
 
