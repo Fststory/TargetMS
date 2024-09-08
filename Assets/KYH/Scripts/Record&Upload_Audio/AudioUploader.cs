@@ -41,6 +41,7 @@ public class AudioUploader : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Post(serverUrl, form))
         {
+            www.timeout = 60;
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)
