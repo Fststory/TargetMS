@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.PlayerSettings;
 using UnityEngine.SceneManagement;
 
 public class FBAuthWighMgr : MonoBehaviour
@@ -38,6 +37,7 @@ public class FBAuthWighMgr : MonoBehaviour
         loginPanel.SetActive(false);
 
         loginSuccess_text.gameObject.SetActive(false);
+        signinSuccess_text.gameObject.SetActive(false);
         loginFail_text.gameObject.SetActive(false);
 
         // 시작시 음악 재생
