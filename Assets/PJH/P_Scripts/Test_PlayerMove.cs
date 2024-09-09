@@ -40,6 +40,7 @@ public class Test_PlayerMove : MonoBehaviour
 
         Vector3 moveVector = new Vector3(x, 0, v);
 
+        
         moveVector = lookPos.TransformDirection(moveVector);
 
         moveVector.Normalize();

@@ -17,7 +17,16 @@ public class Test_PlayerRotate : MonoBehaviour
 
     void Update()
     {
-        Rotate();
+
+        float x = Input.GetAxis("Mouse X");
+        float y = Input.GetAxis("Mouse Y");
+
+        rotX += y * rotateSpeed * Time.deltaTime;
+        rotY += x * rotateSpeed * Time.deltaTime;
+
+        rotX = Mathf.Clamp(rotX, -60, 60);
+
+        transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
     }
 
 

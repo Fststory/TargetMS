@@ -94,18 +94,18 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
         print("방 입장 완료");
         // PhotonNetwork.LoadLevel("PlayScene"); // 씬 전환
 
-        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity);
-
+        //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity);
+        PhotonNetwork.LoadLevel("Test_PlayScene");
         // 방에 접속한 플레이어 수 확인
-        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
-        {
-            // 준비 완료 버튼을 활성화
-            readyButton.SetActive(true);
-        }
-        else
-        {
-            print("다른 플레이어를 기다리는 중...");
-        }
+        //if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
+        //{
+        //    // 준비 완료 버튼을 활성화
+        //    readyButton.SetActive(true);
+        //}
+        //else
+        //{
+        //    print("다른 플레이어를 기다리는 중...");
+        //}
     }
 
     // 플레이어가 준비 버튼을 눌렀을 때 호출될 함수
