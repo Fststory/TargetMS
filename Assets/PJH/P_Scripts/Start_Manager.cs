@@ -22,8 +22,16 @@ public class Start_Manager : MonoBehaviourPunCallbacks
     public TMP_InputField passwordInputField; // 비밀번호 입력칸
     public TMP_InputField currentInputField;
     bool isLogin; // 로그인 확인
-    
 
+
+
+    [Header("회원가입")]
+    public GameObject signInPanel;
+    public TextMeshProUGUI InputID;
+    public TextMeshProUGUI InputPassword;
+    public TextMeshProUGUI InputNickname;
+    public Button signInConfirm;
+    public Button signInExit;
 
     // 음악
     [Header("음악 변수")]
@@ -44,7 +52,9 @@ public class Start_Manager : MonoBehaviourPunCallbacks
 
         // 시작때 로그인 패널 숨기기
         loginPanel.SetActive(false);
-        
+        // 회원가입 패널 숨기기
+        signInPanel.SetActive(false);
+      
         loginSuccess_text.gameObject.SetActive(false);
         loginFail_text.gameObject.SetActive(false);
 
@@ -200,6 +210,23 @@ public class Start_Manager : MonoBehaviourPunCallbacks
             }
         }
        
+    }
+
+    // 회원가입을 눌렀을때 
+    public void ClickSignIn()
+    {
+        signInPanel.SetActive(true);
+    }
+
+    // 회원가입 창 나가기 눌렀을때
+    public void ClickSignInExit()
+    {
+        signInPanel.SetActive(false);
+    }
+
+    public void ClickSignInConfirm()
+    {
+
     }
 
 

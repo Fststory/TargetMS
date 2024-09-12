@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -20,13 +21,12 @@ public class UI_Manager : MonoBehaviour
     public GameObject infoPanel1;
     public Button doc1Exit;
     public GameObject realExitPanel;
-
-
+    public LineRenderer lineRenderer;
+       
 
 
     [Header("버튼")]
     public List<Button> buttonlist = new List<Button>();
-    float currentTime;
     public Button currentButton; // 현재 활성화된 버튼
 
 
@@ -40,9 +40,22 @@ public class UI_Manager : MonoBehaviour
     public GameObject Keytext;
 
 
+
+
+    float currentTime;
+    public GameObject tutorial;
+    public PlayerMove2 playermove; // 플레이어 움직임 스크립트
+    public TMP_Text countDown_text;
+    public TMP_Text currentTimer;
+    bool istimerStart = false;
+
+
+
+
     void Start()
     {
         Info_Canvas infoCanvas = GetComponent<Info_Canvas>();
+        lineRenderer = GetComponent<LineRenderer>();
 
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
@@ -56,15 +69,18 @@ public class UI_Manager : MonoBehaviour
 
     void Update()
     {
-        // 카운트 다운 시작
-        currentTime += Time.deltaTime;
-
-        if(currentTime >= 30.0f)
+        if(!istimerStart)
         {
-            info_Canvas.SetActive(false);
+            currentTime = 60;
 
-            currentTime = 0;
+           // currentTimer.text = currentTime; 내일할거임
+                                    
+            if (currentTime>0) currentTime -= Time.deltaTime;
+            else GameEnd();
+
         }
+
+        
     }
 
 
@@ -73,6 +89,21 @@ public class UI_Manager : MonoBehaviour
     {
         // 누른 버튼을 현재버튼으로 한다.
         currentButton = clickedButton;
+
+        ////////////////////////////////////////////////////////////////////////////////수정필요
+        // clicked button 주위로 원을 그린다.
+        RectTransform rt = GetComponent<RectTransform>();
+        // 버튼 주위의 코너
+        Vector3[] corners = new Vector3[4];
+
+        rt.GetWorldCorners(corners);
+
+        // corners 배열의 각 요소는 월드 좌표계에서의 모서리 좌표
+        Vector3 bottomLeft = corners[0]; // 왼쪽 하단
+        Vector3 bottomRight = corners[1]; // 오른쪽 하단
+        Vector3 topRight = corners[2]; // 오른쪽 상단
+        Vector3 topLeft = corners[3]; // 왼쪽 상단
+
 
         // 누른 버튼안의 패널을 찾고
         Transform panelTransform = clickedButton.transform.Find("Panel");              
@@ -201,5 +232,77 @@ public class UI_Manager : MonoBehaviour
         }
        
     }
+
+    // 아래 것은 start에서 실행 시킬것
+
+    void GameStart()
+    {
+        tutorial.SetActive(true);
+                    
+        // 그리고 플레이어 이동 불가
+        playermove.enabled = false;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            tutorial.SetActive(false);
+            // 카운트 다운
+            StartCoroutine(CountDown());
+
+            // 타이머 시작
+            istimerStart = true;
+
+            playermove.enabled = true;
+                       
+        }
+    }
+       
+
+
+    IEnumerator CountDown()
+    {
+        countDown_text.text = "3";
+        yield return new WaitForSeconds(1f);
+        countDown_text.text = "2";
+        yield return new WaitForSeconds(1f);
+        countDown_text.text = "1";
+        yield return new WaitForSeconds(1f);
+        countDown_text.text = "START"; // 이건 나중에 여유있으면 이미지로 바꾸던가 다른걸로
+
+        countDown_text.text = "";
+    }
+
+
+
+    // GameScene 타이머가 끝나면 다음씬으로 이동시킬것
+    void GameEnd()
+    {
+       
+        //PhotonNetwork.LoadLevel("CouncilScene");
+
+    }
+
+    
+    
+   
+    // 3 2 1 카운트 다운 후 Start! 
+    // / 그리고 플레이어 이동가능
+
+    // GameScence이 시작되면 타이머 시작
+    // 카운트 다운 시작
+    //currentTime += Time.deltaTime;
+
+    //    if(currentTime >= 30.0f)
+    //    {
+    //        info_Canvas.SetActive(false);
+
+    //        currentTime = 0;
+    //    }
+
+
+
+
+
+
+
 }
 
