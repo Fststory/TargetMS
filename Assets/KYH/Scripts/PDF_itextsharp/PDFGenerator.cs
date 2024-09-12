@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class PDFGenerator : MonoBehaviour
 {
-    private void Start()
+    //private void Start()
+    //{
+    //    CreatePDF(Application.dataPath + "/test.pdf");
+    //}
+
+    private void Update()
     {
-        CreatePDF(Application.dataPath + "/test.pdf");
+        if (Input.GetKeyDown(KeyCode.Alpha0)) CreatePDF(Application.dataPath + "/test.pdf");
     }
 
     public void CreatePDF(string filePath)
@@ -15,10 +20,13 @@ public class PDFGenerator : MonoBehaviour
         Document document = new Document();
         PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
         document.Open();
-        document.Add(new Paragraph("Hello, iTextSharp!"));
-        document.Add(new Paragraph("My name is Kim Young Ho!"));
-        document.Add(new Paragraph("My name is Kim Dong Hwi!"));
-        document.Add(new Paragraph("My name is Park Jeong Hyun!"));
+
+        // 한글 폰트 설정
+        BaseFont bf = BaseFont.CreateFont("D:\\UnityProjects\\TargetMS\\Assets\\Fonts\\나눔손글씨 야근하는 김주임.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 12); // 폰트 크기 설정
+
+        document.Add(new Paragraph("Hello, iTextSharp!", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+        document.Add(new Paragraph(ProposalMgr.instance.text_response.text, font));
         document.Close();
         print("PDF 생성 완료!");
     }

@@ -58,5 +58,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8e9702307a6014c9ac94478cfe5d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverUrl: http://meta-ai.iptime.org:65535/audio/stt
+  serverUrl: http://metaai.iptime.org:65535/audio/stt
   sttRecorder: {fileID: 0}

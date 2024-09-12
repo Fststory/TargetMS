@@ -11,7 +11,6 @@ public class SttResponse
     public string result;
 }
 
-
 public class AudioUploader : MonoBehaviour
 {
     // OutputAudioRecorder 클래스로 생성한 wav 파일을 서버에 업로드하는 기능
