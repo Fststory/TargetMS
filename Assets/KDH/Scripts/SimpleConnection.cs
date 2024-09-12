@@ -95,7 +95,7 @@ public class SimpleConnection : MonoBehaviourPunCallbacks
         // PhotonNetwork.LoadLevel("PlayScene"); // 씬 전환
 
         //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity);
-        PhotonNetwork.LoadLevel("Test_PlayScene");
+        //PhotonNetwork.LoadLevel("Test_PlayScene");
         // 방에 접속한 플레이어 수 확인
         //if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
         //{
