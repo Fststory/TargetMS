@@ -60,7 +60,7 @@ public class ProposalMgr : MonoBehaviour
 
     IEnumerator PostJsonRequest(string url)
     {
-        // 사용자의 입력 정보를 Json 데이터로 변환하기
+        // 사용자의 입력 정보(선택한 키워드)를 Json 데이터로 변환하기
         Proposal proposal = new Proposal();
         proposal.analysis_type = "3/4C분석";
         proposal.audience_type = "사내대상";
@@ -89,7 +89,15 @@ public class ProposalMgr : MonoBehaviour
         {
             // 다운로드 핸들러에서 텍스트 값을 받아서 UI에 출력한다.
             string response = request.downloadHandler.text;
-            text_response.text = response;
+
+            // "\n"을 실제 개행 문자로 변환 (+ 불필요한 문자 제거)
+            response = response.Replace("{\"result\":\"", "");
+            response = response.Replace("\\n", "\n");
+            response = response.Replace("#", "");
+            response = response.Replace("*", "");
+            response = response.Replace("}", "");
+
+            text_response.text = response;  // UI에 출력 -> Proposal_result 게임옵젝
             Debug.LogWarning(response);
         }
         else

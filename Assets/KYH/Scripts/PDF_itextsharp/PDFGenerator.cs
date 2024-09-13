@@ -12,6 +12,7 @@ public class PDFGenerator : MonoBehaviour
 
     private void Update()
     {
+        // 0번 누르면 PDF 생성
         if (Input.GetKeyDown(KeyCode.Alpha0)) CreatePDF(Application.dataPath + "/test.pdf");
     }
 
@@ -25,7 +26,6 @@ public class PDFGenerator : MonoBehaviour
         BaseFont bf = BaseFont.CreateFont("D:\\UnityProjects\\TargetMS\\Assets\\Fonts\\나눔손글씨 야근하는 김주임.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 12); // 폰트 크기 설정
 
-        document.Add(new Paragraph("Hello, iTextSharp!", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
         document.Add(new Paragraph(ProposalMgr.instance.text_response.text, font));
         document.Close();
         print("PDF 생성 완료!");
