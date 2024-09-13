@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -22,12 +23,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject RealExitPanel;
 
     //public GameObject[] infoCanvass; 
-    public Button btn1;
-    public Button btn2;
-    public Button btn3;
-    public GameObject currentPanel; // 현재 패널
-    public GameObject currentCanvas; // 현재 캔버스
-    
+   
     //[Header("btn1을 눌렀을때 나올 변수들")]
     ////public GameObject docCanvas1    ;
     //public GameObject infoPanel1;
@@ -38,6 +34,11 @@ public class UI_Manager : MonoBehaviour
 
     [Header("버튼")]
     public List<Button> buttonlist = new List<Button>();
+    public Button btn1;
+    public Button btn2;
+    public Button btn3;
+    public GameObject currentPanel; // 현재 패널
+    public GameObject currentCanvas; // 현재 캔버스
     public Button currentButton; // 현재 활성화된 버튼
 
 
@@ -45,12 +46,17 @@ public class UI_Manager : MonoBehaviour
     public Transform pos1;
     public Transform pos2;
     public Transform pos3;
+    public Transform pos4; // 패널 위치
     
 
     [Header("키워드")]
     public GameObject Keytext;
 
-
+    [Header("메인UI")]
+    [SerializeField]
+    private Button uiExitbtn;   
+    [SerializeField]
+    private Button uiQuestbtn;
 
 
     float currentTime;
@@ -74,9 +80,7 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-        buttonlist.Add(btn1);
-        buttonlist.Add(btn2);
-        buttonlist.Add(btn3);
+       
 
 
         currentButton = null;
@@ -108,8 +112,12 @@ public class UI_Manager : MonoBehaviour
             // 누른 버튼을 현재버튼으로 한다.
             currentButton = clickedButton;
 
-            // 누른 버튼안의 패널을 찾고
-            Transform panelTransform = clickedButton.transform.Find("Panel");
+        // 누른 버튼안의 CHECK 텍스트 출력
+        clickedButton.transform.Find("Check").gameObject.SetActive(true);
+
+
+        // 누른 버튼안의 패널을 찾고
+        Transform panelTransform = clickedButton.transform.Find("Panel");
 
             if (panelTransform != null)
             {
@@ -146,12 +154,15 @@ public class UI_Manager : MonoBehaviour
             if (buttonlist.Count == 2)
             {
                 buttonlist[0].transform.position = pos1.transform.position;
+                buttonlist[0].transform.Find("Panel").transform.position = pos4.position;
                 buttonlist[1].transform.position = pos2.transform.position;
+                buttonlist[1].transform.Find("Panel").transform.position = pos4.position;
             }
             // 만약, 버튼의 갯수가 1개가 되면
             else if (buttonlist.Count == 1)
             {
                 buttonlist[0].transform.position = pos3.transform.position;
+                buttonlist[0].transform.Find("Panel").transform.position = pos4.position;
             }
         }
                                
@@ -208,28 +219,54 @@ public class UI_Manager : MonoBehaviour
     // 키워드 얻고 해당 버튼을 비활성화 하는 코드 추가하기
 
     
+
+
+
+    // 키워드 눌렀을 때
     public void OnClickKeyword(Button keyWord) 
     {
         // keyWord 의 자식중 keytext를 찾음
         Transform findKeyText = keyWord.transform.Find("Keytext");
+        // keyWord 버튼의 text 자식을 가져옴
+        Transform findBtnText = keyWord.transform.Find("Text");
+
+        // text 안의 tmp_text 컴포넌트를 찾음
+        TMP_Text cngFont = findBtnText.GetComponent<TMP_Text>();
+
         // findKeyText 를 gameobejct 변환함
         Keytext = findKeyText.gameObject;
 
         if (Keytext != null)
         {          
-
             // 키텍스트를 활성화
             Keytext.gameObject.SetActive(true);
             // 2초 뒤에 숨기고
             Invoke("HideKeytext", 2f);
-            // 키워드 버튼의 상호작용을 멈춤
-            keyWord.interactable = false;
+           
         }
         else
         {
             Debug.Log("키워드 안의 Keytext가 없습니다.");
         }
+
+
+        
+        if(cngFont != null)
+        {
+            // 기존에 있던 text 를 가져오고
+            string existingText = cngFont.text;
+
+            // 기존 text 아래에 밑줄을 긋는다
+            cngFont.text = $"<u>{existingText}</u>";
+        }
+        else
+        {
+            Debug.Log("안됨");
+        }
        
+        // 키워드 버튼의 상호작용을 멈춤
+        keyWord.interactable = false;
+
 
 
     }
@@ -314,52 +351,78 @@ public class UI_Manager : MonoBehaviour
         cigaCanvas.SetActive(true);
         currentCanvas = cigaCanvas;
         
-        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
-        //RectTransform rt = btn1.GetComponent<RectTransform>();
+        // 아몰라 작동하면 됬지
+        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();       
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
+
+        buttonlist.Add(btn1);
+        buttonlist.Add(btn2);
+        buttonlist.Add(btn3);
+
+        // 밟는 순간 플레이어 움직임 불가능하게 
     }
      public void OnPhone()    {
         phoneCanvas.SetActive(true);
         currentCanvas = phoneCanvas;
 
 
-        //btn1 = currentCanvas.transform.Find("Button1")?.gameObject;
-        //btn2 = currentCanvas.transform.Find("Button2")?.gameObject;
-        //btn3 = currentCanvas.transform.Find("Button3")?.gameObject;
-    }
-     public void OnMonitor()    {
-        monitorCanvas.SetActive(true);
-        currentCanvas = monitorCanvas;
+        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
+        btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
+        btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
 
-        //btn1 = currentCanvas.transform.Find("Button1")?.gameObject;
-        //btn2 = currentCanvas.transform.Find("Button2")?.gameObject;
-        //btn3 = currentCanvas.transform.Find("Button3")?.gameObject;
-
+        buttonlist.Add(btn1);
+        buttonlist.Add(btn2);
+        buttonlist.Add(btn3);
     }
+    
+   
      public void OnLegalPad()    {
         legalCanvas.SetActive(true);
         currentCanvas = legalCanvas;
 
-        //btn1 = currentCanvas.transform.Find("Button1")?.gameObject;
-        //btn2 = currentCanvas.transform.Find("Button2")?.gameObject;
-        //btn3 = currentCanvas.transform.Find("Button3")?.gameObject;
+        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
+        btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
+        btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
+
+        buttonlist.Add(btn1);
+        buttonlist.Add(btn2);
+        buttonlist.Add(btn3);
 
     }
      public void OnCoffee()    {
         coffeeCanvas.SetActive(true);
         currentCanvas = coffeeCanvas;
 
-        
-        //btn1 = currentCanvas.transform.Find("Button1")?.gameObject;
-        //btn2 = currentCanvas.transform.Find("Button2")?.gameObject;
-        //btn3 = currentCanvas.transform.Find("Button3")?.gameObject;
+
+        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
+        btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
+        btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
+
+        buttonlist.Add(btn1);
+        buttonlist.Add(btn2);
+        buttonlist.Add(btn3);
     }
 
-   
+    ///메인 UI
 
+    public void OnClickuiExitbtn() 
+    {
+        Application.Quit();
+    } 
+    public void OnClickuiQuestbtn() 
+    {
+        Transform pt = uiQuestbtn.transform.Find("QuestPanel");
+        GameObject panel = pt.gameObject;
+        // 패널 토글
+        panel.SetActive(!panel.activeSelf);      
 
-
+    }
+    
+  
+    // 키워드 인벤토리 
+    // 스크롤로 구현
+    // I를 누르면 
 
 
 
