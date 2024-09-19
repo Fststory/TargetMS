@@ -231,6 +231,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3585269290370758504, guid: 5a7280fc232bb96449501846a6ea1434,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4687832005122927338, guid: 5a7280fc232bb96449501846a6ea1434,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -320,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MaleCharacterPBR Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821121752154577369, guid: 5a7280fc232bb96449501846a6ea1434,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7562732369933773792, guid: 5a7280fc232bb96449501846a6ea1434, type: 3}

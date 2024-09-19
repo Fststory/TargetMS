@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     GameObject playerFactory;
     
     // 스폰 위치 담을 변수
@@ -26,18 +26,10 @@ public class GameManager : MonoBehaviour
 
         // 플레이어를 생성 (현재 Room 에 접속 되어있는 친구들도 보이게)
         PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        //PhotonNetwork.Instantiate("AA/Player", Vector3.zero, Quaternion.identity); - AA 폴더 안에 플레이어 있을경우 (Resources 안에 있어야함)
 
     }
-
-    // Update is called once per frame
-    int i = 0;
     void Update()
     {
-        //i = i + 36;
-        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //transform.rotation = Quaternion.Euler(i, 0, 0); // x, y, z 축에 대해 도씩 회전
-        //cube.transform.position = Vector3(2, 0, 0);
     }
 
   
@@ -59,29 +51,7 @@ public class GameManager : MonoBehaviour
             spawnCenter.eulerAngles = new Vector3(0, i*angle, 0);
             // spawnCenter 앞방향으로 2만큼 떨어진 위치 구하자.
             spawnPos[i] = spawnCenter.position + spawnCenter.forward * 2;
-            //// 큐브 하나 생성
-            //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            //// 생성된 큐브를 위에서 구한 위치에 놓자.
-            //cube.transform.position = spawnPos[i];
         }
-
-        
-        //i = i + 36;
-        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //cube.transform.position = new Vector3(2, 0, 0);
-        //transform.rotation = Quaternion.Euler(i, 0, 0); // x, y, z 축에 대해 도씩 회전
-
-
-        //cube.transform.position = new Vector3(0,0, 0);
-        //for (int i = 0; i <= 360; i = i + 36)
-        //{
-        //    transform.rotation = Quaternion.Euler(60, 60, 60); // x, y, z 축에 대해 도씩 회전
-        //    GameObject.CreatePrimitive(PrimitiveType.Cube); // 큐브 생성
-        //    Quaternion quaternion = Quaternion.Euler(rotationVector);
-        //    transform.rotation = quaternion;
-        //}
-        //transform.rotation
-
 
     }
 }

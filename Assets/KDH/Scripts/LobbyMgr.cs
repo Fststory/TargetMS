@@ -32,36 +32,12 @@ public class LobbyMgr : MonoBehaviourPunCallbacks
         inputRoomName.onValueChanged.AddListener(OnValueChangedRoomName);
         // inputMaxPlayer 의 내용이 변경될 때 호출되는 함수 등록
         inputMaxPlayer.onValueChanged.AddListener(OnValueChangedMaxPlayer);
-
-        #region Dictionary 사용예제
-        /*
-        Dictionary<int,string> dic = new Dictionary<int, string>();
-        dic.Add(12, "값1");
-        
-        // value 에 대한 값을 추가 / 수정
-        dic[12] = "값1";
-        dic[13] = "dks"; // 덮어씌워짐
-        dic[13] = "값2";
-
-        print(dic[12]); // 값1
-        print(dic[13]); // 값2
-
-        // 삭제
-        dic.Remove(12);
-        print(dic[12]); // 오류
-        */
-        #endregion
     }
 
     void Update()
     {
         
-    }
-
-    // 방이름과 최대인원의 값이 있을 때만 Create 버튼 활성화
-
-    // 방이름에 값이 있으면 Join 버튼 활성화
-    
+    }  
 
     // Join & Create 버튼을 활성화 / 비활성화
     void OnValueChangedRoomName(string roomName)
