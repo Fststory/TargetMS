@@ -5,6 +5,9 @@ using Photon.Pun;
 
 public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 {
+    // 캐릭터 컨트롤러
+    CharacterController cc;
+
     // 이동 속력
     public float moveSpeed = 5f;
 
@@ -15,9 +18,6 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 
     // 점프 초기 속력
     public float jumpPower = 3;
-
-    // 캐릭터 컨트롤러
-    CharacterController cc;
 
     // 카메라
     public GameObject cam;
@@ -40,6 +40,13 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 
     // LookPos
     //public Transform lookPos;
+   
+    //[PunRPC]
+    //void RpcAddPlayer(int order)
+    //{
+    //    // GameManger 에게 photonView 를 넘겨주자
+    //    GM.instance.AddPlayer(photonView, order);
+    //}
 
     void Start()
     {
@@ -122,6 +129,9 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
                 transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, Time.deltaTime * lerpSpeed);
             }
         }
+        // anim 을 이용해서 h, v 값을 전달
+        anim.SetFloat("DirH", h);
+        anim.SetFloat("DirV", v);
     }
 
 
