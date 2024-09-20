@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 61253ef9-b11a-4e26-93f5-77f22bdb2d0c
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: f1f6fcd1-42a9-4dd8-9b45-f022d58a0c64
     AppVersion: 1.0
     UseNameServer: 1
     FixedRegion: kr
@@ -43,6 +43,9 @@ MonoBehaviour:
   - CheckAllPlayersReady
   - AddChat
   - AddVoiceChat
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
