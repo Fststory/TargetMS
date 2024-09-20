@@ -57,6 +57,8 @@ public class UI_Manager : MonoBehaviour
     private Button uiExitbtn;   
     [SerializeField]
     private Button uiQuestbtn;
+    [SerializeField]
+    private Transform scrollviewContent; // 스크롤뷰 인벤토리
 
 
     float currentTime;
@@ -242,6 +244,23 @@ public class UI_Manager : MonoBehaviour
             Keytext.gameObject.SetActive(true);
             // 2초 뒤에 숨기고
             Invoke("HideKeytext", 2f);
+
+            // 키워드를 찾는다
+            Transform kWord = keyWord.transform.Find("Keyword");    
+
+            if(kWord != null)
+            {
+                // 키워드를 scrollview의 content의 자식으로 넣는다.
+                kWord.transform.SetParent(scrollviewContent, false);
+
+                GameObject kWordgo = kWord.gameObject;
+
+                kWordgo.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("kWord 가 없습니다");
+            }
            
         }
         else
