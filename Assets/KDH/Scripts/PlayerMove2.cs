@@ -9,7 +9,7 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
     CharacterController cc;
 
     // 이동 속력
-    public float moveSpeed = 5f;
+    public float moveSpeed = 6f;
 
     // 중력
     float gravity = -9.81f;
