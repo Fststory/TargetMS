@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Org.BouncyCastle.Asn1.Mozilla;
+//using UnityEngine.UIElements;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -57,6 +58,9 @@ public class UI_Manager : MonoBehaviour
     private Button uiExitbtn;   
     [SerializeField]
     private Button uiQuestbtn;
+    [SerializeField]
+    private Transform scrollviewContent; // 스크롤뷰 인벤토리
+    public GameObject scrollview; // 스크롤뷰 인벤토리
 
 
     float currentTime;
@@ -80,9 +84,9 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-       
 
 
+        scrollview.SetActive(false);
         currentButton = null;
         RealExitPanel.SetActive(false);
     }
@@ -99,6 +103,11 @@ public class UI_Manager : MonoBehaviour
             if (currentTime>0) currentTime -= Time.deltaTime;
             else GameEnd();
 
+        }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        { 
+            scrollview.SetActive(!scrollview.activeSelf);
         }
 
        
@@ -240,8 +249,25 @@ public class UI_Manager : MonoBehaviour
         {          
             // 키텍스트를 활성화
             Keytext.gameObject.SetActive(true);
-            // 2초 뒤에 숨기고
-            Invoke("HideKeytext", 2f);
+            // 1초 뒤에 숨기고
+            Invoke("HideKeytext", 1f);
+
+            // 키워드를 찾는다
+            Transform kWord = keyWord.transform.Find("Keyword");    
+
+            if(kWord != null)
+            {
+                // 키워드를 scrollview의 content의 자식으로 넣는다.
+                kWord.transform.SetParent(scrollviewContent, false);
+
+                GameObject kWordgo = kWord.gameObject;
+
+                kWordgo.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("kWord 가 없습니다");
+            }
            
         }
         else
@@ -351,7 +377,7 @@ public class UI_Manager : MonoBehaviour
         cigaCanvas.SetActive(true);
         currentCanvas = cigaCanvas;
         
-        // 아몰라 작동하면 됬지
+        // 작동하면 됬지
         btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();       
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
@@ -420,10 +446,7 @@ public class UI_Manager : MonoBehaviour
     }
     
   
-    // 키워드 인벤토리 
-    // 스크롤로 구현
-    // I를 누르면 
-
+    
 
 
 }
