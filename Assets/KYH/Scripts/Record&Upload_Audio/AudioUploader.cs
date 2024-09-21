@@ -17,7 +17,7 @@ public class AudioUploader : MonoBehaviour
     // OutputAudioRecorder 에서 실행할 것이므로 filePath 도 OutputAudioRecorder 에서 배정하면 된다
     // multipart/form-data 방식, post 메소드, 키-값은 audio_file
 
-    [SerializeField] private string serverUrl = "http://your-fastapi-server-url/uploadfile/";   // 서버 URL, fastapi 주소 받고 수정하면 됨
+    [SerializeField] private string serverUrl;   // 서버 URL, fastapi 주소 받고 수정하면 됨
 
     public STTRecorder sttRecorder;
 

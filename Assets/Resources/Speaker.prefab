@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3669883315469437353}
   - component: {fileID: 6781809768918052954}
   - component: {fileID: 6977670233235610281}
+  - component: {fileID: -7390453471312758578}
+  - component: {fileID: 8744479562398641379}
   m_Layer: 0
   m_Name: Speaker
   m_TagString: Untagged
@@ -147,3 +149,30 @@ MonoBehaviour:
     Max: 1000
     SpeedUpPerc: 5
   restartOnDeviceChange: 1
+--- !u!114 &-7390453471312758578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163557221400329448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a325ef836f33c5458800a565da0dde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioOutCapture: {fileID: 8744479562398641379}
+  serverUrl: 'http://metaai.iptime.org:65535/audio/stt_unique '
+  voiceId: 0
+--- !u!114 &8744479562398641379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163557221400329448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8a5b2f1284e0e49b5df5c6300295d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
