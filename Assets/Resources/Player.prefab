@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: 1774636269182892723}
   - component: {fileID: 8228060445558326882}
   - component: {fileID: 3939408843729454910}
-  - component: {fileID: 185751656243853911}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -244,28 +243,6 @@ MonoBehaviour:
   pvv: {fileID: 8228060445558326882}
   imgSpeaker: {fileID: 4972931081334202519}
   imgSpeechBubble: {fileID: 7260195213380453546}
---- !u!195 &185751656243853911
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4386935142001668521}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &4903231963324161003
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +662,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
