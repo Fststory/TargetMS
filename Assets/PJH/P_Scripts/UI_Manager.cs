@@ -16,8 +16,7 @@ public class UI_Manager : MonoBehaviour
     [Header("캔버스")]
     // 오브젝트 접촉시 띄울 캔버스
     public GameObject cigaCanvas;
-    public GameObject phoneCanvas;
-    public GameObject monitorCanvas;
+    public GameObject phoneCanvas;   
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
 
