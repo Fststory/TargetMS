@@ -16,10 +16,10 @@ public class UI_Manager : MonoBehaviour
     [Header("캔버스")]
     // 오브젝트 접촉시 띄울 캔버스
     public GameObject cigaCanvas;
-    public GameObject phoneCanvas;
-    public GameObject monitorCanvas;
+    public GameObject phoneCanvas;   
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
+    public GameObject checkListCanvas;
 
     public GameObject RealExitPanel;
 
@@ -84,7 +84,7 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-
+        checkListCanvas.SetActive(false);
 
         scrollview.SetActive(false);
         currentButton = null;
@@ -436,6 +436,8 @@ public class UI_Manager : MonoBehaviour
     {
         Application.Quit();
     } 
+
+    //  퀘스트 버튼 /// 1초뒤에 꺼지게할것
     public void OnClickuiQuestbtn() 
     {
         Transform pt = uiQuestbtn.transform.Find("QuestPanel");

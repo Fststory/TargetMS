@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Unity.Android.Types;
+//using Unity.Android.Types;
 using UnityEngine;
 
 public class DrawCircle : MonoBehaviour // 삼각함수로 원그리기
