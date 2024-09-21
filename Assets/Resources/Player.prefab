@@ -40,7 +40,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9175427046619421496}
-  - {fileID: 4501151376868187628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2427771277128999483
@@ -271,16 +270,16 @@ RectTransform:
   m_GameObject: {fileID: 4903231963324161003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.29750407, y: 0.2975043, z: 0.29750407}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 62938677750169591}
   - {fileID: 4385104520360329992}
-  m_Father: {fileID: 8041088297865468613}
+  m_Father: {fileID: 9175427046619421496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 480, y: 269.5}
+  m_AnchoredPosition: {x: 285.60394, y: 160.94983}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6365577396186694216
@@ -380,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -956.66, y: -535.39}
+  m_AnchoredPosition: {x: -959.37, y: -535.16}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3019394409506111108
@@ -455,7 +454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -957.92, y: -535.4}
+  m_AnchoredPosition: {x: -960.63, y: -535.17}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3956491557331548088
@@ -617,7 +616,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7562732369933773792, guid: 5a7280fc232bb96449501846a6ea1434, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5059863812800900464, guid: 5a7280fc232bb96449501846a6ea1434,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4501151376868187628}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5581068215152916426, guid: 5a7280fc232bb96449501846a6ea1434,
         type: 3}
@@ -662,7 +665,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}

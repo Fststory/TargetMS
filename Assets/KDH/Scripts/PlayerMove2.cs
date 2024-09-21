@@ -94,10 +94,10 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
             }
 
             // 4. 점프 입력 처리
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                yVelocity = jumpPower;  // 점프할 때 yVelocity를 점프 파워로 설정
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    yVelocity = jumpPower;  // 점프할 때 yVelocity를 점프 파워로 설정
+            //}
 
             // 5. 중력 적용
             yVelocity += gravity * Time.deltaTime;  // 중력에 의해 yVelocity가 감소
@@ -108,12 +108,12 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
             // 7. 캐릭터 컨트롤러를 통해 캐릭터를 이동
             cc.Move(dir * moveSpeed * Time.deltaTime);
 
-            // 8. 애니메이터 값을 업데이트 (애니메이션 재생을 위해)
-            if (anim != null)
-            {
-                anim.SetFloat("DirH", h);  // 좌우 움직임
-                anim.SetFloat("DirV", v);  // 전후 움직임
-            }
+            //// 8. 애니메이터 값을 업데이트 (애니메이션 재생을 위해)
+            //if (anim != null)
+            //{
+            //    anim.SetFloat("DirH", h);  // 좌우 움직임
+            //    anim.SetFloat("DirV", v);  // 전후 움직임
+            //}
         }
         else
         {
