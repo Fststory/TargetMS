@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 갈 곳이다
 {
@@ -15,6 +17,37 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
     }
 
 
+
+    public void OnclickButton(Button button) // 문제에 화살표를 눌렀을때 패널이 펼쳐지게
+    {
+        Transform pan = button.transform.Find("Panel"); // button 의 자식중 panel를 찾는다
+
+        GameObject panel = pan.gameObject;
+
+        panel.SetActive(!panel.activeSelf); // 패널을 활성화하고
+
+        // button 의 부모인 content의 vertical ... 컴포넌트의 recttransform 컴포넌트를 가져온다.
+        RectTransform content = button.GetComponentInParent<VerticalLayoutGroup>().GetComponent<RectTransform>();
+
+        if(content != null)
+        {
+            Debug.Log("Content가 있습니다. 강제로 레이아웃 갱신합니다.");
+            //LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            StartCoroutine(UpdateLayoutAfterDelay(content));
+        }
+        else
+        {
+            Debug.Log("content 가 없습니다.");
+        }
+    }
+
+
+    private IEnumerator UpdateLayoutAfterDelay(RectTransform content)
+    {
+        yield return null; // 한 프레임 대기
+        LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+        Debug.Log("Layout이 갱신되었습니다.");  
+    }
 
 
     // 캔버스에 패널 두개를 만든다
