@@ -435,6 +435,8 @@ public class UI_Manager : MonoBehaviour
     {
         Application.Quit();
     } 
+
+    //  퀘스트 버튼 /// 1초뒤에 꺼지게할것
     public void OnClickuiQuestbtn() 
     {
         Transform pt = uiQuestbtn.transform.Find("QuestPanel");
