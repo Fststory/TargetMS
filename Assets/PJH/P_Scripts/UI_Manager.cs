@@ -19,6 +19,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject phoneCanvas;   
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
+    public GameObject checkListCanvas;
 
     public GameObject RealExitPanel;
 
@@ -83,7 +84,7 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-
+        checkListCanvas.SetActive(false);
 
         scrollview.SetActive(false);
         currentButton = null;
