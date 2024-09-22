@@ -1,9 +1,15 @@
-﻿using System.Collections;
+﻿using Photon.Pun.Demo.Cockpit;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckList_Script : MonoBehaviour  // 해당 스크립트는 마이크앞에서 e를 누르던지 했을때 모든 플레이어에게 공용으로 나타나게 함.
+public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4번으로 넘어가는거부터 
 {
+    public GameObject checkList2;
+    public GameObject checkList3;
+    public GameObject checkList4;
+
+    public GameObject currentCheck;
     void Start()
     {
         
@@ -15,10 +21,16 @@ public class CheckList_Script : MonoBehaviour  // 해당 스크립트는 마이�
     }
 
 
+    //체크리스트 3번에서 버튼 누르면 4번으로 넘어가게
+    public void OnClickCheck3to4()
+    {
+        checkList3.SetActive(false);
 
+        currentCheck = null;
 
-    // 해야 할 것
-    // 질문 n개 
-    // 해당 질문의 답변 n개 (버튼으로 구현, 시간부족)
-    //
+        checkList4.SetActive(true);
+
+    }
+
+  
 }
