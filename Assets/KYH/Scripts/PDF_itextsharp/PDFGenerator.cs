@@ -23,7 +23,9 @@ public class PDFGenerator : MonoBehaviour
         document.Open();
 
         // 한글 폰트 설정
-        BaseFont bf = BaseFont.CreateFont("D:\\UnityProjects\\TargetMS\\Assets\\Fonts\\나눔손글씨 야근하는 김주임.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        string fontPath = System.IO.Path.Combine(Application.dataPath, "Fonts", "나눔손글씨 야근하는 김주임.ttf");
+        BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        //BaseFont bf = BaseFont.CreateFont("D:\\UnityProjects\\TargetMS\\Assets\\Fonts\\나눔손글씨 야근하는 김주임.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 12); // 폰트 크기 설정
 
         document.Add(new Paragraph(ProposalMgr.instance.text_response.text, font));
