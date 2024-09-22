@@ -51,7 +51,9 @@ public class Area : MonoBehaviour
             if (objectRenderer != null)
             {
                 // 색상을 원래 색상으로 되돌리기
-                objectRenderer.material.color = new Color(0, 0.5f, 0, 1); // 소숫점 단위였음 ㅋㅋ
+                //objectRenderer.material.color = new Color(0, 0.5f, 0, 1); // 소숫점 단위였음 ㅋㅋ
+                objectRenderer.material.color = new Color(0.5f, 0.5f, 0.5f, 1); // 소숫점 단위였음 ㅋㅋ
+
                 //objectRenderer.material.color = new Color(255, 255, 0, 1f); // 이거는 안됨ㅋㅋ
                 //objectRenderer.material.color = Color.;
             }

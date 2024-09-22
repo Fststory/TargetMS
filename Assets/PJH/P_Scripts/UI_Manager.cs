@@ -71,6 +71,12 @@ public class UI_Manager : MonoBehaviour
     bool istimerStart = false;
 
 
+    public GameObject coffee;
+    public GameObject smoke;
+    public GameObject phone;
+    public GameObject regal;
+    
+
     // 싱글톤
     private void Awake()
     {
@@ -213,7 +219,50 @@ public class UI_Manager : MonoBehaviour
     // realExit button 에서 나가기 버튼을 눌렀을때
     public void RealExitExitButton()
     {
-        Destroy(currentCanvas);
+        if (currentCanvas == cigaCanvas)
+        {
+            Destroy(currentCanvas);
+
+            GameObject smoke = GameObject.Find("Smoke_Before");
+
+            smoke.SetActive(false);
+
+            //GameObject smokeArea = GameObject.Find("Area_Smoke");
+
+            //Renderer smokeArea = GetComponent<Renderer>();
+
+            //smokeArea.material.color = new Color(0.5f, 0.5f, 0.5f, 1);
+
+
+        } 
+        if (currentCanvas == coffeeCanvas)
+        {
+            Destroy(currentCanvas);
+
+            GameObject smoke = GameObject.Find("Coffee_Before");
+
+            smoke.SetActive(false);
+
+        } if (currentCanvas == phoneCanvas)
+        {
+            Destroy(currentCanvas);
+
+            GameObject smoke = GameObject.Find("Tablet_Before");
+
+            smoke.SetActive(false);
+
+        } if (currentCanvas == legalCanvas)
+        {
+            Destroy(currentCanvas);
+
+            GameObject smoke = GameObject.Find("rigalpad_Before");
+
+            smoke.SetActive(false);
+
+        }
+           
+
+        
         RealExitPanel.SetActive(false);
     
     }
