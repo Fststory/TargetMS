@@ -4,12 +4,7 @@ using System.IO;
 using UnityEngine;
 
 public class PDFGenerator : MonoBehaviour
-{
-    //private void Start()
-    //{
-    //    CreatePDF(Application.dataPath + "/test.pdf");
-    //}
-
+{  
     private void Update()
     {
         // 0번 누르면 PDF 생성
