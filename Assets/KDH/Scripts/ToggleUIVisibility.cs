@@ -5,8 +5,15 @@ public class ToggleUIVisibility : MonoBehaviour
 {
     public CanvasGroup uiCanvasGroup;  // UI 요소의 CanvasGroup
     public Button toggleButton;        // 토글할 버튼
+    public RectTransform uiRectTransform; // UI의 RectTransform
 
     private bool isVisible = true;     // UI가 보이는지 상태를 저장
+    private bool isMoved = false;      // UI의 위치 상태 저장
+
+    // 초기 위치
+    private Vector2 initialPosition = new Vector2(12f, -772f);
+    // 이동할 위치
+    private Vector2 movedPosition = new Vector2(12f, -1377f);
 
     void Start()
     {
@@ -15,6 +22,8 @@ public class ToggleUIVisibility : MonoBehaviour
 
         // 초기 UI 상태 설정
         SetUIVisibility(isVisible);
+        // 초기 위치 설정
+        uiRectTransform.anchoredPosition = initialPosition;
     }
 
    public void ToggleVisibility()
@@ -24,6 +33,10 @@ public class ToggleUIVisibility : MonoBehaviour
 
         // UI 상태를 설정
         SetUIVisibility(isVisible);
+
+        // 위치를 토글
+        TogglePosition();
+
     }
 
    public void SetUIVisibility(bool visible)
@@ -42,5 +55,23 @@ public class ToggleUIVisibility : MonoBehaviour
             uiCanvasGroup.interactable = false;
             uiCanvasGroup.blocksRaycasts = false;
         }
+    }
+
+    // UI의 위치를 변경하는 함수
+    public void TogglePosition()
+    {
+        if (isMoved)
+        {
+            // 초기 위치로 이동
+            uiRectTransform.anchoredPosition = initialPosition;
+        }
+        else
+        {
+            // 이동할 위치로 이동
+            uiRectTransform.anchoredPosition = movedPosition;
+        }
+
+        // 위치 상태를 토글
+        isMoved = !isMoved;
     }
 }

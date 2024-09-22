@@ -459,7 +459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCC44\uD305\uCC3D\n\uC5F4\uAE30/\uB2EB\uAE30"
+  m_text: "\uCC44\uD305\uCC3D \uC5F4\uAE30/\uB2EB\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5daf2332e906514ab1dd8b7513f48cf, type: 2}
   m_sharedMaterial: {fileID: 4940896870329248067, guid: e5daf2332e906514ab1dd8b7513f48cf,
@@ -708,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCanvasGroup: {fileID: 7939504433681234149}
   toggleButton: {fileID: 265140323463050241}
+  uiRectTransform: {fileID: 5971222857807315416}
 --- !u!1 &4887156368020517551
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,8 +991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 12, y: -1377}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2079455224538925887
 CanvasRenderer:
@@ -1557,7 +1558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00024807264}
+  m_AnchoredPosition: {x: 0, y: 0.00000667572}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2005427665175021376
@@ -1598,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
+  m_HorizontalFit: 2
   m_VerticalFit: 2
 --- !u!1 &8578731020678907818
 GameObject:
