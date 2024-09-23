@@ -958,6 +958,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824767702489896381, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 824767702489896381, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1700422843998589419, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1002,6 +1012,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KDH_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224211572103544103, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224211572103544103, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224211572103544103, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224211572103544103, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6897120271244520422, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
         type: 3}
@@ -1101,6 +1131,16 @@ PrefabInstance:
     - target: {fileID: 6897120271244520422, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436367362416357619, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436367362416357619, guid: a7fe56b8f83af6849bfb05d1244b8ef1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
