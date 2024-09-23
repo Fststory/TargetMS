@@ -81,6 +81,18 @@ public class UI_Manager : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
+
+        Transform pt = uiQuestbtn.transform.Find("QuestPanel");
+        GameObject panel = pt.gameObject;
+
+        // 처음 시작시 퀘스트 알림말 나오게하기
+        panel.SetActive(true);
+
+        // 활성화 되고 1초뒤에 꺼지기
+        if (panel.activeSelf)
+        {
+            Invoke("HideQuestPanel", 2f);
+        }
     }
 
     void Start()
@@ -479,7 +491,7 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn3);
     }
 
-    ///메인 UI
+    /////////////////////////////////////////////////////////////////////////////////////////메인 UI
 
     public void OnClickuiExitbtn() 
     {
@@ -492,8 +504,21 @@ public class UI_Manager : MonoBehaviour
         Transform pt = uiQuestbtn.transform.Find("QuestPanel");
         GameObject panel = pt.gameObject;
         // 패널 토글
-        panel.SetActive(!panel.activeSelf);      
+        panel.SetActive(!panel.activeSelf);
 
+        // 활성화 되고 1초뒤에 꺼지기
+        if(panel.activeSelf)
+        {
+            Invoke("HideQuestPanel", 1f);
+        }
+       
+    }
+
+    public void HideQuestPanel()
+    {
+        Transform pt = uiQuestbtn.transform.Find("QuestPanel");
+        GameObject panel = pt.gameObject;
+        panel.SetActive(false);
     }
     
   

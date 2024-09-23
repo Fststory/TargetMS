@@ -57,6 +57,9 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
 
     public void Start()
     {
+        content = transform.Find("Content").gameObject; // Content는 ScrollView의 자식 오브젝트 이름    
+
+        
         layoutGroup = content.GetComponent<VerticalLayoutGroup>();
     }
 
