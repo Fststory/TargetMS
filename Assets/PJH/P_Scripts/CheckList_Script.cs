@@ -12,12 +12,33 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     public GameObject currentCheck;
 
     [Header("체크리스트2 변수")] // 배열로 해야함
+    public GameObject[] panels;
     public GameObject panel1;
     public GameObject panel2;
+    public GameObject panel3;
+    public GameObject panel4;
+    public GameObject panel5;
+    public GameObject panel6;
+    public GameObject panel7;
+    public GameObject panel8;
+    public GameObject panel9;
+    public GameObject panel10;
+   
 
     void Start()
     {
-        
+        panels = new GameObject[10];
+
+        panels[0] = panel1;
+        panels[1] = panel2;
+        panels[2] = panel3;
+        panels[3] = panel4;
+        panels[4] = panel5;
+        panels[5] = panel6;
+        panels[6] = panel7;
+        panels[7] = panel8;
+        panels[8] = panel9;
+        panels[9] = panel10;
     }
 
     void Update()
@@ -66,8 +87,20 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
     }
 
-    // 체크리스트 2번에 좌클리했을때
-    // 배열로해야함
+    // 체크리스트 2번에 previous클릭
+    public void OnClickPre()
+    {
+
+    }
+
+
+
+
+    // 체크리스트 2번에 next클릭
+    public void OnClickNxt()
+    {
+
+    }
 
 
 
