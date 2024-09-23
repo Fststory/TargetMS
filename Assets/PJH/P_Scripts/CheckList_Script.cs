@@ -43,6 +43,7 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
         ShowPanel(0); // 초기 패널 표시
 
+        
 
     }
 
@@ -78,6 +79,8 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
         checkList4.SetActive(true);
 
         currentCheck = checkList4;
+
+        
 
         ProposalMgr.instance.PostJson();
 
