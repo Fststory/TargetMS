@@ -57,9 +57,15 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
 
     public void Start()
     {
+        if(content != null)
+        {
         content = transform.Find("Content").gameObject; // Content는 ScrollView의 자식 오브젝트 이름    
+        }
+        else
+        {
+            Debug.Log("문제있음");
+        }
 
-        
         layoutGroup = content.GetComponent<VerticalLayoutGroup>();
     }
 
@@ -75,22 +81,33 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
     public void OnClickButton9() => TogglePanel(panel9);
     public void OnClickButton10() => TogglePanel(panel10);
 
+
+
+    // 버튼을 눌렀을때 패널이 활성/비활성되고 그에 따른 content의 자식들의 위치변경
     private void TogglePanel(GameObject panel)
     {
-        // 현재 패널이 on/off 인지
+        // 현재패널은 이 패널이다
+        ccpanel = panel;
+        // 버튼 토글을 넣어서 패널 껏다/켯다
         bool isActive = panel.activeSelf;
+        panel.SetActive(!isActive);
 
-        panel.SetActive(!isActive); // 토글
-
-        layoutGroup.spacing = isActive ? 150 : 50; 
-
+        // 만약, 패널이 활성화 되어있다면 layout space를 150을 아니라면 50으로
+        layoutGroup.spacing = isActive ? 150 : 90;
+        // 만약, 패널이 활성화 되어있다면 현재패널=패널, 활성화 안되어 있다면 현재패널= null
         ccpanel = isActive ? panel : null;
 
-        }
-
-
-
     }
+          
+
+
+
+}
+
+
+
+
+    
 
 
 

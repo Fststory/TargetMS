@@ -23,7 +23,7 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     public GameObject panel8;
     public GameObject panel9;
     public GameObject panel10;
-    private int currentIndex; // 현재 인덱스 확인
+    public int currentIndex; // 현재 인덱스 확인
 
 
     void Start()
@@ -40,6 +40,8 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
         panels[7] = panel8;
         panels[8] = panel9;
         panels[9] = panel10;
+
+        ShowPanel(0); // 초기 패널 표시
 
 
     }
@@ -90,24 +92,27 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
     }
 
+
+    // 체르리스트 2번 패널들
+
+
     // 체크리스트 2번에 previous클릭
     public void OnClickPre()
     {
         if(currentIndex > 0)
         {
-            currentIndex--;
-            ShowPanel(currentIndex);
+            HidePanel(currentIndex); // 현재 패널 숨기기
+            currentIndex--; // 패널 인덱스에서 -1을하고
+            ShowPanel(currentIndex); // 현재 패널 보여주기 
         }
     }
-
-
-
 
     // 체크리스트 2번에 next클릭
     public void OnClickNxt()
     {
-        if (currentIndex > 0)
+        if (currentIndex < panels.Length - 1)
         {
+            HidePanel(currentIndex); 
             currentIndex++;
             ShowPanel(currentIndex);
         }
@@ -115,14 +120,12 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
     private void ShowPanel(int index)
     {
-        // 모든 패널 비활성화
-        foreach (GameObject panel in panels)
-        {
-            panel.SetActive(false);
-        }
+        panels[index].SetActive(true); // 주어진 인덱스의 패널 활성화
+    }
 
-        // 현재 인덱스의 패널만 활성화
-        panels[index].SetActive(true);
+    private void HidePanel(int index)
+    {
+        panels[index].SetActive(false); // 주어진 인덱스의 패널 비활성화
     }
 
 
