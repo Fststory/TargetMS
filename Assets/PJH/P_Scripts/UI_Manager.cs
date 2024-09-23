@@ -21,6 +21,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject coffeeCanvas;
     public GameObject checkListCanvas;
     public TMP_Text timer_text;
+    public GameObject checkListCanvas4; // 인스턴스 활성화를 위해 껏다켜야함
 
 
     public GameObject RealExitPanel;
@@ -105,6 +106,8 @@ public class UI_Manager : MonoBehaviour
         //lineRenderer = GetComponent<LineRenderer>();
 
         checkListCanvas.SetActive(false);
+
+        checkListCanvas4.SetActive(false);
 
         scrollview.SetActive(false);
         currentButton = null;
