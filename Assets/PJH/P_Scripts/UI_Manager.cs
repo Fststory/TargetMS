@@ -20,6 +20,9 @@ public class UI_Manager : MonoBehaviour
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
     public GameObject checkListCanvas;
+    public TMP_Text timer_text;
+    public GameObject checkListCanvas4; // 인스턴스 활성화를 위해 껏다켜야함
+
 
     public GameObject RealExitPanel;
 
@@ -104,6 +107,8 @@ public class UI_Manager : MonoBehaviour
 
         checkListCanvas.SetActive(false);
 
+        checkListCanvas4.SetActive(false);
+
         scrollview.SetActive(false);
         currentButton = null;
         RealExitPanel.SetActive(false);
@@ -112,18 +117,21 @@ public class UI_Manager : MonoBehaviour
 
     void Update()
     {
-        if(!istimerStart)
-        {
-            currentTime = 60;
+        //if (!istimerStart)
+        //{
+        //    currentTime = 60;
 
-           // currentTimer.text = currentTime; 내일할거임
-                                    
-            if (currentTime>0) currentTime -= Time.deltaTime;
-            else GameEnd();
+        //    currentTimer.text = currentTime; //내일할거임
 
-        }
 
-        if(Input.GetKeyDown(KeyCode.I))
+        //    if (currentTime > 0) currentTime -= Time.deltaTime;
+        //    else GameEnd();
+
+        //}
+
+        Timer(); // 캔버스 타이머
+
+        if (Input.GetKeyDown(KeyCode.I))
         { 
             scrollview.SetActive(!scrollview.activeSelf);
         }
@@ -369,26 +377,26 @@ public class UI_Manager : MonoBehaviour
 
     // 아래 것은 start에서 실행 시킬것
 
-    void GameStart()
-    {
-        tutorial.SetActive(true);
+    //void GameStart()
+    //{
+    //    tutorial.SetActive(true);
                     
-        // 그리고 플레이어 이동 불가
-        playermove.enabled = false;
+    //    // 그리고 플레이어 이동 불가
+    //    playermove.enabled = false;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            tutorial.SetActive(false);
-            // 카운트 다운
-            StartCoroutine(CountDown());
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        tutorial.SetActive(false);
+    //        // 카운트 다운
+    //        StartCoroutine(CountDown());
 
-            // 타이머 시작
-            istimerStart = true;
+    //        // 타이머 시작
+    //        istimerStart = true;
 
-            playermove.enabled = true;
+    //        playermove.enabled = true;
                        
-        }
-    }
+    //    }
+    //}
        
 
 
@@ -434,7 +442,8 @@ public class UI_Manager : MonoBehaviour
 
 
     // 플레이어가 각 오브젝트에 닿았을때 출력 될 함수
-    public void OnCigarette()    {
+    public void OnCigarette()    
+    {
         cigaCanvas.SetActive(true);
         currentCanvas = cigaCanvas;
         
@@ -446,13 +455,20 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+                
 
-        // 밟는 순간 플레이어 움직임 불가능하게 
+        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
+        currentTime = 5;
+        istimerStart = true;
+
+       
     }
-     public void OnPhone()    {
+    public void OnPhone()    
+    {
+        // 휴대폰 캔버스가 활성화
         phoneCanvas.SetActive(true);
+        // 현재 캔버스를 phonecanvas로
         currentCanvas = phoneCanvas;
-
 
         btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
@@ -461,10 +477,17 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+
+        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
+        currentTime = 5;
+        istimerStart = true;
+
+
     }
-    
-   
-     public void OnLegalPad()    {
+
+
+    public void OnLegalPad()  
+    {
         legalCanvas.SetActive(true);
         currentCanvas = legalCanvas;
 
@@ -476,8 +499,13 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
+        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
+        currentTime = 5;
+        istimerStart = true;
+
     }
-     public void OnCoffee()    {
+     public void OnCoffee()   
+    {
         coffeeCanvas.SetActive(true);
         currentCanvas = coffeeCanvas;
 
@@ -489,6 +517,28 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+
+        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
+        currentTime = 5;
+        istimerStart = true;
+    }
+
+    void Timer() // 이것도 rpc ismine 체크해야 함 아마도
+    {
+        // 타이머가 돌아가기 시작하면
+        if(istimerStart)
+        {
+            // 시간을 누적한다.
+            currentTime -= Time.deltaTime;
+            // 0초가 되면 캔버스를 제거한다.
+            if(currentTime <= 0)
+            {
+                Destroy(currentCanvas);
+
+                currentCanvas = null;
+
+            }
+        }
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////메인 UI
