@@ -55,7 +55,7 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
     // 다시 버튼을 누르면 panel을 button 안으로 집어넣게
     // 구현하기로 했음 
 
-    public void Start()
+    public void Awake()
     {
         if(content != null)
         {

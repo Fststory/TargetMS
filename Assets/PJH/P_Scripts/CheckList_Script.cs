@@ -1,6 +1,10 @@
 ﻿using Photon.Pun.Demo.Cockpit;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4번으로 넘어가는거부터 
@@ -25,6 +29,11 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     public GameObject panel10;
     public int currentIndex; // 현재 인덱스 확인
 
+    [SerializeField]
+    //private float timeLimit = 30f; // 타이머
+    public TMP_Text panelTimer; // 타이머를 표시할 텍스트
+    public float timer; // 실제 감소될 시간
+
 
     void Start()
     {
@@ -42,14 +51,18 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
         panels[9] = panel10;
 
         ShowPanel(0); // 초기 패널 표시
-
-        
+               
 
     }
 
     void Update()
     {
-        
+        panelTime();
+
+        if(currentIndex == 0)
+        {
+            timer = 30;           
+        }
     }
 
 
@@ -95,29 +108,35 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
     }
 
-
-    // 체르리스트 2번 패널들
-
+/// <summary>
+/// //////////////////////////////////////////체크리스트2
+/// </summary>
 
     // 체크리스트 2번에 previous클릭
     public void OnClickPre()
     {
+        // 만약, 현재 인덱스가 0보다 크다면
         if(currentIndex > 0)
         {
             HidePanel(currentIndex); // 현재 패널 숨기기
             currentIndex--; // 패널 인덱스에서 -1을하고
             ShowPanel(currentIndex); // 현재 패널 보여주기 
+
+            ResetTimer(); // 그리고 타이머 30으로 리셋
         }
     }
 
     // 체크리스트 2번에 next클릭
     public void OnClickNxt()
     {
+        // 만역, 현재 패널이 총 패널의 갯수보다 1 적다면
         if (currentIndex < panels.Length - 1)
         {
             HidePanel(currentIndex); 
             currentIndex++;
             ShowPanel(currentIndex);
+
+            ResetTimer(); // 그리고 타이머 30으로 리셋
         }
     }
 
@@ -129,6 +148,27 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     private void HidePanel(int index)
     {
         panels[index].SetActive(false); // 주어진 인덱스의 패널 비활성화
+    }
+
+
+    void panelTime()
+    {
+        // 만약, 타이머가 0보다 크다면
+        if(timer > 0)
+        {
+            // 프레임마다 감소시키고
+            timer -= Time.deltaTime;
+            // 남은 시간을 int로 표시 panel타임에 표시
+            panelTimer.text = Mathf.Ceil(timer).ToString();
+        }
+    }
+
+    void ResetTimer()
+    {
+        // currenpanel 의 숫자가 바뀔때마다, 즉 버튼을 누를때마다 초기화
+        timer = 30;
+
+        panelTimer.text = Mathf.Ceil(timer).ToString();
     }
 
 

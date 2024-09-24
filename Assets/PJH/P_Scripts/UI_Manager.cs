@@ -20,7 +20,11 @@ public class UI_Manager : MonoBehaviour
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
     public GameObject checkListCanvas;
-    public TMP_Text timer_text;
+    public float timerTime = 30;
+    public TMP_Text regaltimer_text;
+    public TMP_Text coffeetimer_text;
+    public TMP_Text phonetimer_text;
+    public TMP_Text cigatimer_text;
     public GameObject checkListCanvas4; // 인스턴스 활성화를 위해 껏다켜야함
 
 
@@ -455,10 +459,11 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
-                
 
-        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
-        currentTime = 5;
+        timerTime = 30f;
+
+        // 타이머 값을 UI에 표시
+        cigatimer_text.text = Mathf.Ceil(timerTime).ToString();
         istimerStart = true;
 
        
@@ -478,8 +483,10 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
-        currentTime = 5;
+        timerTime = 30f;
+
+        // 타이머 값을 UI에 표시
+        phonetimer_text.text = Mathf.Ceil(timerTime).ToString();
         istimerStart = true;
 
 
@@ -499,8 +506,10 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
-        currentTime = 5;
+        timerTime = 30f;
+
+        // 타이머 값을 UI에 표시
+        regaltimer_text.text = Mathf.Ceil(timerTime).ToString();
         istimerStart = true;
 
     }
@@ -518,8 +527,10 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-        // 캔버스가 활성화 되는 순간 타이머가 돌아가게 만든다.
-        currentTime = 5;
+        timerTime = 30f;
+
+        // 타이머 값을 UI에 표시
+        coffeetimer_text.text = Mathf.Ceil(timerTime).ToString();
         istimerStart = true;
     }
 
@@ -529,13 +540,38 @@ public class UI_Manager : MonoBehaviour
         if(istimerStart)
         {
             // 시간을 누적한다.
-            currentTime -= Time.deltaTime;
+            timerTime -= Time.deltaTime;
+
+            if(currentCanvas == legalCanvas)
+            {
+                // 타이머 값을 UI에 표시
+                regaltimer_text.text = Mathf.Ceil(timerTime).ToString();
+            }
+            else if(currentCanvas == coffeeCanvas)
+            {
+                // 타이머 값을 UI에 표시
+                coffeetimer_text.text = Mathf.Ceil(timerTime).ToString();
+            }
+            else if(currentCanvas == phoneCanvas)
+            {
+                // 타이머 값을 UI에 표시
+                phonetimer_text.text = Mathf.Ceil(timerTime).ToString();
+            }
+            else if(currentCanvas == cigaCanvas)
+            {
+                // 타이머 값을 UI에 표시
+                cigatimer_text.text = Mathf.Ceil(timerTime).ToString();
+            }
+            
+
             // 0초가 되면 캔버스를 제거한다.
-            if(currentTime <= 0)
+            if (timerTime <= 0)
             {
                 Destroy(currentCanvas);
 
                 currentCanvas = null;
+
+                istimerStart = false; // 타이머 중지
 
             }
         }
