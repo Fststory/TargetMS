@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerVoice : MonoBehaviour
+public class VoiceChatImage : MonoBehaviour
 {
     // Photon Voice View
     public PhotonVoiceView pvv;
@@ -11,11 +11,6 @@ public class PlayerVoice : MonoBehaviour
     public GameObject imgSpeaker;
     // Image SpeechBubble
     public GameObject imgSpeechBubble;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
