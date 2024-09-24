@@ -34,7 +34,7 @@ public class UI_Manager : MonoBehaviour
     //public Button doc1Exit;
     //public LineRenderer lineRenderer;
        
-
+    // wtf
 
     [Header("버튼")]
     public List<Button> buttonlist = new List<Button>();
