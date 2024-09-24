@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/PJH/Scenes/P_StartScreen.unity
+    guid: bf67bd90eca86564999d234d9bc2729b
+  - enabled: 1
+    path: Assets/KYH/Scenes/P_StartScreen_Y.unity
+    guid: f9162e939fb2d5b42943c8d71f6f9e99
+  - enabled: 1
+    path: Assets/KDH/Scenes/connectScene.unity
+    guid: 1d2cfc7a9b9df4c42a907b3d13a7a2bc
+  - enabled: 1
+    path: Assets/KDH/Scenes/PlayScene.unity
+    guid: 260c2e0a72b5e224f836440bb21de5fa
+  - enabled: 0
+    path: Assets/PJH/Scenes/Test_PlayScene.unity
+    guid: b941c3837cdf30b4383476ae6ac83f58
   m_configObjects: {}
