@@ -240,7 +240,7 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    // realExit button 에서 나가기 버튼을 눌렀을때
+    // realExit button 에서 나가기 버튼을 눌렀을때 오브젝트 after로 바꾸기
     public void RealExitExitButton()
     {
         if (currentCanvas == cigaCanvas)
@@ -256,32 +256,30 @@ public class UI_Manager : MonoBehaviour
             //Renderer smokeArea = GetComponent<Renderer>();
 
             //smokeArea.material.color = new Color(0.5f, 0.5f, 0.5f, 1);
-
-
         } 
         if (currentCanvas == coffeeCanvas)
         {
             Destroy(currentCanvas);
 
-            GameObject smoke = GameObject.Find("Coffee_Before");
+            GameObject coffee = GameObject.Find("Coffee_Before");
 
-            smoke.SetActive(false);
+            coffee.SetActive(false);
 
         } if (currentCanvas == phoneCanvas)
         {
             Destroy(currentCanvas);
 
-            GameObject smoke = GameObject.Find("Tablet_Before");
+            GameObject tablet = GameObject.Find("Tablet_Before");
 
-            smoke.SetActive(false);
+            tablet.SetActive(false);
 
         } if (currentCanvas == legalCanvas)
         {
             Destroy(currentCanvas);
 
-            GameObject smoke = GameObject.Find("rigalpad_Before");
+            GameObject rigal = GameObject.Find("rigalpad_Before");
 
-            smoke.SetActive(false);
+            rigal.SetActive(false);
 
         }
            
