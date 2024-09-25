@@ -3,52 +3,28 @@
   "WorkspaceRootPath": "D:\\UnityProjects\\TargetMS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\sttmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\sttmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\audiouploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\audiouploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\outputaudiorecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\outputaudiorecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\kyh\\scripts\\answercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\answercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82562E14-D8DD-6B67-21AE-15CFD900A83E}|PhotonUnityNetworking.csproj|D:\\UnityProjects\\TargetMS\\assets\\photon\\photonunitynetworking\\code\\photonnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82562E14-D8DD-6B67-21AE-15CFD900A83E}|PhotonUnityNetworking.csproj|solutionrelative:assets\\photon\\photonunitynetworking\\code\\photonnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\ui_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\ui_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\legal_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\legal_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\monitor_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\monitor_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\drawcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\drawcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\phone_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\phone_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\scrollview_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\scrollview_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\checklist_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\checklist_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\kdh\\scripts\\gm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kdh\\scripts\\gm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\pjh\\p_scripts\\start_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\pjh\\p_scripts\\start_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,152 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "STTRecorder.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAIwC8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T02:31:39.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "STTManager.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
+              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T02:31:23.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProposalMgr.cs",
               "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
               "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
               "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
               "RelativeToolTip": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAiwDoAAAAFAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAADgvy0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T00:24:49.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "AudioUploader.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAADgvygAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T02:30:58.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OutputAudioRecorder.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAiwBcAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T02:12:54.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AnswerCheck.cs",
               "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "RelativeToolTip": "Assets\\KYH\\Scripts\\AnswerCheck.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAIwDEAAAABAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAYwDUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:22:05.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DrawCircle.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\DrawCircle.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\DrawCircle.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\DrawCircle.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\DrawCircle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvxEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T10:19:04.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Phone_Trigger.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Phone_Trigger.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\Phone_Trigger.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Phone_Trigger.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\Phone_Trigger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T10:12:37.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PhotonNetwork.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
-              "RelativeDocumentMoniker": "Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
-              "RelativeToolTip": "Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
-              "ViewState": "AQIAAJYJAAAAAAAAAAAswKwJAACIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T09:45:04.296Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Monitor_Trigger.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Monitor_Trigger.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\Monitor_Trigger.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Monitor_Trigger.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\Monitor_Trigger.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAcwCAAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T09:35:27.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Legal_Trigger.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Legal_Trigger.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\Legal_Trigger.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Legal_Trigger.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\Legal_Trigger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvxMAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T09:34:49.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ScrollView_Script.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\ScrollView_Script.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\ScrollView_Script.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\ScrollView_Script.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\ScrollView_Script.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:13:15.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CheckList_Script.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\CheckList_Script.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\CheckList_Script.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\CheckList_Script.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\CheckList_Script.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvxIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:02:23.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GM.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KDH\\Scripts\\GM.cs",
-              "RelativeDocumentMoniker": "Assets\\KDH\\Scripts\\GM.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KDH\\Scripts\\GM.cs",
-              "RelativeToolTip": "Assets\\KDH\\Scripts\\GM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T02:43:34.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UI_Manager.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\UI_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\UI_Manager.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\UI_Manager.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\UI_Manager.cs",
-              "ViewState": "AQIAAHQBAAAAAAAAAAAQwJABAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T02:31:37.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Start_Manager.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Start_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\PJH\\P_Scripts\\Start_Manager.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\PJH\\P_Scripts\\Start_Manager.cs",
-              "RelativeToolTip": "Assets\\PJH\\P_Scripts\\Start_Manager.cs",
-              "ViewState": "AQIAALgAAAAAAAAAAAAqwNYAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T15:29:46.323Z"
+              "WhenOpened": "2024-09-25T00:22:05.079Z",
+              "EditorCaption": ""
             }
           ]
         }
