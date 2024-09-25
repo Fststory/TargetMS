@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using Org.BouncyCastle.Asn1.Mozilla;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class CheckList_Panel_Script : MonoBehaviour
 {
@@ -14,12 +16,28 @@ public class CheckList_Panel_Script : MonoBehaviour
     public GameObject button5;
     public GameObject button6;
 
-    public InputField inputfield;
+    public TMP_InputField inputfield; // 기대효과 적을칸
+    public TMP_InputField inputfield2; // 예상 리스크 적을칸
+
+    public GameObject canvas3prefab; // ScrollView_Script 가 달려있는 오브젝트를 넣는다.
+    public ScrollView_Script canvas3; //
 
 
     void Start()
     {
+        //inputfield.onValueChanged.AddListener((string s) => 
+        //{
+        //    ProposalMgr.instance.proposal.audience_type = s;
+        //}); 
+
         
+
+        //inputfield2.onValueChanged.AddListener((string s) =>
+        //{
+        //    ProposalMgr.instance.proposal = s;
+        //});
+
+        canvas3 = canvas3prefab.GetComponent<ScrollView_Script>();
     }
 
     void Update()
@@ -42,6 +60,9 @@ public class CheckList_Panel_Script : MonoBehaviour
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
             ProposalMgr.instance.proposal.project_type = text;
 
+            // 캔버스3에도 전달한다
+            canvas3.UdpateAnwer1(text);
+
             // 그리고 진행도에 정답 이미지 추가할것
         }
         else
@@ -62,6 +83,9 @@ public class CheckList_Panel_Script : MonoBehaviour
 
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
             ProposalMgr.instance.proposal.audience_type = text;
+
+            // 캔버스3에도 전달한다
+            canvas3.UdpateAnwer2(text);
 
             // 그리고 진행도에 정답 이미지 추가할것
         }
@@ -84,6 +108,9 @@ public class CheckList_Panel_Script : MonoBehaviour
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
             ProposalMgr.instance.proposal.target = text;
 
+            // 캔버스3에도 전달한다
+            canvas3.UdpateAnwer3(text);
+
             // 그리고 진행도에 정답 이미지 추가할것
         }
         else
@@ -100,26 +127,11 @@ public class CheckList_Panel_Script : MonoBehaviour
         // 진행도 오답 표시 추가
     }
 
-    public void Input1() // 입력칸 1
-    {
-        // input 필드 안의 tmptext 가져온다
-        TMP_Text inputtext = inputfield.GetComponent<TMP_Text>();
 
-        if(inputtext != null)
-        {
-            // 안에 적힐 글을 text 변수 선언을 하고
-            string text = inputtext.text;
 
-            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
-            ProposalMgr.instance.proposal.target = text;
-        }
-    }
+    
 
-    public void Input2() // 입력칸 2
-    {
-
-        //inputfield
-    }
+   
 }
 
 

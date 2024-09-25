@@ -22,11 +22,7 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     public GameObject panel3;
     public GameObject panel4;
     public GameObject panel5;
-    public GameObject panel6;
-    public GameObject panel7;
-    public GameObject panel8;
-    public GameObject panel9;
-    public GameObject panel10;
+   
     public int currentIndex; // 현재 인덱스 확인
 
     [SerializeField]
@@ -37,18 +33,14 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
     void Start()
     {
-        panels = new GameObject[10];
+        panels = new GameObject[5];
 
         panels[0] = panel1;
         panels[1] = panel2;
         panels[2] = panel3;
         panels[3] = panel4;
         panels[4] = panel5;
-        panels[5] = panel6;
-        panels[6] = panel7;
-        panels[7] = panel8;
-        panels[8] = panel9;
-        panels[9] = panel10;
+        
 
         ShowPanel(0); // 초기 패널 표시
                
