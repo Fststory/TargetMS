@@ -46,7 +46,7 @@ public class ProposalMgr : MonoBehaviour
     // 기획서 프롬프트
     public Proposal proposal = new Proposal();
 
-    //public Canvas4_Script canvas;
+    public Canvas4_Script canvas;
 
     // 싱글턴 패턴
     private void Awake()
@@ -112,7 +112,7 @@ public class ProposalMgr : MonoBehaviour
             response = response.Replace("}", "");
 
             text_response.text = response;  // UI에 출력 -> Proposal_result 게임옵젝
-            //canvas.DoneText();
+            canvas.DoneText();
             Debug.LogWarning(response);
         }
         else
