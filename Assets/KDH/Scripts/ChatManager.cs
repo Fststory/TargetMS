@@ -206,8 +206,6 @@
 using TMPro;
 using UnityEngine;
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
 //using ColorUtility = UnityEngine.ColorUtility; //있어도 없어도 되는거
 
@@ -280,12 +278,14 @@ public class ChatManager : MonoBehaviourPun
         // "<color=#ffffff"> 원하는 내용 </color>"
         string nick = "<color=#" + ColorUtility.ToHtmlStringRGB(nickNameColor) + ">" + PhotonNetwork.NickName + "</color>";
         string chat = nick + " : " + s;
+
+        //string chat = PhotonNetwork.NickName + " : " + s;
         //string chat = "<color=#" + ColorUtility.ToHtmlStringRGB(nickNameColor) + ">" + PhotonNetwork.NickName + "</color> : " + s;
 
         // AddChat RPC 함수 호출
-        photonView.RPC(nameof(AddChat), RpcTarget.All, s);
+        photonView.RPC(nameof(AddChat), RpcTarget.All, chat);
 
-        print("엔터 침 : " + s);
+        print("엔터 침 : " + chat);
 
         // 강제로 inputchat을 활성화.
         inputChat.ActivateInputField();

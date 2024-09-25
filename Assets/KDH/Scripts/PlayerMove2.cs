@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using TMPro;
 
 public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 {
@@ -42,6 +43,9 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
     // 이동 제어 변수
     private bool canMove = true; // 플레이어가 이동할 수 있는지 여부
 
+    // 닉네임 UI
+    public TMP_Text nickName;
+
     // LookPos
     //public Transform lookPos;
 
@@ -68,6 +72,9 @@ public class PlayerMove2 : MonoBehaviourPun, IPunObservable
 
         // 애니메이터 가져오기
         anim = GetComponentInChildren<Animator>();
+
+        // 닉네임 Ui에 해당캐릭터의 주인의 닉네임 설정
+        nickName.text = photonView.Owner.NickName;
     }
 
     void Update()
