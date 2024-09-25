@@ -15,6 +15,7 @@ public class CheckList_Panel_Script : MonoBehaviour
     public GameObject button4;
     public GameObject button5;
     public GameObject button6;
+    public GameObject button7;
 
     public TMP_InputField inputfield; // 기대효과 적을칸
     public TMP_InputField inputfield2; // 예상 리스크 적을칸
