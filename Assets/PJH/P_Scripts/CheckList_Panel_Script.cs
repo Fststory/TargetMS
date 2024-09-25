@@ -38,7 +38,6 @@ public class CheckList_Panel_Script : MonoBehaviour
             //Debug.Log(text);
 
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
-            ProposalMgr.instance.proposal.analysis_type = text;
 
             // 그리고 진행도에 정답 이미지 추가할것
         }
@@ -206,7 +205,6 @@ public class CheckList_Panel_Script : MonoBehaviour
             //Debug.Log(text);
 
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
-            ProposalMgr.instance.proposal.worker = text;
 
             // 그리고 진행도에 정답 이미지 추가할것
         }

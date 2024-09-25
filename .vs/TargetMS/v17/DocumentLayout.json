@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UnityProjects\\TargetMS\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\sttmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\sttmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\teamproject3\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\sttsummarymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\sttsummarymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\audiouploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\assets\\kyh\\scripts\\record\u0026upload_audio\\audiouploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\audiouploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|d:\\unityprojects\\targetms\\assets\\kyh\\scripts\\record\u0026upload_audio\\outputaudiorecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\voicechat\\sttrecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\proposalmgr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\assets\\kyh\\scripts\\record\u0026upload_audio\\outputaudiorecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\record\u0026upload_audio\\outputaudiorecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|D:\\UnityProjects\\TargetMS\\assets\\kyh\\scripts\\answercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\assets\\kyh\\scripts\\answercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47646C31-36F8-FAAD-49D4-A19129E3F6B7}|Assembly-CSharp.csproj|solutionrelative:assets\\kyh\\scripts\\answercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,85 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "STTRecorder.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
-              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
-              "RelativeToolTip": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAIwC8AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:31:39.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "STTManager.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
-              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
-              "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAFAAAA",
+              "Title": "STTSummaryManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTSummaryManager.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTSummaryManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTSummaryManager.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\STTSummaryManager.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAA7wFEAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:31:23.857Z",
+              "WhenOpened": "2024-09-25T06:47:54.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProposalMgr.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
-              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
-              "RelativeToolTip": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAADgvy0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:24:49.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "AudioUploader.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
               "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
               "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\AudioUploader.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAADgvygAAABDAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAQwDwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T02:30:58.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "STTRecorder.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\VoiceChat\\STTRecorder.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwC8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T02:31:39.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProposalMgr.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
+              "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\ProposalMgr.cs",
+              "RelativeToolTip": "Assets\\KYH\\Scripts\\ProposalMgr.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAADgvy0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T00:24:49.176Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "OutputAudioRecorder.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
               "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
               "RelativeToolTip": "Assets\\KYH\\Scripts\\Record\u0026Upload_Audio\\OutputAudioRecorder.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAiwBcAAABcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:12:54.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T02:12:54.531Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "AnswerCheck.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "RelativeDocumentMoniker": "Assets\\KYH\\Scripts\\AnswerCheck.cs",
-              "ToolTip": "D:\\UnityProjects\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\TeamProject3\\TargetMS\\Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "RelativeToolTip": "Assets\\KYH\\Scripts\\AnswerCheck.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAYwDUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:22:05.079Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:22:05.079Z"
             }
           ]
         }
