@@ -22,16 +22,21 @@ public class Canvas4_Script : MonoBehaviour
 
     void Update()
     {
-        // 만약, 문서가 null이 아니라면
-       if(actualDoc != null)
-        {
-            // 필요하다면 photonNetwork.instantiate 을쓴다.
-            //PhotonNetwork.Instantiate
-            docDone.gameObject.SetActive(true);
-            docING.gameObject.SetActive(false);
+       // // 만약, 문서가 null이 아니라면
+       //if(actualDoc != null)
+       // {
+       //     // 필요하다면 photonNetwork.instantiate 을쓴다.
+       //     //PhotonNetwork.Instantiate
+           
 
-        }
+       // }
        
+    }
+
+    public void DoneText()
+    {
+        docDone.gameObject.SetActive(true);
+        docING.gameObject.SetActive(false);
     }
 
     
