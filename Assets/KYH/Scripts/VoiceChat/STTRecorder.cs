@@ -45,7 +45,7 @@ public class STTRecorder : MonoBehaviourPun
         photonView.RPC(nameof(AddVoiceChat), RpcTarget.All, chat);
 
         // STTManager 에 stt 모으기
-        STTManager.instance.AddSTTResult(chat);
+        STTSummaryManager.instance.AddSTTResult(chat);
     }
 
     // 채팅 추가 함수

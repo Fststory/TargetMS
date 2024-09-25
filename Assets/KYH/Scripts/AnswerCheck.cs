@@ -30,15 +30,13 @@ public class AnswerCheckMgr : MonoBehaviour
 
         // 문항 순서
         // 1.유형 2.읽는 이 3.타겟 4.기대효과 5.예상 리스크
-        // 1,2,3 은 여기서 채점
-        // 4,5 는 AI에게 채점 결과를 받을 것임
 
         // 문항별 정답 체크
         if (checklist.project_type == "프로그램 개발") tORf[0] = true;
         if (checklist.audience_type == "내부 개발자") tORf[1] = true;
-        if (checklist.target == "특정 연령대") tORf[2] = true;
-        //tORf[3] = checklist.expected_outcome;
-        //tORf[4] = checklist.potential_risk;
+        if (checklist.target == "유아") tORf[2] = true;
+        if (checklist.expected_outcome == "우주관련 콘텐츠 관심도 상승") tORf[3] = true;
+        if (checklist.potential_risk == "적은 예산으로 인한 고용에 대한 문제 발생") tORf[4] = true;
 
         // 문항별 O/X 에 따라 이미지 표시
         for (int i = 0; i < 5; i++)

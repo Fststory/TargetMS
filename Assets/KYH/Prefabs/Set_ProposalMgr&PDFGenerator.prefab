@@ -122,8 +122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2309d34d5162d4fa792ad099c71a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://metaai.iptime.org:65535/ai/proposal
+  url: http://metaai2.iptime.org:65535/ai/proposal
   text_response: {fileID: 924215700410550147}
+  proposal:
+    audience_type: 
+    subject: 
+    project_type: 
+    step: 
+    plan: 
+    target: 
+    purpose: 
+    budget: 
+    expected_outcome: 
+    potential_risk: 
+  canvas: {fileID: 0}
 --- !u!1 &6410726754503493837
 GameObject:
   m_ObjectHideFlags: 0
