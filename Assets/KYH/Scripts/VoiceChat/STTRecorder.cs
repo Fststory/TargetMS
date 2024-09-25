@@ -36,12 +36,16 @@ public class STTRecorder : MonoBehaviourPun
         //if (s.Length == 0) return;
 
         // 채팅 내용을 (NickName : 채팅 내용) 으로 묶기
-        // "<color=#ffffff> 원하는 내용 </color>"
-        string nick = "<color=#" + ColorUtility.ToHtmlStringRGB(nickNameColor) + ">" + PhotonNetwork.NickName + "</color>";
-        string chat = nick + " : " + s;
+        // "<color=#ffffff> 원하는 내용 </color>"    // 색깔 있는 버전
+        //string nick = "<color=#" + ColorUtility.ToHtmlStringRGB(nickNameColor) + ">" + PhotonNetwork.NickName + "</color>";
+        //string chat = nick + " : " + s;                
+        string chat = PhotonNetwork.NickName + " : " + s;   // 색깔 없는 버전
 
         // AddChat Rpc 함수 호출
         photonView.RPC(nameof(AddVoiceChat), RpcTarget.All, chat);
+
+        // STTManager 에 stt 모으기
+        STTManager.instance.AddSTTResult(chat);
     }
 
     // 채팅 추가 함수

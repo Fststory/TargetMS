@@ -21,7 +21,7 @@ public class OutputAudioRecorder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             print("녹음 시작!");
-            clip = Microphone.Start(micList[0], true, 30, 44100);   // 녹음하는 오디오 클립이 clip 에 담김
+            clip = Microphone.Start(micList[0], true, 0, 44100);   // 녹음하는 오디오 클립이 clip 에 담김
         }
         // 숫자 6번 누르면 녹음 종료!
         if (Input.GetKeyDown(KeyCode.Alpha6))
