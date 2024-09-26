@@ -13,6 +13,9 @@ public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
 
+    
+
+
     [Header("캔버스")]
     // 오브젝트 접촉시 띄울 캔버스
     public GameObject cigaCanvas;
@@ -341,7 +344,7 @@ public class UI_Manager : MonoBehaviour
             // 키텍스트를 활성화
             Keytext.gameObject.SetActive(true);
             // 1초 뒤에 숨기고
-            Invoke("HideKeytext", 1f);
+            Invoke("HideKeytext", 0.5f);
 
             // 키워드를 찾는다
             Transform kWord = keyWord.transform.Find("Keyword");    
@@ -464,6 +467,8 @@ public class UI_Manager : MonoBehaviour
 
 
     // 플레이어가 각 오브젝트에 닿았을때 출력 될 함수
+
+
     public void OnCigarette()    
     {
         cigaCanvas.SetActive(true);
@@ -488,6 +493,8 @@ public class UI_Manager : MonoBehaviour
 
        
     }
+
+    [PunRPC]
     public void OnPhone()    
     {
         // 휴대폰 캔버스가 활성화
@@ -514,7 +521,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-
+    [PunRPC]
     public void OnLegalPad()  
     {
         legalCanvas.SetActive(true);
@@ -537,7 +544,9 @@ public class UI_Manager : MonoBehaviour
         istimerStart = true;
 
     }
-     public void OnCoffee()   
+
+    [PunRPC]
+    public void OnCoffee()   
     {
         coffeeCanvas.SetActive(true);
 
