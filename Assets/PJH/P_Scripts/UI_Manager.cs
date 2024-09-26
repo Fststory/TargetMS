@@ -116,12 +116,12 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
- 
+
         //checkListCanvas3.SetActive(false);
-        //checkListCanvas4.SetActive(false);
 
 
         AllCheckLISt.SetActive(false);
+        checkListCanvas4.SetActive(false); // instance를 위해
 
         scrollview.SetActive(false);
         currentButton = null;
@@ -191,6 +191,8 @@ public class UI_Manager : MonoBehaviour
             {
                 Debug.Log("자식중에 panel 이 없습니다.");
             }
+
+      
 
     }
       
