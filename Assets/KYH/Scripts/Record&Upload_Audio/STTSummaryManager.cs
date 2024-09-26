@@ -89,8 +89,8 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
             // |n 을 제거하는 코드
             //sttSummary = sttSummary.Replace("|n", "");
 
-            //tmpSummary[cls.currentIndex].text = sttSummary;  // UI에 출력
-            photonView.RPC(nameof(Summary), RpcTarget.All, cls.currentIndex, sttSummary);
+            tmpSummary[cls.currentIndex].text = sttSummary;  // UI에 출력
+            //photonView.RPC(nameof(Summary), RpcTarget.All, cls.currentIndex, sttSummary);
             Debug.LogWarning(response);
         }
         else
