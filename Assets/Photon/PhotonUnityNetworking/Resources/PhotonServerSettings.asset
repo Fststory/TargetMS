@@ -51,6 +51,7 @@ MonoBehaviour:
   - OnLegalPad
   - OnPhone
   - AddSTTResult
+  - Summary
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

@@ -89,7 +89,8 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
             // |n 을 제거하는 코드
             //sttSummary = sttSummary.Replace("|n", "");
 
-            tmpSummary[cls.currentIndex].text = sttSummary;  // UI에 출력
+            //tmpSummary[cls.currentIndex].text = sttSummary;  // UI에 출력
+            photonView.RPC(nameof(Summary), RpcTarget.All, cls.currentIndex, sttSummary);
             Debug.LogWarning(response);
         }
         else
@@ -97,5 +98,11 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
             tmpSummary[cls.currentIndex].text = request.error;
             Debug.LogError(request.error);
         }
+    }
+
+    [PunRPC]
+    public void Summary(int a, string b)
+    {
+        tmpSummary[a].text = b;
     }
 }
