@@ -95,7 +95,12 @@ public class UI_Manager : MonoBehaviour
     public GameObject smoke;
     public GameObject phone;
     public GameObject regal;
-    
+
+
+    [Header("사운드")]
+    public AudioSource audioSource;
+    public AudioClip keywordSound;
+    public AudioClip coffeeAfterSound;
 
     // 싱글톤
     private void Awake()
@@ -296,7 +301,20 @@ public class UI_Manager : MonoBehaviour
 
             coffee.SetActive(false);
 
-        } if (currentCanvas == phoneCanvas)
+            AudioSource audio = UI_Manager.instance.audioSource;
+            AudioClip coffeeSound = UI_Manager.instance.coffeeAfterSound;
+
+            audioSource.clip = coffeeAfterSound;
+            audioSource.time = 5f;
+            audioSource.Play();
+
+
+            Invoke("StopSound", 2f);
+
+
+
+        }
+        if (currentCanvas == phoneCanvas)
         {
             Destroy(currentCanvas);
 
@@ -336,6 +354,14 @@ public class UI_Manager : MonoBehaviour
     // 키워드 눌렀을 때
     public void OnClickKeyword(Button keyWord) 
     {
+        audioSource.clip = keywordSound;
+        audioSource.time = 2f;
+        audioSource.Play();
+
+        Invoke("StopSound", 0.5f);
+
+
+
         // keyWord 의 자식중 keytext를 찾음
         Transform findKeyText = keyWord.transform.Find("Keytext");
         // keyWord 버튼의 text 자식을 가져옴
@@ -664,8 +690,11 @@ public class UI_Manager : MonoBehaviour
         panel.SetActive(false);
     }
 
-
-
+    // 모든 소리 정지 함수
+    public void StopSound()
+    {
+        audioSource.Stop();
+    }
 
 
 }
