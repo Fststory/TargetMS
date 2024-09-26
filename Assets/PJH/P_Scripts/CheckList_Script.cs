@@ -51,10 +51,12 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     {
         panelTime();
 
-        if(currentIndex == 0)
-        {
-            timer = 30;           
-        }
+        //if(currentIndex == 0)
+        //{
+        //    timer = 30;
+
+           
+        //}
     }
 
 

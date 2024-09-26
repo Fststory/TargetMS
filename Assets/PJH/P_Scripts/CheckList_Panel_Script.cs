@@ -47,7 +47,7 @@ public class CheckList_Panel_Script : MonoBehaviour
     }
 
     // 정답 클릭할때
-    public void OnClick1(Button selectedBtn) // 유형 답변
+    public void OnClick1(Button selectedBtn) // [유형] 답변
     {
         // 버튼의 자식에서 TMP_Text를 가져온다.
         TMP_Text btnText = selectedBtn.GetComponentInChildren<TMP_Text>();
@@ -57,13 +57,15 @@ public class CheckList_Panel_Script : MonoBehaviour
             // TMP_Text의 텍스트를 가져온다.
             string text = btnText.text;
             //Debug.Log(text);
-
-            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
-            ProposalMgr.instance.proposal.project_type = text;
 
             // 캔버스3에도 전달한다
             canvas3.UdpateAnwer1(text);
 
+            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
+            ProposalMgr.instance.proposal.project_type = text;
+
+           
+
             // 그리고 진행도에 정답 이미지 추가할것
         }
         else
@@ -71,7 +73,7 @@ public class CheckList_Panel_Script : MonoBehaviour
             Debug.LogWarning("TMP_Text를 찾을 수 없습니다.");
         }
     }
-    public void OnClick2(Button selectedBtn) // 읽는 이
+    public void OnClick2(Button selectedBtn) // [읽는 이]
     {
         // 버튼의 자식에서 TMP_Text를 가져온다.
         TMP_Text btnText = selectedBtn.GetComponentInChildren<TMP_Text>();
@@ -82,12 +84,14 @@ public class CheckList_Panel_Script : MonoBehaviour
             string text = btnText.text;
             //Debug.Log(text);
 
-            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
-            ProposalMgr.instance.proposal.audience_type = text;
 
             // 캔버스3에도 전달한다
             canvas3.UdpateAnwer2(text);
 
+
+            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
+            ProposalMgr.instance.proposal.audience_type = text;
+
             // 그리고 진행도에 정답 이미지 추가할것
         }
         else
@@ -95,7 +99,7 @@ public class CheckList_Panel_Script : MonoBehaviour
             Debug.LogWarning("TMP_Text를 찾을 수 없습니다.");
         }
     }
-    public void OnClick3(Button selectedBtn) // 타겟
+    public void OnClick3(Button selectedBtn) // [타겟]
     {
         // 버튼의 자식에서 TMP_Text를 가져온다.
         TMP_Text btnText = selectedBtn.GetComponentInChildren<TMP_Text>();
@@ -106,11 +110,13 @@ public class CheckList_Panel_Script : MonoBehaviour
             string text = btnText.text;
             //Debug.Log(text);
 
+            // 캔버스3에도 전달한다
+            canvas3.UdpateAnwer3(text);
+
             // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
             ProposalMgr.instance.proposal.target = text;
 
-            // 캔버스3에도 전달한다
-            canvas3.UdpateAnwer3(text);
+           
 
             // 그리고 진행도에 정답 이미지 추가할것
         }
@@ -119,7 +125,60 @@ public class CheckList_Panel_Script : MonoBehaviour
             Debug.LogWarning("TMP_Text를 찾을 수 없습니다.");
         }
     }
-    
+    public void OnClick4(Button selectedBtn) // [기대효과]
+    {
+        // 버튼의 자식에서 TMP_Text를 가져온다.
+        TMP_Text btnText = selectedBtn.GetComponentInChildren<TMP_Text>();
+
+        if (btnText != null)
+        {
+            // TMP_Text의 텍스트를 가져온다.
+            string text = btnText.text;
+            //Debug.Log(text);
+
+            // 캔버스3에 먼저 전달
+            canvas3.UdpateAnwer4(text);
+
+            // 해당 버튼의 inputtext를 proposalMGR로 보낸다. (checklist canvas 4가 맨처음 활성화됬다가 setactive false가 되어야한다.)
+            ProposalMgr.instance.proposal.expected_outcome = text;
+
+           
+
+            // 그리고 진행도에 정답 이미지 추가할것
+        }
+        else
+        {
+            Debug.LogWarning("TMP_Text를 찾을 수 없습니다.");
+        }
+    }
+
+    public void OnClick5(Button selectedBtn) // [예상효과]
+    {
+        // 버튼의 자식에서 TMP_Text를 가져온다.
+        TMP_Text btnText = selectedBtn.GetComponentInChildren<TMP_Text>();
+
+        if (btnText != null)
+        {
+            // TMP_Text의 텍스트를 가져온다.
+            string text = btnText.text;
+            //Debug.Log(text);
+
+           
+
+            // 캔버스3에도 전달한다
+            canvas3.UdpateAnwer5(text);
+
+            // 해당 버튼의 inputtext를 proposalMGR로 보낸다.
+            ProposalMgr.instance.proposal.potential_risk = text;
+
+            // 그리고 진행도에 정답 이미지 추가할것
+        }
+        else
+        {
+            Debug.LogWarning("TMP_Text를 찾을 수 없습니다.");
+        }
+    }
+
 
 
     // 오답을 클릭했을때 

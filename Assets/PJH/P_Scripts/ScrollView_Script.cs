@@ -62,7 +62,7 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
         //    Debug.Log("문제있음");
         //}
 
-        layoutGroup = content.GetComponent<VerticalLayoutGroup>();
+       // layoutGroup = content.GetComponent<VerticalLayoutGroup>();
     }
 
     // 버튼 눌렀을때

@@ -116,6 +116,12 @@ public class UI_Manager : MonoBehaviour
         scrollview.SetActive(false);
         currentButton = null;
         RealExitPanel.SetActive(false);
+
+
+        cigaCanvas.SetActive(false);
+        phoneCanvas.SetActive(false);
+        legalCanvas.SetActive(false);
+        coffeeCanvas.SetActive(false);
     }
 
 
@@ -247,6 +253,8 @@ public class UI_Manager : MonoBehaviour
         {
             Destroy(currentCanvas);
 
+            timerTime = 0;
+
             GameObject smoke = GameObject.Find("Smoke_Before");
 
             smoke.SetActive(false);
@@ -257,6 +265,9 @@ public class UI_Manager : MonoBehaviour
 
             //smokeArea.material.color = new Color(0.5f, 0.5f, 0.5f, 1);
         } 
+
+
+
         if (currentCanvas == coffeeCanvas)
         {
             Destroy(currentCanvas);
