@@ -13,16 +13,28 @@ public struct SttSum
     public string data;
 }
 
+[Serializable]
+public struct SumResult
+{
+    public string result;
+}
+
 public class STTSummaryManager : MonoBehaviourPunCallbacks
 {
     public string summaryUrl;  // summary 주소
     
     public static STTSummaryManager instance;  // 싱글톤
 
+    [Header("현재 문제 번호")]
+    public CheckList_Script cls;    // cls 에 2단계 캔버스 할당해줘야 됨
+    // 현재 풀고 있는 문제 번호 0~4, 총 5개
+    // cls.currentIndex;
+
+    [Header("문제별 회의 내용 STT")]
     public SttSum[] sum = new SttSum[5];    // 5문제니까 요약도 5개
 
-    // 출력받을 TMP_Text
-    public TMP_Text[] text_response = new TMP_Text[5];
+    [Header("문제별 회의 요약본")]
+    public TMP_Text[] tmpSummary = new TMP_Text[5];  // 출력받을 TMP_Text
 
     private void Awake()
     {
@@ -43,10 +55,10 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
     // STT 결과를 추가하는 함수
     public void AddSTTResult(string sttResult)
     {
-        sum[0].data += sttResult;
+        sum[cls.currentIndex].data += sttResult;
         //if(현재 푸는 문제 번호 = i)   // 현재 풀고 있는 문제의 번호를 알아야 됨. 변수로 만들어서
         //{
-        //    sum[i-1].data += sttResult;
+        //    sum[i].data += sttResult;
         //}
         Debug.Log("STT 결과 추가: " + sttResult);
     }
@@ -58,7 +70,8 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
 
     IEnumerator PostJsonRequest(string url)
     {
-        string proposalJson = JsonUtility.ToJson(sum[0], true);
+        // 해당 문제의 회의록에 작성해야 됨
+        string proposalJson = JsonUtility.ToJson(sum[cls.currentIndex], true);
         byte[] jsonBins = Encoding.UTF8.GetBytes(proposalJson);
 
         // Post를 하기 위한 준비를 한다.
@@ -73,18 +86,18 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
         if (request.result == UnityWebRequest.Result.Success)
         {
             // JSON 파싱
-            SttSum response = JsonUtility.FromJson<SttSum>(request.downloadHandler.text);
-            string sttSummary = response.data;
+            SumResult response = JsonUtility.FromJson<SumResult>(request.downloadHandler.text);
+            string sttSummary = response.result;
 
             // |n 을 제거하는 코드
-            sttSummary = sttSummary.Replace("|n", "");
+            //sttSummary = sttSummary.Replace("|n", "");
 
-            text_response[0].text = sttSummary;  // UI에 출력 -> summary_result 게임옵젝
+            tmpSummary[cls.currentIndex].text = sttSummary;  // UI에 출력
             Debug.LogWarning(response);
         }
         else
         {
-            text_response[0].text = request.error;
+            tmpSummary[cls.currentIndex].text = request.error;
             Debug.LogError(request.error);
         }
     }

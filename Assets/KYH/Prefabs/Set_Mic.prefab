@@ -1143,6 +1143,7 @@ GameObject:
   - component: {fileID: 596609635038673985}
   - component: {fileID: 3366106956411521819}
   - component: {fileID: 8122333427265672533}
+  - component: {fileID: 2651466715633617676}
   m_Layer: 0
   m_Name: Mic
   m_TagString: Untagged
@@ -1172,7 +1173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5491751442968828703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39e9de7d6da90b241886f8587b29cda4, type: 3}
   m_Name: 
@@ -1192,6 +1193,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverUrl: http://metaai2.iptime.org:65535/audio/stt
   sttRecorder: {fileID: 4767820155867430629}
+--- !u!114 &2651466715633617676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491751442968828703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb11361ec88888f4e89c529eaa039d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioUploader: {fileID: 8122333427265672533}
 --- !u!1 &5560067893838380674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2daf6b2dd38004e97e1170cda44090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  summaryUrl: 
+  summaryUrl: http://metaai2.iptime.org:65535/ai/summary
   sum:
   - data: 
   - data: 
