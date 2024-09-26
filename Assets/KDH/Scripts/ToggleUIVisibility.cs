@@ -21,12 +21,22 @@ public class ToggleUIVisibility : MonoBehaviour
         toggleButton.onClick.AddListener(ToggleVisibility);
 
         // 초기 UI 상태 설정
-        SetUIVisibility(isVisible);
+        SetUIVisibility(!isVisible);
         // 초기 위치 설정
         uiRectTransform.anchoredPosition = initialPosition;
     }
 
-   public void ToggleVisibility()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            ToggleVisibility();
+        }
+
+        
+    }
+
+    public void ToggleVisibility()
     {
         // 현재 상태를 반대로 전환
         isVisible = !isVisible;
@@ -69,6 +79,8 @@ public class ToggleUIVisibility : MonoBehaviour
         {
             // 이동할 위치로 이동
             uiRectTransform.anchoredPosition = movedPosition;
+           
+           
         }
 
         // 위치 상태를 토글

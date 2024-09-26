@@ -458,6 +458,8 @@ public class UI_Manager : MonoBehaviour
     public void OnCigarette()    
     {
         cigaCanvas.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
         currentCanvas = cigaCanvas;
         
         // 작동하면 됬지
@@ -481,6 +483,8 @@ public class UI_Manager : MonoBehaviour
     {
         // 휴대폰 캔버스가 활성화
         phoneCanvas.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
         // 현재 캔버스를 phonecanvas로
         currentCanvas = phoneCanvas;
 
@@ -505,6 +509,8 @@ public class UI_Manager : MonoBehaviour
     public void OnLegalPad()  
     {
         legalCanvas.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
         currentCanvas = legalCanvas;
 
         btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
@@ -525,6 +531,8 @@ public class UI_Manager : MonoBehaviour
      public void OnCoffee()   
     {
         coffeeCanvas.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
         currentCanvas = coffeeCanvas;
 
 
