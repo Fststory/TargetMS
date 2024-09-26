@@ -56,8 +56,14 @@ public class UI_Manager : MonoBehaviour
     public GameObject currentCanvas; // 현재 캔버스
     public Button currentButton; // 현재 활성화된 버튼
 
+    public Transform position1;
+    public Transform position2;
+    public Transform position3;
+    public Transform position4;
+
 
     [Header("버튼위치")]
+    public List<Transform> poslist = new List<Transform>();
     public Transform pos1;
     public Transform pos2;
     public Transform pos3;
@@ -128,6 +134,7 @@ public class UI_Manager : MonoBehaviour
         RealExitPanel.SetActive(false);
 
 
+
         cigaCanvas.SetActive(false);
         phoneCanvas.SetActive(false);
         legalCanvas.SetActive(false);
@@ -191,8 +198,7 @@ public class UI_Manager : MonoBehaviour
             {
                 Debug.Log("자식중에 panel 이 없습니다.");
             }
-
-      
+                  
 
     }
       
@@ -242,7 +248,7 @@ public class UI_Manager : MonoBehaviour
                 // 현재 버튼 제거   
                 Destroy(currentButton.gameObject);
                 // 버튼 자리를 재배치한다.
-                ButtonPlaceSwap();
+               // ButtonPlaceSwap();
                 
             }
             else if (!currentPanel.activeSelf)
@@ -483,9 +489,13 @@ public class UI_Manager : MonoBehaviour
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
 
+      
+       
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+
+      
 
         timerTime = 30f;
 
@@ -506,13 +516,19 @@ public class UI_Manager : MonoBehaviour
         // 현재 캔버스를 phonecanvas로
         currentCanvas = phoneCanvas;
 
+        // 작동하면 됬지
         btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
 
+      
+
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+
+      
+
 
         timerTime = 30f;
 
@@ -539,6 +555,7 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
+
         timerTime = 30f;
 
         // 타이머 값을 UI에 표시
@@ -563,6 +580,8 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
+
+     
 
         timerTime = 30f;
 
