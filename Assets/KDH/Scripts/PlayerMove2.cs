@@ -1,4 +1,197 @@
-﻿// 영역 위에선 움직이지 마 + 마우스 자동 생성
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using Photon.Pun;
+//using TMPro;
+//using System;
+
+//public class PlayerMove2 : MonoBehaviourPun, IPunObservable
+//{
+//    // 캐릭터 컨트롤러
+//    CharacterController cc;
+
+//    // 이동 속력
+//    public float moveSpeed = 6f;
+
+//    // 중력
+//    float gravity = -9.81f;
+//    // y 속력
+//    float yVelocity;
+
+//    // 점프 초기 속력
+//    public float jumpPower = 3;
+
+//    // 카메라
+//    public GameObject cam;
+
+//    // 서버에서 넘어오는 위치값
+//    Vector3 receivePos;
+//    // 서버에서 넘어오는 회전값
+//    Quaternion receiveRot; // quaternion -> Quaternion으로 변경
+
+//    // 보정 속력
+//    public float lerpSpeed = 50;
+
+//    // 애니메이터
+//    Animator anim;
+
+//    // AD 키를 입력 받을 변수
+//    float h;
+//    // WS 키를 입력 받을 변수
+//    float v;
+
+//    // 이동 제어 변수
+//    private bool canMove = true; // 플레이어가 이동할 수 있는지 여부
+
+//    // 닉네임 UI
+//    public TMP_Text nickName;
+
+//    // MicArea 스크립트 참조
+//    private MicArea micArea;
+
+//    void Start()
+//    {
+//        // 캐릭터 컨트롤러 가져오기
+//        cc = GetComponent<CharacterController>();
+
+//        // 내 것일 때만 카메라를 활성화
+//        cam.SetActive(photonView.IsMine);
+
+//        if (photonView.IsMine)
+//        {
+//            // 마우스 잠그기
+//            //Cursor.lockState = CursorLockMode.Locked;
+//        }
+
+//        // 애니메이터 가져오기
+//        anim = GetComponentInChildren<Animator>();
+
+//        // 닉네임 Ui에 해당 캐릭터의 주인의 닉네임 설정
+//        nickName.text = photonView.Owner.NickName;
+
+//        // MicArea 스크립트 가져오기
+//        micArea = FindObjectOfType<MicArea>();
+//    }
+
+//    void Update()
+//    {
+//        // 내 플레이어인지 확인
+//        if (photonView.IsMine)
+//        {
+//            // ESC 키를 누르면 이동 허용
+//            if (!canMove && Input.GetKeyDown(KeyCode.Escape))
+//            {
+//                canMove = true;
+//            }
+
+//            // 이동이 가능한 상태에서만 움직임 처리
+//            if (canMove)
+//            {
+//                // 마우스의 lockmode가 none 이면 (마우스 포인터 활성화 되어있다면) 함수 나가자
+//                if (Cursor.lockState == CursorLockMode.None)
+//                {
+//                    return;
+//                }
+
+//                // 1. 키보드 입력 (WASD) 값을 받음
+//                h = Input.GetAxis("Horizontal");
+//                v = Input.GetAxis("Vertical");
+
+//                // 2. 이동 방향을 계산
+//                Vector3 dirH = transform.right * h;  // 좌우 방향
+//                Vector3 dirV = transform.forward * v;  // 전후 방향
+//                Vector3 dir = dirH + dirV;  // 최종 이동 방향
+//                dir.Normalize();  // 방향 벡터를 정규화
+
+//                // 3. 땅에 닿아있는지 확인하여 yVelocity를 초기화
+//                if (cc.isGrounded)
+//                {
+//                    yVelocity = 0;
+//                }
+
+//                // 5. 중력 적용
+//                yVelocity += gravity * Time.deltaTime;  // 중력에 의해 yVelocity가 감소
+
+//                // 6. 이동 방향에 yVelocity를 포함
+//                dir.y = yVelocity;
+
+//                // 7. 캐릭터 컨트롤러를 통해 캐릭터를 이동
+//                cc.Move(dir * moveSpeed * Time.deltaTime);
+
+//                // 애니메이터 값을 업데이트 (애니메이션 재생을 위해)
+//                anim.SetFloat("DirH", h);  // 좌우 움직임
+//                anim.SetFloat("DirV", v);  // 전후 움직임
+//            }
+//        }
+//        else
+//        {
+//            // 다른 플레이어의 위치 보정
+//            if (receivePos != Vector3.zero)
+//            {
+//                transform.position = Vector3.Lerp(transform.position, receivePos, Time.deltaTime * lerpSpeed);
+//            }
+
+//            // 다른 플레이어의 회전 보정
+//            if (receiveRot != Quaternion.identity)
+//            {
+//                transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, Time.deltaTime * lerpSpeed);
+//            }
+//        }
+//    }
+
+//    // 충돌 감지 함수
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        // 특정 태그 또는 오브젝트와의 충돌을 감지하여 이동을 제한
+//        if (other.CompareTag("AREA"))
+//        {
+//            if (micArea != null && micArea.areaCount != 4 && other.gameObject.name == "Area_monitor")
+//            {
+//                // "Area_monitor"와 충돌 시 이동 제한
+//                canMove = false;  // 이동 제한
+//                if (photonView.IsMine)
+//                {
+//                    // 마우스 잠그기 해제
+//                    Cursor.lockState = CursorLockMode.None;
+//                }
+//            }
+//        }
+//    }
+
+//    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+//    {
+//        if (stream.IsWriting)
+//        {
+//            // 내 위치 값을 보낸다
+//            stream.SendNext(transform.position);
+//            // 내 회전값을 보낸다
+//            stream.SendNext(transform.rotation);
+//            // 내 h 값
+//            stream.SendNext(h);
+//            // 내 v 값
+//            stream.SendNext(v);
+//        }
+//        else if (stream.IsReading)
+//        {
+//            // 위치 값을 받자
+//            receivePos = (Vector3)stream.ReceiveNext();
+//            // 회전 값을 받자
+//            receiveRot = (Quaternion)stream.ReceiveNext();
+//            // 서버에서 전달되는 h 값 받자
+//            h = (float)stream.ReceiveNext();
+//            // 서버에서 전달되는 v 값 받자
+//            v = (float)stream.ReceiveNext();
+//        }
+//    }
+
+//    internal void SetCollisionRestriction(bool v)
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
+
+
+// 영역 위에선 움직이지 마 + 마우스 자동 생성
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
