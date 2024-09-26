@@ -30,6 +30,7 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     public TMP_Text panelTimer; // 타이머를 표시할 텍스트
     public float timer; // 실제 감소될 시간
 
+    public AnswerCheckMgr acmgr;
 
     void Start()
     {
@@ -71,7 +72,7 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
         currentCheck = checkList3;
 
-        
+        acmgr.AnswerCheck();
 
     }
 

@@ -15,11 +15,7 @@ public class AnswerCheckMgr : MonoBehaviour
     // 문항별 ox 이미지 (할당해줘야 됨!)
     public Image[] o = new Image[5];
     public Image[] x = new Image[5];
-
-    private void Start()
-    {
-        AnswerCheck();
-    }
+       
 
     // 정답 체크 ( 체크 & O/X 이미지 표시)
     // 3단계로 넘어가는 부분에서 호출하면 되는 함수
