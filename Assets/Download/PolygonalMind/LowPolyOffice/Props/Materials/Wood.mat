@@ -202,7 +202,7 @@ Material:
     - _Shininess: 0.078
     - _SketchHalftoneMax: 1
     - _SketchHalftoneMin: 0.2
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 1
     - _SpecularHighlights: 1

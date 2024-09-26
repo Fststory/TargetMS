@@ -1,4 +1,5 @@
-﻿//using System.Collections;
+﻿//// 마이크 영역에서는 처음에는 움직이고 싶어요
+//using System.Collections;
 //using System.Collections.Generic;
 //using UnityEngine;
 //using Photon.Pun;

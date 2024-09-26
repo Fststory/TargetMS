@@ -1,11 +1,12 @@
-﻿//using System.Collections;
+﻿//// pt가 1번째 영역에서는 움직일 수 있게 플레이어무드2랑 연계한거
+//using System.Collections;
 //using System.Collections.Generic;
 //using UnityEngine;
 
 //public class MicArea : MonoBehaviour
 //{
 //    // Area1의 스크립트를 저장할 변수
-//    private Area area1Script;
+//    private Area2 area1Script;
 
 //    public GameObject monitorArea;
 
@@ -32,7 +33,7 @@
 //    private void Awake()
 //    {
 //        monitorArea = GameObject.Find("Area_monitor").gameObject;
-//        area1Script = monitorArea.GetComponent<Area>();
+//        area1Script = monitorArea.GetComponent<Area2>();
 
 //        // PlayerMove2 스크립트 가져오기
 //        playerMove2Script = GameObject.FindWithTag("Player").GetComponent<PlayerMove2>();
@@ -47,7 +48,7 @@
 //        }
 //        else
 //        {
-//            area1Script = monitorArea.GetComponent<Area>();
+//            area1Script = monitorArea.GetComponent<Area2>();
 //            area1Script.enabled = false;
 //        }
 

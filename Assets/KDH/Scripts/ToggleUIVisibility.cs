@@ -11,9 +11,9 @@ public class ToggleUIVisibility : MonoBehaviour
     private bool isMoved = false;      // UI의 위치 상태 저장
 
     // 초기 위치
-    private Vector2 initialPosition = new Vector2(12f, -772f);
+    private Vector2 initialPosition = new Vector2(12f, -1377f);
     // 이동할 위치
-    private Vector2 movedPosition = new Vector2(12f, -1377f);
+    private Vector2 movedPosition = new Vector2(12f, -772);
 
     void Start()
     {
@@ -72,15 +72,14 @@ public class ToggleUIVisibility : MonoBehaviour
     {
         if (isMoved)
         {
-            // 초기 위치로 이동
-            uiRectTransform.anchoredPosition = initialPosition;
+            // 이동할 위치로 이동
+            uiRectTransform.anchoredPosition = movedPosition;
+            
         }
         else
         {
-            // 이동할 위치로 이동
-            uiRectTransform.anchoredPosition = movedPosition;
-           
-           
+            // 초기 위치로 이동
+            uiRectTransform.anchoredPosition = initialPosition;
         }
 
         // 위치 상태를 토글
