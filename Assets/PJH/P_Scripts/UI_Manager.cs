@@ -19,7 +19,9 @@ public class UI_Manager : MonoBehaviour
     public GameObject phoneCanvas;   
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
-    public GameObject checkListCanvas;
+    public GameObject checkListCanvas2;
+    public GameObject checkListCanvas3;
+
     public float timerTime = 30;
     public TMP_Text regaltimer_text;
     public TMP_Text coffeetimer_text;
@@ -109,8 +111,8 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-        checkListCanvas.SetActive(false);
-
+        checkListCanvas2.SetActive(false);
+        checkListCanvas3.SetActive(false);
         checkListCanvas4.SetActive(false);
 
         scrollview.SetActive(false);
