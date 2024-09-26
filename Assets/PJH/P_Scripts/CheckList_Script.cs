@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using TMPro;
-using UnityEditor.ShaderGraph.Internal;
+//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4번으로 넘어가는거부터 
@@ -127,7 +127,10 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
         // 만역, 현재 패널이 총 패널의 갯수보다 1 적다면
         if (currentIndex < panels.Length - 1)
         {
-            HidePanel(currentIndex); 
+            HidePanel(currentIndex);
+
+            STTSummaryManager.instance.PostJson();  // 문제 넘어가기 전에 회의록 요약 부탁 통신 보냄
+
             currentIndex++;
             ShowPanel(currentIndex);
 

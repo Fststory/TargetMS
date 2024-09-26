@@ -1792,7 +1792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD504\uB85C\uADF8\uB7A8 \uAC1C\uBC1C "
+  m_text: "\uD504\uB85C\uADF8\uB7A8 \uAC1C\uBC1C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05026e3f45e8b974980963ffcd1dc584, type: 2}
   m_sharedMaterial: {fileID: -2666128883652739778, guid: 05026e3f45e8b974980963ffcd1dc584,
@@ -51312,7 +51312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC720 \uC544"
+  m_text: "\uC720\uC544"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05026e3f45e8b974980963ffcd1dc584, type: 2}
   m_sharedMaterial: {fileID: -2666128883652739778, guid: 05026e3f45e8b974980963ffcd1dc584,
@@ -51350,7 +51350,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
