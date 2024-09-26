@@ -24,6 +24,8 @@ public class STTRecorder : MonoBehaviourPun
     // 닉네임 색상
     Color nickNameColor;
 
+    public CheckList_Script cls;    // cls 에 체크리스트 캔버스 할당해줘야 됨
+
     void Start()
     {
         // 닉네임 색상 랜덤하게 설정
@@ -45,7 +47,15 @@ public class STTRecorder : MonoBehaviourPun
         photonView.RPC(nameof(AddVoiceChat), RpcTarget.All, chat);
 
         // STTManager 에 stt 모으기
-        STTSummaryManager.instance.AddSTTResult(chat);
+        //STTSummaryManager.instance.AddSTTResult(chat);
+        photonView.RPC(nameof(AddSTTResult), RpcTarget.All, chat);
+    }
+
+    [PunRPC]
+    public void AddSTTResult(string sttResult)
+    {
+        STTSummaryManager.instance.sum[cls.currentIndex].data += sttResult;
+        Debug.Log("STT 결과 추가: " + sttResult);
     }
 
     // 채팅 추가 함수

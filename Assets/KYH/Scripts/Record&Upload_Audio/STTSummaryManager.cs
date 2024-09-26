@@ -26,14 +26,14 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
     public static STTSummaryManager instance;  // 싱글톤
 
     [Header("현재 문제 번호")]
-    public CheckList_Script cls;    // cls 에 2단계 캔버스 할당해줘야 됨
+    public CheckList_Script cls;    // cls 에 체크리스트 캔버스 할당해줘야 됨
     // 현재 풀고 있는 문제 번호 0~4, 총 5개
     // cls.currentIndex;
 
-    [Header("문제별 회의 내용 STT")]
+    [Header("문제별 회의 STT")]
     public SttSum[] sum = new SttSum[5];    // 5문제니까 요약도 5개
 
-    [Header("문제별 회의 요약본")]
+    [Header("문제별 회의 STT 요약본")]
     public TMP_Text[] tmpSummary = new TMP_Text[5];  // 출력받을 TMP_Text
 
     private void Awake()
@@ -53,15 +53,12 @@ public class STTSummaryManager : MonoBehaviourPunCallbacks
     }
 
     // STT 결과를 추가하는 함수
-    public void AddSTTResult(string sttResult)
-    {
-        sum[cls.currentIndex].data += sttResult;
-        //if(현재 푸는 문제 번호 = i)   // 현재 풀고 있는 문제의 번호를 알아야 됨. 변수로 만들어서
-        //{
-        //    sum[i].data += sttResult;
-        //}
-        Debug.Log("STT 결과 추가: " + sttResult);
-    }
+    //[PunRPC]
+    //public void AddSTTResult(string sttResult)
+    //{
+    //    sum[cls.currentIndex].data += sttResult;
+    //    Debug.Log("STT 결과 추가: " + sttResult);
+    //}
 
     public void PostJson()
     {

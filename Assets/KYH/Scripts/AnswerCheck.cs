@@ -10,7 +10,7 @@ public class AnswerCheckMgr : MonoBehaviour
     public bool[] tORf = new bool[5];
 
     // 다 맞추면
-    bool allAnswer;
+    //bool allAnswer;
 
     // 문항별 ox 이미지 (할당해줘야 됨!)
     public Image[] o = new Image[5];
@@ -22,7 +22,7 @@ public class AnswerCheckMgr : MonoBehaviour
     // 3단계 캔버스 켜질 때 AnswerCheckMgr 오브젝트가 활성화되므로 Start() 에서 호출
     public void AnswerCheck()
     {
-        Proposal checklist = ProposalMgr.instance.proposal;
+        Proposal checklist = ProposalMgr.instance.proposal;     // 너무 길어서 변수에 담음
 
         // 문항 순서
         // 1.유형 2.읽는 이 3.타겟 4.기대효과 5.예상 리스크
@@ -42,9 +42,9 @@ public class AnswerCheckMgr : MonoBehaviour
         }
 
         // 5 문제 다 맞추면 allAnswer (모두 정답 처리 => 기획서 작성 요청 가능할 때 사용하거나 하면 될 듯)
-        if (tORf[0]&& tORf[1] && tORf[2] && tORf[3] && tORf[4])
-        {
-            allAnswer = true;
-        }
+        //if (tORf[0]&& tORf[1] && tORf[2] && tORf[3] && tORf[4])
+        //{
+        //    allAnswer = true;
+        //}
     }
 }
