@@ -21,13 +21,15 @@ public class Monitor_Trigger : MonoBehaviour
         // 모니터 박스 안에 있을때
         if(other.gameObject.CompareTag("Player"))
         {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                //checklist 캔버스를 띄운다. 토글
-                checkListCanvas.SetActive(!checkListCanvas.activeSelf);
-                // 마우스활성화
-                Cursor.lockState = CursorLockMode.None;
-            }
+            //if(Input.GetKeyDown(KeyCode.E))
+            //{
+            //    //checklist 캔버스를 띄운다. 토글
+            //    checkListCanvas.SetActive(!checkListCanvas.activeSelf);
+            //    // 마우스활성화
+            //    Cursor.lockState = CursorLockMode.None;
+            //}
+
+            checkListCanvas.SetActive(true);
         }
 
     }

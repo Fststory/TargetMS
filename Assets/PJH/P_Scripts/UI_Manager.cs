@@ -494,7 +494,7 @@ public class UI_Manager : MonoBehaviour
        
     }
 
-    [PunRPC]
+    
     public void OnPhone()    
     {
         // 휴대폰 캔버스가 활성화
@@ -521,7 +521,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    [PunRPC]
+  
     public void OnLegalPad()  
     {
         legalCanvas.SetActive(true);
@@ -545,7 +545,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    [PunRPC]
+
     public void OnCoffee()   
     {
         coffeeCanvas.SetActive(true);
