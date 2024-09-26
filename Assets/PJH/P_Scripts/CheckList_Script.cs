@@ -167,4 +167,59 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
 
 
 
+    /////////////////////////////// 3번째 체크리스트에서 버튼 누르면 2번째 체크리스트 문제띄우기
+    ///
+    // 3번째 캔버스에 해당 문제 버튼 누르면 2번째 캔버스 해당 문제 패널로 이동하기
+
+
+    public void QButton1()
+    {
+        // 체크리스트 3을 비활성화하고 
+        checkList3.SetActive(false);
+        // 체크리스트 2를 활성화하고
+        checkList2.SetActive(true);
+        // 체크리스트 2안의 type을 찾아서 활성화
+        checkList2.transform.Find("Type").gameObject.SetActive(true);
+
+
+    }
+    public void QButton2()
+    {
+        // 체크리스트 3을 비활성화하고 
+        checkList3.SetActive(false);
+        // 체크리스트 2를 활성화하고
+        checkList2.SetActive(true);
+        // 체크리스트 2안의 type을 찾아서 활성화
+        checkList2.transform.Find("Who").gameObject.SetActive(true);
+    }
+    public void QButton3()
+    {
+        // 체크리스트 3을 비활성화하고 
+        checkList3.SetActive(false);
+        // 체크리스트 2를 활성화하고
+        checkList2.SetActive(true);
+        // 체크리스트 2안의 type을 찾아서 활성화
+        checkList2.transform.Find("Target").gameObject.SetActive(true);
+    }
+    public void QButton4()
+    {
+        // 체크리스트 3을 비활성화하고 
+        checkList3.SetActive(false);
+        // 체크리스트 2를 활성화하고
+        checkList2.SetActive(true);
+        // 체크리스트 2안의 type을 찾아서 활성화
+        checkList2.transform.Find("Expect").gameObject.SetActive(true);
+    }
+    public void QButton5()
+    {
+        // 체크리스트 3을 비활성화하고 
+        checkList3.SetActive(false);
+        // 체크리스트 2를 활성화하고
+        checkList2.SetActive(true);
+        // 체크리스트 2안의 type을 찾아서 활성화
+        checkList2.transform.Find("Risk").gameObject.SetActive(true);
+    }
+
+
+
 }

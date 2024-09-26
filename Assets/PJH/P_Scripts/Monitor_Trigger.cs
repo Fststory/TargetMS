@@ -25,6 +25,8 @@ public class Monitor_Trigger : MonoBehaviour
             {
                 //checklist 캔버스를 띄운다. 토글
                 checkListCanvas.SetActive(!checkListCanvas.activeSelf);
+                // 마우스활성화
+                Cursor.lockState = CursorLockMode.None;
             }
         }
 

@@ -21,6 +21,8 @@ public class UI_Manager : MonoBehaviour
     public GameObject coffeeCanvas;
     public GameObject checkListCanvas2;
     public GameObject checkListCanvas3;
+    public GameObject AllCheckLISt;
+   
 
     public float timerTime = 30;
     public TMP_Text regaltimer_text;
@@ -111,9 +113,12 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-        checkListCanvas2.SetActive(false);
-        checkListCanvas3.SetActive(false);
-        checkListCanvas4.SetActive(false);
+ 
+        //checkListCanvas3.SetActive(false);
+        //checkListCanvas4.SetActive(false);
+
+
+        AllCheckLISt.SetActive(false);
 
         scrollview.SetActive(false);
         currentButton = null;
@@ -158,6 +163,8 @@ public class UI_Manager : MonoBehaviour
     {       
             // 누른 버튼을 현재버튼으로 한다.
             currentButton = clickedButton;
+
+            Cursor.lockState = CursorLockMode.None;
 
         // 누른 버튼안의 CHECK 텍스트 출력
         clickedButton.transform.Find("Check").gameObject.SetActive(true);
@@ -618,6 +625,7 @@ public class UI_Manager : MonoBehaviour
         }
        
     }
+      
 
     public void HideQuestPanel()
     {
@@ -625,9 +633,9 @@ public class UI_Manager : MonoBehaviour
         GameObject panel = pt.gameObject;
         panel.SetActive(false);
     }
-    
-  
-    
+
+
+
 
 
 }
