@@ -1,4 +1,83 @@
-﻿// 종혁님 세운 식
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//public class MicArea : MonoBehaviour
+//{
+//    // Area1의 스크립트를 저장할 변수
+//    private Area area1Script;
+
+//    public GameObject monitorArea;
+
+//    public int areaCount = 0;
+
+//    private PlayerMove2 playerMove2Script;
+
+//    public void CheckArea()
+//    {
+//        areaCount++;
+//        if (areaCount == 4)
+//        {
+//            area1Script.enabled = true;
+//            // PlayerMove2에서 충돌 허용
+//            playerMove2Script.SetCollisionRestriction(true);
+//        }
+//        else
+//        {
+//            // 아직 4개의 영역을 통과하지 않았으므로 충돌 제한
+//            playerMove2Script.SetCollisionRestriction(false);
+//        }
+//    }
+
+//    private void Awake()
+//    {
+//        monitorArea = GameObject.Find("Area_monitor").gameObject;
+//        area1Script = monitorArea.GetComponent<Area>();
+
+//        // PlayerMove2 스크립트 가져오기
+//        playerMove2Script = GameObject.FindWithTag("Player").GetComponent<PlayerMove2>();
+//    }
+
+//    void Start()
+//    {
+//        if (area1Script != null)
+//        {
+//            // 시작 시 Area1의 스크립트를 비활성화
+//            area1Script.enabled = false;
+//        }
+//        else
+//        {
+//            area1Script = monitorArea.GetComponent<Area>();
+//            area1Script.enabled = false;
+//        }
+
+//        // 처음에는 충돌을 제한하도록 설정
+//        playerMove2Script.SetCollisionRestriction(false);
+//    }
+
+//    void Update()
+//    {
+//        // 모든 영역을 한 번씩 통과했을 때 Area1의 스크립트를 활성화
+//        if (Input.GetKeyDown(KeyCode.Q))
+//        {
+//            print(areaCount);
+//            print(area1Script.enabled);
+//        }
+//    }
+
+//    // 영역에 플레이어가 들어왔을 때 호출되는 함수
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        if (other.CompareTag("Player"))
+//        {
+//            // CheckArea 함수를 호출하여 영역 통과 여부 확인
+//            CheckArea();
+//        }
+//    }
+//}
+
+
+// 종혁님 세운 식
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,16 +143,10 @@ public class MicArea : MonoBehaviour
             area1Script.enabled = true;
         }
     }
-
-    // 영역에서 플레이어가 나갔을 때 호출되는 함수 (필요하지 않다면 생략 가능)
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // 다른 특별한 동작은 필요 없으므로 빈 상태로 남겨둘 수 있음
-        }
-    }
 }
+
+
+
 
 //  수정을 했는데도 안됑옹ㅇ 
 //using System.Collections;
