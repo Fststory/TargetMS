@@ -113,7 +113,7 @@ public class ScrollView_Script : MonoBehaviour // 결과 이벤트창이 들어 
     }
 
 
-
+  
 
 }
 

@@ -111,7 +111,7 @@ public class UI_Manager : MonoBehaviour
 
         //lineRenderer = GetComponent<LineRenderer>();
 
-        checkListCanvas2.SetActive(false);
+ 
         checkListCanvas3.SetActive(false);
         checkListCanvas4.SetActive(false);
 
@@ -618,6 +618,7 @@ public class UI_Manager : MonoBehaviour
         }
        
     }
+      
 
     public void HideQuestPanel()
     {
@@ -625,9 +626,9 @@ public class UI_Manager : MonoBehaviour
         GameObject panel = pt.gameObject;
         panel.SetActive(false);
     }
-    
-  
-    
+
+
+
 
 
 }
