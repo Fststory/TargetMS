@@ -18,9 +18,13 @@ public class Coffee_Trigger : MonoBehaviour
             {
                 // 현재 캔버스를 true로
                 UI_Manager.instance.OnCoffee();
+
+               
             }
         }
     }
+
+   
 
 
     //////////////////////// 포톤 멀티 플레이용 
