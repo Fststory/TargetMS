@@ -26486,6 +26486,7 @@ GameObject:
   - component: {fileID: 593546671}
   - component: {fileID: 593546673}
   - component: {fileID: 593546672}
+  - component: {fileID: 593546674}
   m_Layer: 5
   m_Name: Monitor_Tuto
   m_TagString: Untagged
@@ -26510,7 +26511,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 1556.352, y: 1146.432}
+  m_SizeDelta: {x: 1725, y: 1257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593546672
 MonoBehaviour:
@@ -26532,7 +26533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6b7473c60001dbb4b9f78aacf3dae089, type: 3}
+  m_Texture: {fileID: 2800000, guid: 6c2d30b373c2d7443a96809c95c54bc1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -26547,6 +26548,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593546670}
   m_CullTransparentMesh: 1
+--- !u!114 &593546674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593546670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &593762804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36609,6 +36625,7 @@ GameObject:
   - component: {fileID: 870195266}
   - component: {fileID: 870195268}
   - component: {fileID: 870195267}
+  - component: {fileID: 870195269}
   m_Layer: 5
   m_Name: smoke_Tuto
   m_TagString: Untagged
@@ -36633,7 +36650,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1854, y: 1362}
+  m_SizeDelta: {x: 1483.2, y: 1089.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870195267
 MonoBehaviour:
@@ -36670,6 +36687,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870195265}
   m_CullTransparentMesh: 1
+--- !u!114 &870195269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870195265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &871879546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56215,6 +56247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tuto_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5730597035085027759, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9023129429706042202, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
         type: 3}
       propertyPath: m_SortingOrder
@@ -56231,7 +56268,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 593546671}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5730597035085027759, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265313079}
   m_SourcePrefab: {fileID: 100100000, guid: c022a6d69cccb564a96d84b0a5e0eb5b, type: 3}
 --- !u!224 &1265313077 stripped
 RectTransform:
@@ -56239,6 +56280,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1265313076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1265313078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5730597035085027759, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1265313076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1265313079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265313078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1267551735
 GameObject:
   m_ObjectHideFlags: 0
