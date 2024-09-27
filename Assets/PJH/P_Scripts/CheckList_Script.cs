@@ -151,7 +151,17 @@ public class CheckList_Script : MonoBehaviour  // 체크리스트 3번에서 4�
     }
 
 
-    8
+    void panelTime()
+    {
+        // 만약, 타이머가 0보다 크다면
+        if (timer > 0)
+        {
+            // 프레임마다 감소시키고
+            timer -= Time.deltaTime;
+            // 남은 시간을 int로 표시 panel타임에 표시
+            panelTimer.text = Mathf.Ceil(timer).ToString();
+        }
+    }
 
     void ResetTimer()
     {
