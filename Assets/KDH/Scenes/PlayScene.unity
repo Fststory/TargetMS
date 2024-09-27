@@ -6468,7 +6468,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -45484,7 +45484,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -48996,7 +48996,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523625813}
   m_HandleRect: {fileID: 1523625812}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -56288,6 +56288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tuto_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489805722395811272, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8063313244822401888, guid: c022a6d69cccb564a96d84b0a5e0eb5b,
         type: 3}
@@ -73095,7 +73100,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -77388,7 +77393,6 @@ MonoBehaviour:
   effectaudioSource: {fileID: 968532777}
   keywordSound: {fileID: 8300000, guid: f9c03d2e292fffe4da307e74a57f2557, type: 3}
   coffeeAfterSound: {fileID: 8300000, guid: b45d74ab634b7f84db15de7a20edd1ef, type: 3}
-  officeSound: {fileID: 8300000, guid: 07d5245b387963f45b22431291e39a9c, type: 3}
 --- !u!4 &1693845497
 Transform:
   m_ObjectHideFlags: 0
@@ -77411,7 +77415,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693845495}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07d5245b387963f45b22431291e39a9c, type: 3}
@@ -92840,7 +92844,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -69, y: -82}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2017565135
 MonoBehaviour:

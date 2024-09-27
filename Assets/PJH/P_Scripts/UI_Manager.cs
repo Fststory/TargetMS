@@ -102,7 +102,7 @@ public class UI_Manager : MonoBehaviour
     public AudioSource effectaudioSource;
     public AudioClip keywordSound;
     public AudioClip coffeeAfterSound;
-    public AudioClip officeSound;
+    //public AudioClip officeSound;
 
     // 싱글톤
     private void Awake()
@@ -122,9 +122,9 @@ public class UI_Manager : MonoBehaviour
         }
 
         // 오브젝트가 생성될 때 한 번 호출
-        audioSource.clip = officeSound;
-        audioSource.loop = true; // 루프 설정
-        audioSource.Play(); // 사운드 자동 재생
+        //audioSource.clip = officeSound;
+        //audioSource.loop = true; // 루프 설정
+       // audioSource.Play(); // 사운드 자동 재생
 
 
     }
