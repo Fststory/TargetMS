@@ -105,6 +105,8 @@ public class MicArea : MonoBehaviour
     {
         monitorArea = GameObject.Find("Area_monitor").gameObject;
         area1Script = monitorArea.GetComponent<Area>();
+
+      
     }
 
     void Start()

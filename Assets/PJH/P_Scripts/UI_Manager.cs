@@ -13,19 +13,19 @@ public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
 
-    
+
 
 
     [Header("캔버스")]
     // 오브젝트 접촉시 띄울 캔버스
     public GameObject cigaCanvas;
-    public GameObject phoneCanvas;   
+    public GameObject phoneCanvas;
     public GameObject legalCanvas;
     public GameObject coffeeCanvas;
     public GameObject checkListCanvas2;
     public GameObject checkListCanvas3;
     public GameObject AllCheckLISt;
-   
+
 
     public float timerTime = 30;
     public TMP_Text regaltimer_text;
@@ -38,13 +38,13 @@ public class UI_Manager : MonoBehaviour
     public GameObject RealExitPanel;
 
     //public GameObject[] infoCanvass; 
-   
+
     //[Header("btn1을 눌렀을때 나올 변수들")]
     ////public GameObject docCanvas1    ;
     //public GameObject infoPanel1;
     //public Button doc1Exit;
     //public LineRenderer lineRenderer;
-       
+
 
 
     [Header("버튼")]
@@ -68,14 +68,14 @@ public class UI_Manager : MonoBehaviour
     public Transform pos2;
     public Transform pos3;
     public Transform pos4; // 패널 위치
-    
+
 
     [Header("키워드")]
     public GameObject Keytext;
 
     [Header("메인UI")]
     [SerializeField]
-    private Button uiExitbtn;   
+    private Button uiExitbtn;
     [SerializeField]
     private Button uiQuestbtn;
     [SerializeField]
@@ -99,8 +99,10 @@ public class UI_Manager : MonoBehaviour
 
     [Header("사운드")]
     public AudioSource audioSource;
+    public AudioSource effectaudioSource;
     public AudioClip keywordSound;
     public AudioClip coffeeAfterSound;
+    public AudioClip officeSound;
 
     // 싱글톤
     private void Awake()
@@ -118,6 +120,13 @@ public class UI_Manager : MonoBehaviour
         {
             Invoke("HideQuestPanel", 2f);
         }
+
+        // 오브젝트가 생성될 때 한 번 호출
+        audioSource.clip = officeSound;
+        audioSource.loop = true; // 루프 설정
+        audioSource.Play(); // 사운드 자동 재생
+
+
     }
 
     void Start()
@@ -144,6 +153,18 @@ public class UI_Manager : MonoBehaviour
         phoneCanvas.SetActive(false);
         legalCanvas.SetActive(false);
         coffeeCanvas.SetActive(false);
+
+        // 플레이씬 사운드.awake on start, loop 는 인스펙터에서
+        //audioSource.clip = officeSound;
+
+        //PlaySound();
+        //StopSound();
+
+        AudioSource audio = GetComponent<AudioSource>();
+
+        audio.gameObject.SetActive(false);
+        audio.gameObject.SetActive(true);
+
     }
 
 
@@ -164,22 +185,22 @@ public class UI_Manager : MonoBehaviour
         Timer(); // 캔버스 타이머
 
         if (Input.GetKeyDown(KeyCode.I))
-        { 
+        {
             scrollview.SetActive(!scrollview.activeSelf);
         }
 
-       
+
 
     }
 
 
     //doucument 버튼을 눌렀을 때 발생할 이벤트
     public void OnclickedButton(Button clickedButton)
-    {       
-            // 누른 버튼을 현재버튼으로 한다.
-            currentButton = clickedButton;
+    {
+        // 누른 버튼을 현재버튼으로 한다.
+        currentButton = clickedButton;
 
-            Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
 
         // 누른 버튼안의 CHECK 텍스트 출력
         clickedButton.transform.Find("Check").gameObject.SetActive(true);
@@ -188,37 +209,37 @@ public class UI_Manager : MonoBehaviour
         // 누른 버튼안의 패널을 찾고
         Transform panelTransform = clickedButton.transform.Find("Panel");
 
-            if (panelTransform != null)
-            {
-                // transform paenl 을 gameObject 형식으로 바꾸고
-                GameObject panel = panelTransform.gameObject;
+        if (panelTransform != null)
+        {
+            // transform paenl 을 gameObject 형식으로 바꾸고
+            GameObject panel = panelTransform.gameObject;
 
-                // 버튼 안의 panel 을 setactive(true)
-                panel.gameObject.SetActive(true);
+            // 버튼 안의 panel 을 setactive(true)
+            panel.gameObject.SetActive(true);
 
-                // 현재 활성화 된 패널을 현재 패널로 한다.
-                currentPanel = panel;
-            }
-            else
-            {
-                Debug.Log("자식중에 panel 이 없습니다.");
-            }
-                  
+            // 현재 활성화 된 패널을 현재 패널로 한다.
+            currentPanel = panel;
+        }
+        else
+        {
+            Debug.Log("자식중에 panel 이 없습니다.");
+        }
+
 
     }
-      
 
-       
 
-        // 해당 document 버튼 밖에 파란 원이 생김 (setactive) true      
 
-    
+
+    // 해당 document 버튼 밖에 파란 원이 생김 (setactive) true      
+
+
 
 
     //button이 사라지면 자리 변경
     void ButtonPlaceSwap()
-    {        
-        for(int i = 0; i < buttonlist.Count; i++)
+    {
+        for (int i = 0; i < buttonlist.Count; i++)
         {
             // 만약, 버튼의 갯수가 2개가 되면
             if (buttonlist.Count == 2)
@@ -235,9 +256,9 @@ public class UI_Manager : MonoBehaviour
                 buttonlist[0].transform.Find("Panel").transform.position = pos4.position;
             }
         }
-                               
+
     }
-       
+
     // 나가기 버튼 눌렀을때
     public void OnClickedExitButton()
     {
@@ -249,12 +270,12 @@ public class UI_Manager : MonoBehaviour
             if (currentPanel.activeSelf)
             {
                 // 버튼 리스트에서 현재 버튼제거
-                buttonlist.Remove(currentButton);       
+                buttonlist.Remove(currentButton);
                 // 현재 버튼 제거   
                 Destroy(currentButton.gameObject);
                 // 버튼 자리를 재배치한다.
-               // ButtonPlaceSwap();
-                
+                // ButtonPlaceSwap();
+
             }
             else if (!currentPanel.activeSelf)
             {
@@ -289,7 +310,7 @@ public class UI_Manager : MonoBehaviour
             //Renderer smokeArea = GetComponent<Renderer>();
 
             //smokeArea.material.color = new Color(0.5f, 0.5f, 0.5f, 1);
-        } 
+        }
 
 
 
@@ -304,9 +325,9 @@ public class UI_Manager : MonoBehaviour
             AudioSource audio = UI_Manager.instance.audioSource;
             AudioClip coffeeSound = UI_Manager.instance.coffeeAfterSound;
 
-            audioSource.clip = coffeeAfterSound;
-            audioSource.time = 5f;
-            audioSource.Play();
+            effectaudioSource.clip = coffeeAfterSound;
+            effectaudioSource.time = 5f;
+            effectaudioSource.Play();
 
 
             Invoke("StopSound", 2f);
@@ -322,7 +343,8 @@ public class UI_Manager : MonoBehaviour
 
             tablet.SetActive(false);
 
-        } if (currentCanvas == legalCanvas)
+        }
+        if (currentCanvas == legalCanvas)
         {
             Destroy(currentCanvas);
 
@@ -331,11 +353,11 @@ public class UI_Manager : MonoBehaviour
             rigal.SetActive(false);
 
         }
-           
 
-        
+
+
         RealExitPanel.SetActive(false);
-    
+
     }
 
     public void RealExitReturnButton()
@@ -347,18 +369,19 @@ public class UI_Manager : MonoBehaviour
 
     // 키워드 얻고 해당 버튼을 비활성화 하는 코드 추가하기
 
-    
+
 
 
 
     // 키워드 눌렀을 때
-    public void OnClickKeyword(Button keyWord) 
+    public void OnClickKeyword(Button keyWord)
     {
-        audioSource.clip = keywordSound;
-        audioSource.time = 2f;
-        audioSource.Play();
+        effectaudioSource.clip = keywordSound;
+        effectaudioSource.time = 2f;
+        effectaudioSource.Play();
 
-        Invoke("StopSound", 0.5f);
+
+        Invoke("StopSound", 1f);
 
 
 
@@ -374,16 +397,16 @@ public class UI_Manager : MonoBehaviour
         Keytext = findKeyText.gameObject;
 
         if (Keytext != null)
-        {          
+        {
             // 키텍스트를 활성화
             Keytext.gameObject.SetActive(true);
             // 1초 뒤에 숨기고
             Invoke("HideKeytext", 0.5f);
 
             // 키워드를 찾는다
-            Transform kWord = keyWord.transform.Find("Keyword");    
+            Transform kWord = keyWord.transform.Find("Keyword");
 
-            if(kWord != null)
+            if (kWord != null)
             {
                 // 키워드를 scrollview의 content의 자식으로 넣는다.
                 kWord.transform.SetParent(scrollviewContent, false);
@@ -396,7 +419,7 @@ public class UI_Manager : MonoBehaviour
             {
                 Debug.Log("kWord 가 없습니다");
             }
-           
+
         }
         else
         {
@@ -404,8 +427,8 @@ public class UI_Manager : MonoBehaviour
         }
 
 
-        
-        if(cngFont != null)
+
+        if (cngFont != null)
         {
             // 기존에 있던 text 를 가져오고
             string existingText = cngFont.text;
@@ -417,7 +440,7 @@ public class UI_Manager : MonoBehaviour
         {
             Debug.Log("안됨");
         }
-       
+
         // 키워드 버튼의 상호작용을 멈춤
         keyWord.interactable = false;
 
@@ -431,7 +454,7 @@ public class UI_Manager : MonoBehaviour
         {
             Keytext.gameObject.SetActive(false);
         }
-       
+
     }
 
     // 아래 것은 start에서 실행 시킬것
@@ -439,7 +462,7 @@ public class UI_Manager : MonoBehaviour
     //void GameStart()
     //{
     //    tutorial.SetActive(true);
-                    
+
     //    // 그리고 플레이어 이동 불가
     //    playermove.enabled = false;
 
@@ -453,10 +476,10 @@ public class UI_Manager : MonoBehaviour
     //        istimerStart = true;
 
     //        playermove.enabled = true;
-                       
+
     //    }
     //}
-       
+
 
 
     IEnumerator CountDown()
@@ -477,7 +500,7 @@ public class UI_Manager : MonoBehaviour
     // GameScene 타이머가 끝나면 다음씬으로 이동시킬것
     void GameEnd()
     {
-       
+
         //PhotonNetwork.LoadLevel("CouncilScene");
 
     }
@@ -503,25 +526,25 @@ public class UI_Manager : MonoBehaviour
     // 플레이어가 각 오브젝트에 닿았을때 출력 될 함수
 
 
-    public void OnCigarette()    
+    public void OnCigarette()
     {
         cigaCanvas.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
         currentCanvas = cigaCanvas;
-        
+
         // 작동하면 됬지
-        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();       
+        btn1 = currentCanvas.transform.Find("Button1").GetComponent<Button>();
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
 
-      
-       
+
+
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-      
+
 
         timerTime = 30f;
 
@@ -529,11 +552,11 @@ public class UI_Manager : MonoBehaviour
         cigatimer_text.text = Mathf.Ceil(timerTime).ToString();
         istimerStart = true;
 
-       
+
     }
 
-    
-    public void OnPhone()    
+
+    public void OnPhone()
     {
         // 휴대폰 캔버스가 활성화
         phoneCanvas.SetActive(true);
@@ -547,13 +570,13 @@ public class UI_Manager : MonoBehaviour
         btn2 = currentCanvas.transform.Find("Button2").GetComponent<Button>();
         btn3 = currentCanvas.transform.Find("Button3").GetComponent<Button>();
 
-      
+
 
         buttonlist.Add(btn1);
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-      
+
 
 
         timerTime = 30f;
@@ -565,8 +588,8 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-  
-    public void OnLegalPad()  
+
+    public void OnLegalPad()
     {
         legalCanvas.SetActive(true);
 
@@ -591,7 +614,7 @@ public class UI_Manager : MonoBehaviour
     }
 
 
-    public void OnCoffee()   
+    public void OnCoffee()
     {
         coffeeCanvas.SetActive(true);
 
@@ -607,7 +630,7 @@ public class UI_Manager : MonoBehaviour
         buttonlist.Add(btn2);
         buttonlist.Add(btn3);
 
-     
+
 
         timerTime = 30f;
 
@@ -619,32 +642,32 @@ public class UI_Manager : MonoBehaviour
     void Timer() // 이것도 rpc ismine 체크해야 함 아마도
     {
         // 타이머가 돌아가기 시작하면
-        if(istimerStart)
+        if (istimerStart)
         {
             // 시간을 누적한다.
             timerTime -= Time.deltaTime;
 
-            if(currentCanvas == legalCanvas)
+            if (currentCanvas == legalCanvas)
             {
                 // 타이머 값을 UI에 표시
                 regaltimer_text.text = Mathf.Ceil(timerTime).ToString();
             }
-            else if(currentCanvas == coffeeCanvas)
+            else if (currentCanvas == coffeeCanvas)
             {
                 // 타이머 값을 UI에 표시
                 coffeetimer_text.text = Mathf.Ceil(timerTime).ToString();
             }
-            else if(currentCanvas == phoneCanvas)
+            else if (currentCanvas == phoneCanvas)
             {
                 // 타이머 값을 UI에 표시
                 phonetimer_text.text = Mathf.Ceil(timerTime).ToString();
             }
-            else if(currentCanvas == cigaCanvas)
+            else if (currentCanvas == cigaCanvas)
             {
                 // 타이머 값을 UI에 표시
                 cigatimer_text.text = Mathf.Ceil(timerTime).ToString();
             }
-            
+
 
             // 0초가 되면 캔버스를 제거한다.
             if (timerTime <= 0)
@@ -661,13 +684,13 @@ public class UI_Manager : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////////////////////////////메인 UI
 
-    public void OnClickuiExitbtn() 
+    public void OnClickuiExitbtn()
     {
         Application.Quit();
-    } 
+    }
 
     //  퀘스트 버튼 /// 1초뒤에 꺼지게할것
-    public void OnClickuiQuestbtn() 
+    public void OnClickuiQuestbtn()
     {
         Transform pt = uiQuestbtn.transform.Find("QuestPanel");
         GameObject panel = pt.gameObject;
@@ -675,13 +698,13 @@ public class UI_Manager : MonoBehaviour
         panel.SetActive(!panel.activeSelf);
 
         // 활성화 되고 1초뒤에 꺼지기
-        if(panel.activeSelf)
+        if (panel.activeSelf)
         {
             Invoke("HideQuestPanel", 1f);
         }
-       
+
     }
-      
+
 
     public void HideQuestPanel()
     {
@@ -693,9 +716,27 @@ public class UI_Manager : MonoBehaviour
     // 모든 소리 정지 함수
     public void StopSound()
     {
-        audioSource.Stop();
+        effectaudioSource.Stop();
     }
 
+    public void PlaySound()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.loop = true; // 루프 설정
+            audioSource.Play();
 
+        }
+    }
 }
+
+//    public void PlayEffectSound()
+//    {
+//        if (effectaudioSource != null && effectaudioSource.clip != null)
+//        {
+//            effectaudioSource.PlayOneShot(keywordSound); // 효과음 재생
+//        }
+//    }
+
+//}
 
