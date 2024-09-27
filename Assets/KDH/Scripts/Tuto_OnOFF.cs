@@ -23,11 +23,7 @@ public class Tuto_OnOFF : MonoBehaviour
 
     private void Update()
     {
-        // F11 키로 토글 가능
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            ToggleVisibility();
-        }
+
     }
 
     public void ToggleVisibility()
